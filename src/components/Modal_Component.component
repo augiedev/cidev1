@@ -1,5 +1,5 @@
 <apex:component >
-<apex:attribute name="title" type="String" description="The title that appears at the top of the Modal in the Visualforce page and indeed GIT" required="true" />
+<apex:attribute name="title" type="String" description="The title that appears at the top of the Modal" required="true" />
 <apex:attribute name="showPopup" type="boolean" description="Indicates whether to show the Modal or not" required="true" />
 
 <style type="text/css">
