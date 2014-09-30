@@ -1,0 +1,26 @@
+<apex:page standardController="Lead" extensions="LeadConvertPageExtension" action="{!redirect}">
+<apex:detail subject="{!Lead}" />
+<c:Modal_Component title="{!title}" showPopup="{!showPopup}">
+	<apex:componentBody >
+		
+		<apex:outputText value="{!textMessage1}" /><br/>
+		
+		<apex:repeat value="{!fieldsNotFilledIn}" var="a">
+			<apex:outputText value="{!a}" /><br/>
+		</apex:repeat>
+		
+		<p><apex:outputText value="{!textMessage2}" /></p>
+		<div align="right">
+			<apex:commandButton value="        OK        " action="{!getLeadRecordPage}" rendered="{!NOT(showConfirmation)}"/>
+			<apex:commandButton value="  Yes  " action="{!goToLeadConvertPage}" rendered="{!showConfirmation}" reRender="hiddenBlock" />
+			&nbsp;&nbsp;
+			<apex:commandButton value="  No  " action="{!goToLeadConvertPage}" rendered="{!showConfirmation}" reRender="hiddenBlock">
+				<apex:param value="1" assignTo="{!doNotCreateOpportunity}" />
+			</apex:commandButton>
+			
+			<apex:pageBlock id="hiddenBlock" rendered="false" />
+		</div>
+	</apex:componentBody>
+</c:Modal_Component>
+
+</apex:page>

@@ -1,0 +1,80 @@
+<apex:page >
+    <apex:sectionHeader title="Postcode Anywhere" subtitle="Instructions and Help"/>
+    <apex:pageblock title="Enter Your Credentials">
+        <p>Without account details, you won’t be able to perform any lookups – so you will need to register a Postcode Anywhere account. If you do not already have a Postcode Anywhere account, then you can register for free by clicking on the link below. This will give you an account code and ten free lookups to trial the system. We will also generate a license key for you to use to access the web services.</p>
+        <apex:outputLink value="https://www.postcodeanywhere.co.uk/register/">Register Here</apex:outputLink>
+        <p>Once you have registered for an account your need to login to create a license key to use within the app. Login to your Postcode Anywhere control panel and select Setup-up your account. Then select the I want a general web service license key to access all of the pay-as-you-go services radio button and hit Start to create a key. Now you have a key load up the Postcode Anywhere app within Salesforce and paste the key into Standard Key and Royal Mail Key (UK Only) fields.</p>
+    </apex:pageblock>
+    <apex:pageblock title="Which countries do you need?">
+        <p>You can choose which countries you wish to use the address lookup app with from the Management tab, under Countries. To copy over all available countries, simply click on the arrow next to Fill. However, this much choice can confuse people, so it’s best to choose only the countries you will need – click on the country in the left box and then click the Add arrow to move each country over from the choice in the Available box to the Dropdown box. If you change your mind, you can remove a country from the Dropdown box – just click on the country, then click Remove. WARNING: Be careful not to click the Fill button instead of the Add button when adding individual countries, as this will fill the Dropdown box with every country available and you will have to press the Clear button and start over.</p>
+        <p>TIP: Countries can be placed at the top of the list for quicker selection. Select the country and use the Up or Down arrows to move it up or down the list. The country at the top of the list will be the default selection. </p>
+    </apex:pageblock>
+    <apex:pageblock title="Which data sources do you need?">
+        <p>As well as selecting countries from the list, you will also need to select which data sources you need under Additional Options. The pane allows you to choose which datasets are used for address validation, any additional Postcode Anywhere services you wish to use and how the app is displayed within your objects.</p>
+        <br/>
+        <apex:pageblockSection columns="1" title="Address Validation">
+            <p>Check the International Data box if you want international addresses (obvious, right?) – this will provide street level address validation for all the countries you have selected above. If you only deal with UK customers, or want to give your UK customers the best possible service, it is best to check the UK Royal Mail Data box because this data source resolves down to premise level – that is, from a postcode, it will return a list of possible addresses including house names and numbers as well as street names. You won’t even have to type in a house number. If you want to populate the company name field with the company name Royal Mail has on file, select Royal Mail Update Company. We also have a clever facility which allows you to search for an address record based on a company and partial address. To enable this, select Royal Mail Reverse Lookup. We also have premise level data from USPS which works in much the same way as the Royal Mail lookups. Tick USPS Data to populate full premise-level addresses for US lookups, and tick USPS Reverse Lookup if you want to allow reverse lookups too.</p>
+        </apex:pageblockSection>
+        <apex:pageblockSection columns="1" title="Dun and Bradstreet Business Profiling">
+            <p>Check Business Data if you want access to a wealth of Dun and Bradstreet address and business information which aren’t included in the international and UK residential datasets. If you select Business Data you will need to add a new Business Integration to tell the app which fields on the standard edit forms to use. More information about this can be found in the Advanced Customisation section.</p>
+        </apex:pageblockSection>
+        <apex:pageblockSection columns="1" title="Payment Validation">
+            <p>If you wish to validate bank account numbers and sort codes the app can provide you with this. Simply check the Payment Validation checkbox to enable functionality. As with the Business Data, if you select Payment Validation will need to add a new Payment Integration to tell the app which fields on the standard edit forms to use. More information about this can be found in the Advanced Customisation section.</p>
+        </apex:pageblockSection>
+        <apex:pageblockSection columns="1" title="Email Validation">
+            <p>If you are entering email addresses into your objects we can validate these for you. Check the Email Validation checkbox to enable this. This will enable the functionality within both the Lead and Contacts objects but if you want to add it to additional objects please refer to the Advanced Customisation section.</p>
+        </apex:pageblockSection>
+        <apex:pageblockSection columns="1" title="Formatting Options">
+            <p>The app will format your address fields to make the whole address lookup process more intuitive for users. The app will rearrange the address so that the Country and Zipcode/Postcode fields appear at the top. If you wish to leave the fields in the standard order within your objects check the Disable Field Rearrange checkbox. It will also convert your Country textbox into a dropdown list and populate it with the Countries you have selected above. If you wish to use your own dropdown list check the Disable Country List checkbox. The final option is to Disable Other Country Option. Select this checkbox if you only want to only allow users to perform lookups for the specific Countries you have selected and not allow them to manually type in additional Countries. </p>
+        </apex:pageblockSection>
+        <p>When you are done click Save and clear your browser cache to pick up all these changes.</p>
+    </apex:pageblock>
+    <apex:pageblock title="Final Setup">
+        <p>We finally need to setup the app so that it displays within your edit pages, so CRM users can quickly and accurately capture and validate data.</p>
+        <br/>
+        <apex:pageblockSection columns="1" title="Enabling Postcode Anywhere">
+            <ol>
+                <li>Click Setup in the top right hand corner of the Salesforce page</li>
+                <li>Click on the little plus sign next to Customize to expand it, and then expand Home. Then, select Home Page Layouts, and click Edit for the relevant layout</li>
+                <li>Tick the Postcode Anywhere component and click Next</li>
+                <li>Make sure that Postcode Anywhere is in the Narrow (Left) Column box and save the changes</li>
+            </ol>
+        </apex:pageblockSection>
+        <apex:pageblockSection columns="1" title="Enabling the Custom Sidebar Component">
+            <ol>
+                <li>Click Setup in the top right hand corner of the Salesforce page</li>
+                <li>Click on the little plus sign next to Customize to expand it and select User Interface</li>
+                <li>Ensure that the Show Sidebar Components on All Pages box is checked and save changes</li>
+            </ol>
+        </apex:pageblockSection>
+    </apex:pageblock>
+    <apex:pageblock title="Advanced Customisation - Enabling the functionality within custom objects">
+        <apex:pageblockSection columns="1" title="Adding Address Validation to custom objects">
+            <p>The Postcode Anywhere Address Validation functionality will work on all the standard objects within Salesforce. However, it can also be easily added to any custom objects you have within the Postcode Anywhere Management tab. The app requires a country field, postcode/zip code field, street field, city field and county field as textboxes to be present within the custom object. We can also populate your company field within the object but this is optional. If these fields are present then you can run through the following steps to install the address finder</p>
+            <ol>
+                <li>Select New Address Integration within the Address Integrations pane</li>
+                <li>Give the address integration a name</li>
+                <li>Paste the Salesforce field IDs into the app. To find the field IDs, open up the field definition detail</li>
+                <li>Select Save and then within the Management tab Save to enable the finder</li>
+            </ol>
+        </apex:pageblockSection>
+        <apex:pageblockSection columns="1" title="Enabling Dun and Bradstreet Business Profiling within your objects">
+            <p>When enabled the app will add Business Profiling by default to the Leads, Contacts and Accounts objects. The functionality can be enabled within additional objects as follows</p>
+            <ol>
+                <li>Select New Address Integration within the Address Integrations pane</li>
+                <li>Give the address integration a name</li>
+                <li>Paste the Salesforce field IDs into the app. To find the field IDs, open up the field definition detail</li>
+                <li>Select Save and then within the Management tab Save to enable the functionality</li>
+            </ol>
+        </apex:pageblockSection>
+        <apex:pageblockSection columns="1" title="Enabling Email Validation within your objects">
+            <p>When enabled the app will add Email Validation by default to the Lead and Contacts objects. The functionality can be enabled within additional objects as follows</p>
+            <ol>
+                <li>Select New Email Integration within the Email Integrations pane</li>
+                <li>Give the email integration a name</li>
+                <li>Paste the Salesforce field IDs into the app. To find the field IDs, open up the field definition detail</li>
+                <li>Select Save and then within the Management tab Save to enable the functionality</li>
+            </ol>
+        </apex:pageblockSection>
+    </apex:pageblock>
+</apex:page>

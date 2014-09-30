@@ -1,0 +1,84 @@
+<apex:page controller="ET4AE.LoginControl" tabStyle="ExactTarget__tab">
+	<apex:stylesheet value="{!$Resource.ET4AE__ExactTargetStyles}"/>
+	<apex:form id="loginForm">
+		<apex:actionFunction name="doLoginsJS" action="{!doLogins}" rerender="login" status="loginStatus"/>
+		
+		<apex:actionStatus id="loginStatus">
+			<apex:facet name="start">
+				<img class="spinnerLarge" src="{!URLFOR( $Resource.ET4AE__ExactTargetImages, 'loading.gif' )}"/>
+			</apex:facet>
+			<apex:facet name="stop">
+				<apex:pageBlock id="login" title="{!$Label.et4ae__Login_Message_PageLabel}">
+					<apex:pageBlockButtons location="bottom">
+						<apex:actionStatus id="loginStatus">
+							<apex:facet name="start">
+								<img class="spinnerSmall" src="{!URLFOR( $Resource.ET4AE__ExactTargetImages, 'loading.gif' )}"/>
+							</apex:facet>
+							<apex:facet name="stop">
+								<apex:commandButton action="{!doLogins}" value="{!$Label.et4ae__General_Button_Submit}" rerender="loginForm" status="loginStatus"/>
+							</apex:facet>
+						</apex:actionStatus>
+					</apex:pageBlockButtons>
+				
+					<!-- General Form Errors -->
+					<apex:pageBlockSection id="pageMessages">
+						<apex:outputPanel styleClass="errors" layout="block" rendered="{!hasErrors}">
+							<apex:pageBlockSectionItem >
+								<apex:pageMessages />
+							</apex:pageBlockSectionItem>
+						</apex:outputPanel>
+					</apex:pageBlockSection>
+		
+					<!-- ExactTarget Login -->
+					<apex:pageBlockSection id="etLoginBlock" columns="1" title="ExactTarget" collapsible="false" rendered="{!etCreds.isValid != true}">				
+						<!-- ExactTarget Username -->
+						<apex:pageBlockSectionItem >
+							<apex:outputLabel for="etUsername" value="{!$Label.et4ae__Login_Field_ETUsername}"/>
+							<apex:inputText id="etUsername" value="{!etCreds.username}"/>
+						</apex:pageBlockSectionItem>
+						
+						<!-- ExactTarget Password -->
+						<apex:pageBlockSectionItem >
+							<apex:outputLabel for="etPassword" value="{!$Label.et4ae__Login_Field_ETPassword}"/>
+							<apex:inputSecret id="etPassword" value="{!etCreds.password}" onkeydown="noenter(event);" />
+						</apex:pageBlockSectionItem>
+					</apex:pageBlockSection>
+					
+					<!-- ExactTarget Valid -->
+					<apex:pageBlockSection columns="1" title="ExactTarget" collapsible="false" rendered="{!etCreds.isValid == true}">
+						<apex:outputText value="ExactTarget credentials are valid"/>
+					</apex:pageBlockSection>
+		
+					<!-- Salesforce Login -->
+					<apex:pageBlockSection id="sfLoginBlock" columns="1" title="Salesforce" collapsible="false" rendered="{!sfCreds.isValid != true}">
+						<!-- Salesforce Username -->
+						<apex:pageBlockSectionItem >
+							<apex:outputLabel for="sfUsername" value="{!$Label.et4ae__Login_Field_SFUsername}"/>
+							<apex:outputText id="sfUsername" value="{!sfCreds.username}"/>
+						</apex:pageBlockSectionItem>
+						
+						<!-- Salesforce Password -->
+						<apex:pageBlockSectionItem >
+							<apex:outputLabel for="sfPassword" value="{!$Label.et4ae__Login_Field_SFPassword}"/>
+							<apex:inputSecret id="sfPassword" value="{!sfCreds.password}" onkeydown="noenter(event);" />
+						</apex:pageBlockSectionItem>
+					</apex:pageBlockSection>
+					
+					<!-- Salesforce Valid -->
+					<apex:pageBlockSection columns="1" title="Salesforce" collapsible="false" rendered="{!sfCreds.isValid == true}">
+						<apex:outputText value="Salesforce credentials are valid"/>
+					</apex:pageBlockSection>
+				</apex:pageBlock>
+			</apex:facet>
+		</apex:actionStatus>
+	</apex:form>
+	<script type="text/javascript">
+		window.setTimeout( doLoginsJS, 0 );
+		function noenter(ev)  {
+		   	if (ev.which == 13)
+		   	{
+		   		doLoginsJS();
+		     }
+		 }
+	</script>
+</apex:page>

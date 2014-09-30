@@ -1,0 +1,59 @@
+<apex:page controller="ET4AE.SendEmailControl" action="{!initializeConfirmation}" tabStyle="ExactTarget__tab">
+	<apex:pageBlock id="latestSendDisplayWrapper" title="Send Details">
+		<apex:pageBlockSection >
+			<h2>{!$Label.et4ae__SendEmail_Message_SendQueued}</h2>
+		</apex:pageBlockSection>
+		<apex:actionStatus id="latestSendDisplay">
+			<apex:facet name="start">
+				<img class="spinnerSmall" src="{!URLFOR( $Resource.ET4AE__ExactTargetImages, 'loading.gif' )}"/>
+			</apex:facet>
+			<apex:facet name="stop">
+				<apex:pageBlockSection columns="1">
+					<apex:pageBlockSectionItem >
+						<apex:outputLabel for="id" value="{!$Label.et4ae__Send_Field_SendId}"/>
+						<apex:outputText id="id" value="{!send.name}"/>
+					</apex:pageBlockSectionItem>
+					<apex:pageBlockSectionItem >
+						<apex:outputLabel for="emailName" value="{!$Label.et4ae__Send_Field_Email}"/>
+						<apex:outputText id="emailName" value="{!send.ET4AE__EmailName__c}"/>
+					</apex:pageBlockSectionItem>
+					<apex:pageBlockSectionItem rendered="{!IF( NOT( ISNULL( send.campaign__r.name ) ), true, false )}">
+						<apex:outputLabel for="campaignName" value="{!$Label.et4ae__Send_Field_Campaign}"/>
+						<apex:outputText id="campaignName" value="{!send.Campaign__r.Name}"/>
+					</apex:pageBlockSectionItem>
+					<apex:pageBlockSectionItem rendered="{!IF( NOT( ISNULL( send.lead__r.name ) ), true, false )}">
+						<apex:outputLabel for="leadName" value="{!$Label.et4ae__Send_Field_Lead}"/>
+						<apex:outputText id="leadName" value="{!send.lead__r.name}"/>
+					</apex:pageBlockSectionItem>
+					<apex:pageBlockSectionItem rendered="{!IF( NOT( ISNULL( send.contact__r.name ) ), true, false )}">
+						<apex:outputLabel for="contactName" value="{!$Label.et4ae__Send_Field_Contact}"/>
+						<apex:outputText id="contactName" value="{!send.contact__r.name}"/>
+					</apex:pageBlockSectionItem>
+					<apex:pageBlockSectionItem rendered="{!IF( NOT( ISNULL( send.ET4AE__SubscriberListName__c ) ), true, false )}">
+						<apex:outputLabel for="subscriberListName" value="{!$Label.et4ae__Send_Field_SubscriberList}"/>
+						<apex:outputText id="subscriberListName" value="{!send.ET4AE__SubscriberListName__c}"/>
+					</apex:pageBlockSectionItem>
+					<apex:pageBlockSectionItem rendered="{!IF( NOT( ISNULL( send.ET4AE__ReportName__c ) ), true, false )}">
+						<apex:outputLabel for="reportName" value="{!$Label.et4ae__Send_Field_Report}"/>
+						<apex:outputText id="reportName" value="{!send.ET4AE__ReportName__c}"/>
+					</apex:pageBlockSectionItem>
+					<apex:pageBlockSectionItem >
+						<apex:outputLabel for="sendStatus" value="{!$Label.et4ae__Send_Field_Status}"/>
+						<apex:outputText id="sendStatus" value="{!send.ET4AE__SendStatus__c}"/>
+					</apex:pageBlockSectionItem>
+					<apex:pageBlockSectionItem rendered="{!IF( AND( NOT( ISNULL( send.Messages__c ) ), NOT( ISBLANK( send.Messages__c ) ) ), true, false ) }">
+						<apex:outputLabel for="messages" value="Messages"/>
+						<apex:outputText id="messages" value="{!send.ET4AE__Messages__c}"/>
+					</apex:pageBlockSectionItem>
+					<apex:pageBlockSectionItem >
+						<apex:outputLabel for="modifiedDate" value="Last Updated"/>
+						<apex:outputField value="{!send.LastModifiedDate}"/>
+					</apex:pageBlockSectionItem>
+				</apex:pageBlockSection>
+		    </apex:facet>
+		</apex:actionStatus>
+	</apex:pageBlock>
+	<apex:form >
+		<apex:commandButton action="{!initializeConfirmation}" value="{!$Label.et4ae__General_Button_Refresh}" rerender="latestSendDisplayWrapper" status="latestSendDisplay"/>
+	</apex:form>
+</apex:page>

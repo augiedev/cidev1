@@ -1,0 +1,50 @@
+<apex:component > 
+
+<style>
+td.ll_head {font-weight: bold; color: #333333; font-size: 12px; padding-right: 10px; height:25px;}
+td.ll_data {}
+</style>
+
+<div class="toolsContentRight">
+<div class="bSubBlock secondaryPalette">
+<h3 class="lbHeader">{!$Label.ll_join_meeting}</h3>
+<div class="lbBody">	  
+	<table border="0" cellpadding="0" cellspacing="0"><tbody>    
+	<tr>
+	<td class="ll_head">{!$Label.ll_join_another}</td>
+	<td class="ll_data">
+	<input type="text" id="join_fld" style="width:90px"/>
+	<button id="join_btn" class="btn" onclick="openIntegration('{!JSENCODE($Setup.IBM__LL_Config__c.IBM__ServerUrl__c)}/meetings/join?id=' + document.getElementById('join_fld').value, 'height=768,width=1024,location=no,resizable=yes,toolbar=no,status=no,menubar=no,scrollbars=1', 1)">  {!$Label.ll_join}  </button>
+	</td>
+	</tr>  
+	</tbody></table> 
+</div></div></div>
+
+<div class="toolsContentRight">
+<div class="bSubBlock secondaryPalette">
+<h3 class="lbHeader">{!$Label.ll_host_meeting}</h3>
+<div class="lbBody">
+	<table border="0" cellpadding="0" cellspacing="0"> 
+	<tbody>
+	<tr>
+	<td class="ll_head" style="height:32px;width:65px">
+	{!$Label.ll_your_meeting} {!HTMLENCODE($Setup.IBM__LL_Config__c.IBM__MeetingId__c)}
+	</td>	
+	<td class="ll_data" style="height:32px">
+	<a href="#" onclick="openIntegration('/apex/ll_meetinginvite', 'height=500,width=500,location=no,resizable=yes,toolbar=no,status=no,menubar=no,scrollbars=1', 1)">
+		{!$Label.ll_send_link}</a>&nbsp;&nbsp;	
+	<button class="btn" id="start_btn" onclick="startMeeting(null, '{!JSENCODE($Label.ll_instant_meeting)}', '{!JSENCODE($User.Id)}', '{!JSENCODE($User.FirstName)} {!JSENCODE($User.LastName)}', '{!JSENCODE($Setup.IBM__LL_Config__c.IBM__ServerUrl__c)}', '{!JSENCODE($Api.Session_ID)}')">{!$Label.ll_host_meeting_btn}</button>
+	</td>
+	</tr>
+
+	<tr>
+	<td class="ll_data" colspan="2">{!$Label.ll_your_meeting_url}</td>
+	</tr>
+	<tr>
+	<td class="ll_data" colspan="2">{!HTMLENCODE($Setup.IBM__LL_Config__c.IBM__ServerUrl__c)}/meetings/join?id={!HTMLENCODE($Setup.IBM__LL_Config__c.IBM__MeetingId__c)}</td>
+	</tr>	
+	</tbody>
+	</table>
+</div></div></div>
+
+</apex:component>

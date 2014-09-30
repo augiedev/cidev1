@@ -1,0 +1,12 @@
+Dear {!SendDefinition__c.OwnerFirstName},
+
+The following send, initiated on {!SendDefinition__c.CreatedDate},  has failed
+
+Email: {!SendDefinition__c.EmailName__c}
+Subject: {!SendDefinition__c.Subject__c}
+Error: {!SendDefinition__c.Messages__c}
+
+You can view the details of this send by going to the record in Salesforce: (http://login.salesforce.com/{!SendDefinition__c.Id})
+
+Regards,
+ - ExactTarget for Appexchange

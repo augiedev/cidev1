@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ReportFolder xmlns="http://soap.sforce.com/2006/04/metadata">
+    <accessType>Shared</accessType>
+    <name>ExactTarget Reports</name>
+    <publicFolderAccess>ReadWrite</publicFolderAccess>
+    <sharedTo>
+        <role>NAMarketingManager</role>
+        <role>NAMarketingUser</role>
+        <role>SystemAdministrator</role>
+    </sharedTo>
+</ReportFolder>

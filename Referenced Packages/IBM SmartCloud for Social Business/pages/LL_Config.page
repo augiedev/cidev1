@@ -1,0 +1,9 @@
+<apex:page controller="IBM.LL_ConfigController" action="{!handleConfig}">
+    <apex:outputPanel rendered="{!need_auth}">
+        <script type="text/javascript">
+            window.name = window.location.href;
+            window.location.replace("LL_Auth");
+        </script>
+    </apex:outputPanel>
+    <center>{!$Label.ibm__ll_configuring}</center>
+</apex:page>

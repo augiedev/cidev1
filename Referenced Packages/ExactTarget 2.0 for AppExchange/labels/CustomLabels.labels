@@ -1,0 +1,1214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
+    <labels>
+        <fullName>AdminConsole_Error_AdminUserInvalid</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Admin Console - Error - Admin User Invalid</shortDescription>
+        <value>The Salesforce credentials for the Admin User are invalid.  Please have the Admin User correct these then try again.</value>
+    </labels>
+    <labels>
+        <fullName>AdminConsole_Error_ETOrgIdRequired</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Admin Console - Error - ET Org Id Required</shortDescription>
+        <value>ExactTarget Org Id is required.</value>
+    </labels>
+    <labels>
+        <fullName>AdminConsole_Error_ETStackRequired</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Admin Console - Error - ExactTarget Stack Required</shortDescription>
+        <value>ExactTarget Stack is required.</value>
+    </labels>
+    <labels>
+        <fullName>AdminConsole_Error_NumberOfRetriesInvalid</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Admin Console - Error - Number of Retries Invalid</shortDescription>
+        <value>Number of Retries must be greater than zero.</value>
+    </labels>
+    <labels>
+        <fullName>AdminConsole_Error_RetryRuleRequired</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Admin Console - Error - Retry Rule Required</shortDescription>
+        <value>Retry Rule is required.</value>
+    </labels>
+    <labels>
+        <fullName>AdminConsole_Error_SFPasswordRequired</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Admin Console - Error - SF Password Required</shortDescription>
+        <value>Salesforce Password is required in order to make changes to the Admin Console.</value>
+    </labels>
+    <labels>
+        <fullName>AdminConsole_Error_SFUsernameRequired</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Admin Console - Error - Salesforce Username Required</shortDescription>
+        <value>Salesforce Username is required.</value>
+    </labels>
+    <labels>
+        <fullName>AdminConsole_Error_SupportTicketRecipientRequired</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Admin Console - Error - Support Ticket Recipient Required</shortDescription>
+        <value>Support Ticket Recipient is required.</value>
+    </labels>
+    <labels>
+        <fullName>AdminConsole_Error_TrackingExpirationInvalid</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Admin Console - Error - Tracking Expiration Invalid</shortDescription>
+        <value>Tracking Expiration (Days) must be greater than zero.</value>
+    </labels>
+    <labels>
+        <fullName>AdminConsole_Error_WriteToAnyAllMatchingRecords</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Admin Console - Error - Write To Any/All Matching Records</shortDescription>
+        <value>Write To Any/All Matching Records is required.</value>
+    </labels>
+    <labels>
+        <fullName>AdminConsole_Field_AdminUser</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Admin Console - Field - Admin User</shortDescription>
+        <value>API User</value>
+    </labels>
+    <labels>
+        <fullName>AdminConsole_Field_AggregateLevelTracking</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Admin Console - Field - Aggregate Level Tracking</shortDescription>
+        <value>Aggregate Level Tracking</value>
+    </labels>
+    <labels>
+        <fullName>AdminConsole_Field_ETOrgId</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Admin Console - Field - ExactTarget Org Id</shortDescription>
+        <value>ExactTarget Org Id</value>
+    </labels>
+    <labels>
+        <fullName>AdminConsole_Field_ETStack</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Admin Console - Field - ExactTarget Stack</shortDescription>
+        <value>ExactTarget Stack</value>
+    </labels>
+    <labels>
+        <fullName>AdminConsole_Field_Enable_Personal_Reports_Flag</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Admin Console &gt; Field &gt; Personal Folder Access</shortDescription>
+        <value>Allow access to Reports in User&apos;s personal folder through the integration?</value>
+    </labels>
+    <labels>
+        <fullName>AdminConsole_Field_IndividualLevelTracking</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Admin Console - Field - Individual Level Tracking</shortDescription>
+        <value>Individual Level Tracking</value>
+    </labels>
+    <labels>
+        <fullName>AdminConsole_Field_IndividualLinkTracking</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>AdminConsole - Field - IndividualLinkTracking</shortDescription>
+        <value>Individual Link Tracking</value>
+    </labels>
+    <labels>
+        <fullName>AdminConsole_Field_IntegrationUsers</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Admin Console - Field - Integration Users</shortDescription>
+        <value>Integration Users</value>
+    </labels>
+    <labels>
+        <fullName>AdminConsole_Field_IntegrationUsers_AvailableUsers</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Admin Console - Field - Integration Users - Available Users</shortDescription>
+        <value>Available Users</value>
+    </labels>
+    <labels>
+        <fullName>AdminConsole_Field_IntegrationUsers_SelectedUsers</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Admin Console - Field - Integration Users - Selected Users</shortDescription>
+        <value>Selected Users</value>
+    </labels>
+    <labels>
+        <fullName>AdminConsole_Field_NumberOfRetries</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Admin Console - Field - Number of Retries</shortDescription>
+        <value>Number of Retries</value>
+    </labels>
+    <labels>
+        <fullName>AdminConsole_Field_RetryRule</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Admin Console - Field - Retry Rule</shortDescription>
+        <value>Retry Rule</value>
+    </labels>
+    <labels>
+        <fullName>AdminConsole_Field_SFPassword</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Admin Console - Field - Salesforce Password</shortDescription>
+        <value>Salesforce Password</value>
+    </labels>
+    <labels>
+        <fullName>AdminConsole_Field_SFUsername</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Admin Console - Field - Salesforce Username</shortDescription>
+        <value>Salesforce Username</value>
+    </labels>
+    <labels>
+        <fullName>AdminConsole_Field_SandboxFlag</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Admin Console - Field - Sandbox Flag</shortDescription>
+        <value>Is this a Salesforce Sandbox?</value>
+    </labels>
+    <labels>
+        <fullName>AdminConsole_Field_SentEventsTracking</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>AdminConsole - Field - SentEventsTracking</shortDescription>
+        <value>Sent Events Tracking</value>
+    </labels>
+    <labels>
+        <fullName>AdminConsole_Field_SupportTicketRecipient</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Admin Console - Field - Support Ticket Recipient</shortDescription>
+        <value>Support Ticket Recipient</value>
+    </labels>
+    <labels>
+        <fullName>AdminConsole_Field_TrackingExpirationDays</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Admin Console - Field - Tracking Expiration (Days)</shortDescription>
+        <value>Tracking Expiration (Days)</value>
+    </labels>
+    <labels>
+        <fullName>AdminConsole_Field_WriteToAnyAllMatchingRecords</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Admin Console - Field - Write to any/all matching records</shortDescription>
+        <value>Write To Any/All Matching Records</value>
+    </labels>
+    <labels>
+        <fullName>AdminConsole_Help_AdminUser</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Admin Console - Help - Admin User</shortDescription>
+        <value>This is the Salesforce User account that will be used for administrative purposes when specific User privileges are not needed.  NOTE: This User must already be configured to use the integration!</value>
+    </labels>
+    <labels>
+        <fullName>AdminConsole_Help_AggregateLevelTracking</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Admin Console - Help - Aggregate Level Tracking</shortDescription>
+        <value>Summary level tracking will be stored in Salesforce system (will consume SFC storage).</value>
+    </labels>
+    <labels>
+        <fullName>AdminConsole_Help_ETOrgId</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Admin Console - Help - ET Org Id</shortDescription>
+        <value>The Accout ID for you ExactTarget account.  Also called the MID or Enterprise ID.</value>
+    </labels>
+    <labels>
+        <fullName>AdminConsole_Help_ETStack</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Admin Console - Help - ExactTarget Stack</shortDescription>
+        <value>Server stack where your ET org resides.</value>
+    </labels>
+    <labels>
+        <fullName>AdminConsole_Help_IndividualLevelTracking</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Admin Console - Help - Individual Level Tracking</shortDescription>
+        <value>Individual recipient level tracking will be stored in Salesforce system (will consume SFC storage).</value>
+    </labels>
+    <labels>
+        <fullName>AdminConsole_Help_IndividualLinkTracking</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Individual Link Tracking Help</shortDescription>
+        <value>Individual recipient link level tracking will be stored in Salesforce system (will consume SFDC storage).</value>
+    </labels>
+    <labels>
+        <fullName>AdminConsole_Help_IntegrationUsers</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Admin Console - Help - Integration Users</shortDescription>
+        <value>Salesforce users that are enabled to use the integration.</value>
+    </labels>
+    <labels>
+        <fullName>AdminConsole_Help_NumberOfRetries</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Admin Console - Help - Number of Retries</shortDescription>
+        <value>Number of times to attempt a failed execution.</value>
+    </labels>
+    <labels>
+        <fullName>AdminConsole_Help_RetryRule</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Admin Console - Help - Retry Rule</shortDescription>
+        <value>The way the system will attempt to re-send email if a system availability error is encountered.</value>
+    </labels>
+    <labels>
+        <fullName>AdminConsole_Help_SFPassword</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Admin Console - Help - SF Password</shortDescription>
+        <value>The Administrative User password.</value>
+    </labels>
+    <labels>
+        <fullName>AdminConsole_Help_SFUsername</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Admin Console - Help - SF Username</shortDescription>
+        <value>The Adminstrative User that is used by the Salesforce integration.  This user must have System Admin rights to the Integration.</value>
+    </labels>
+    <labels>
+        <fullName>AdminConsole_Help_SandboxFlag</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Admin Console - Help - Sandbox Flag</shortDescription>
+        <value>Check this if you are using the a Salesforce sandbox.</value>
+    </labels>
+    <labels>
+        <fullName>AdminConsole_Help_SentEventsTracking</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Sent Events Tracking Help</shortDescription>
+        <value>Individual recipient level tracking for sent emails will be stored in Salesforce system (will consume SFDC storage).</value>
+    </labels>
+    <labels>
+        <fullName>AdminConsole_Help_SupportTicketRecipient</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Admin Console - Help - Support Ticket Recipient</shortDescription>
+        <value>Email address of Salesforce internal support resource. Emails will first route to this addess for problem resolution.</value>
+    </labels>
+    <labels>
+        <fullName>AdminConsole_Help_TrackingExpirationDays</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Admin Console - Help - Tracking Expiration Days</shortDescription>
+        <value>Number of days of tracking data to store.</value>
+    </labels>
+    <labels>
+        <fullName>AdminConsole_Help_WriteToAnyAllMatchingRecords</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Admin Console - Help - Write To Any All Matching Records</shortDescription>
+        <value>Individual tracking will be associated with all occurrences of an email address.</value>
+    </labels>
+    <labels>
+        <fullName>AdminConsole_Message_Confirmation</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Admin Console - Message - Confirmation</shortDescription>
+        <value>The admin configuration has been successfully submitted.</value>
+    </labels>
+    <labels>
+        <fullName>AdminConsole_Message_ConfirmationLink</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Admin Console - Message - Confirmation Link</shortDescription>
+        <value>Continue using the integration.</value>
+    </labels>
+    <labels>
+        <fullName>AdminConsole_Message_PageLabel</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Admin Console - Message - Page Label</shortDescription>
+        <value>Admin Console Submitted</value>
+    </labels>
+    <labels>
+        <fullName>AdminConsole_Tab</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Admin Console - Tab</shortDescription>
+        <value>Admin Console</value>
+    </labels>
+    <labels>
+        <fullName>AdminDashboard_Button_NextPage</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Admin Dashboard - Button - Next Page</shortDescription>
+        <value>Next Page</value>
+    </labels>
+    <labels>
+        <fullName>AdminDashboard_Button_PreviousPage</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Admin Dashboard - Button - Previous Page</shortDescription>
+        <value>Previous Page</value>
+    </labels>
+    <labels>
+        <fullName>AdminDashboard_Button_RefreshTracking</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Admin Dashboard - Button - Refresh Tracking</shortDescription>
+        <value>Request Tracking</value>
+    </labels>
+    <labels>
+        <fullName>AdminDashboard_Button_ReportProblem</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Admin Dashboard - Button - Report Problem</shortDescription>
+        <value>Report Problem</value>
+    </labels>
+    <labels>
+        <fullName>AdminDashboard_Button_Search</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Admin Dashboard - Button - Search</shortDescription>
+        <value>Search</value>
+    </labels>
+    <labels>
+        <fullName>AdminDashboard_Button_ViewTracking</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Admin Dashboard - Button - View Tracking</shortDescription>
+        <value>View</value>
+    </labels>
+    <labels>
+        <fullName>AdminDashboard_Field_Comments</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Admin Dashboard - Field - Comments</shortDescription>
+        <value>Comments</value>
+    </labels>
+    <labels>
+        <fullName>AdminDashboard_Field_CreatedDate</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Admin Dashboard - Field - Created Date</shortDescription>
+        <value>Created</value>
+    </labels>
+    <labels>
+        <fullName>AdminDashboard_Field_Requestor</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Admin Dashboard - Field - Requestor</shortDescription>
+        <value>Requestor</value>
+    </labels>
+    <labels>
+        <fullName>AdminDashboard_Field_SubscriberType</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Admin Dashboard - Field - Subscriber Type</shortDescription>
+        <value>Subscriber Type</value>
+    </labels>
+    <labels>
+        <fullName>AdminDashboard_Field_Subscribers</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Admin Dashboard - Field - Subscribers</shortDescription>
+        <value>Subscribers</value>
+    </labels>
+    <labels>
+        <fullName>AdminDashboard_Field_Support</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Admin Dashboard - Field - Support</shortDescription>
+        <value>Support</value>
+    </labels>
+    <labels>
+        <fullName>AdminDashboard_Field_SupportStatus</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Admin Dashboard - Field - Support Status</shortDescription>
+        <value>Support Status</value>
+    </labels>
+    <labels>
+        <fullName>AdminDashboard_Field_Tracking</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Admin Dashboard - Field - Tracking</shortDescription>
+        <value>Tracking</value>
+    </labels>
+    <labels>
+        <fullName>AdminDashboard_Message_HelpRequestDescription</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Admin Dashboard - Message - Help Request Description</shortDescription>
+        <value>Please share any information regarding this particular send that will help us aid you in solving the problem.</value>
+    </labels>
+    <labels>
+        <fullName>AdminDashboard_Tab</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Admin Dashboard - Tab</shortDescription>
+        <value>My Dashboard</value>
+    </labels>
+    <labels>
+        <fullName>Admin_Console_Help_Personal_Reports_Flag</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Admin Console &gt; Help &gt; Personal Reports Flag</shortDescription>
+        <value>Allows access to the Personal Reports folder through the integration.</value>
+    </labels>
+    <labels>
+        <fullName>BUConsole_Button_SelectAll</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Business Units Console - Button - Select All</shortDescription>
+        <value>Select All</value>
+    </labels>
+    <labels>
+        <fullName>BUConsole_Button_SelectNone</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Business Units Console - Button - Select None</shortDescription>
+        <value>Select None</value>
+    </labels>
+    <labels>
+        <fullName>BUConsole_Message_NoBUFound</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Business Units Console - Message - No Business Units Found</shortDescription>
+        <value>No business units found in your ExactTarget org.</value>
+    </labels>
+    <labels>
+        <fullName>BUConsole_Message_PageLabel</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Business Units Console - Message - Page Label</shortDescription>
+        <value>Business Units Console</value>
+    </labels>
+    <labels>
+        <fullName>BUConsole_Tab</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>BU Console - Tab</shortDescription>
+        <value>Business Units Console</value>
+    </labels>
+    <labels>
+        <fullName>ETLoginConfirmation_Message_Confirmation</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>ET Login Confirmation - Message - Confirmation</shortDescription>
+        <value>Your information has been forwarded to ExactTarget for processing. An email notification will be sent to you when this process is complete. Usually takes 2-3 business days. Thanks for choosing ExactTarget!  Please contact support@exacttarget.com if you need further assistance.</value>
+    </labels>
+    <labels>
+        <fullName>ETLoginConfirmation_Message_ConfirmationLink</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>ET Login Confirmation - Message - Confirmation Link</shortDescription>
+        <value>Continue using the integration.</value>
+    </labels>
+    <labels>
+        <fullName>ETLoginConfirmation_Message_PageLabel</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>ET Login Confirmation - Message - Page Label</shortDescription>
+        <value>Thank You</value>
+    </labels>
+    <labels>
+        <fullName>ETLogin_Field_ETAdmin</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>ET Login - Field - ET Admin</shortDescription>
+        <value>Are you the ExactTarget for AppExchange admin?</value>
+    </labels>
+    <labels>
+        <fullName>ETLogin_Field_ETPassword</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>ET Login - Field - ET Password</shortDescription>
+        <value>ExactTarget Password</value>
+    </labels>
+    <labels>
+        <fullName>ETLogin_Field_ETUsername</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>ET Login - Field - ET Username</shortDescription>
+        <value>ExactTarget Username</value>
+    </labels>
+    <labels>
+        <fullName>ETLogin_Message_LoginInvalid</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>ET Login - Message - Login Invalid</shortDescription>
+        <value>The username and/or password specified above are incorrect. Please update them and try again.</value>
+    </labels>
+    <labels>
+        <fullName>ETLogin_Message_PageLabel</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>ET Login - Message - Page Label</shortDescription>
+        <value>Enter Your ExactTarget Credentials</value>
+    </labels>
+    <labels>
+        <fullName>ETLogin_Status_AttemptingLogin</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>ET Login - Status - Attempting Login</shortDescription>
+        <value>Attempting to login...</value>
+    </labels>
+    <labels>
+        <fullName>EmailConsole_Button_DeleteEmailLink</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Email Console - Button - Delete Email Link</shortDescription>
+        <value>Delete</value>
+    </labels>
+    <labels>
+        <fullName>EmailConsole_Button_SaveAudiencePref</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Emai lConsole - Button - Save Audience Pref</shortDescription>
+        <value>Save Audience Preferences</value>
+    </labels>
+    <labels>
+        <fullName>EmailConsole_Field_EmailName</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Email Console - Field - Email Name</shortDescription>
+        <value>Email Name</value>
+    </labels>
+    <labels>
+        <fullName>EmailConsole_Field_PortalAudience</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Email Console - Field - Portal Audience</shortDescription>
+        <value>Portal User Audience</value>
+    </labels>
+    <labels>
+        <fullName>EmailConsole_Field_RecipientElementName</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Email Console - Field - Recipient Element Name</shortDescription>
+        <value>Report</value>
+    </labels>
+    <labels>
+        <fullName>EmailConsole_Field_StandardAudience</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Email Console - Field - Standard Audience</shortDescription>
+        <value>Standard User Audience</value>
+    </labels>
+    <labels>
+        <fullName>EmailConsole_Help_PortalAudience</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Email Console - Help - Portal Audience</shortDescription>
+        <value>Controls the Target Audiences that may be used by Portal Salesforce user.</value>
+    </labels>
+    <labels>
+        <fullName>EmailConsole_Help_StandardAudience</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Email Console - Help - Standard Audience</shortDescription>
+        <value>Controls the Target Audiences that may be used by Standard Salesforce user.</value>
+    </labels>
+    <labels>
+        <fullName>EmailConsole_Tab</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Email Console - Tab</shortDescription>
+        <value>Email Console</value>
+    </labels>
+    <labels>
+        <fullName>EmailConsole_Tab_AudiencePreferences</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Email Console - Tab - Audience Preferences</shortDescription>
+        <value>Audience Preferences</value>
+    </labels>
+    <labels>
+        <fullName>EmailConsole_Tab_EmailLinks</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Email Console - Tab - Email Links</shortDescription>
+        <value>Email/Report Linkages</value>
+    </labels>
+    <labels>
+        <fullName>General_Button_Cancel</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>General - Button - Cancel</shortDescription>
+        <value>Cancel</value>
+    </labels>
+    <labels>
+        <fullName>General_Button_Refresh</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>General - Button - Refresh</shortDescription>
+        <value>Refresh</value>
+    </labels>
+    <labels>
+        <fullName>General_Button_Remove</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>General - Button - Remove</shortDescription>
+        <value>Remove</value>
+    </labels>
+    <labels>
+        <fullName>General_Button_Submit</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>General - Button - Submit</shortDescription>
+        <value>Submit</value>
+    </labels>
+    <labels>
+        <fullName>General_Field_SendId</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>General - Field - Send Id</shortDescription>
+        <value>Send Id</value>
+    </labels>
+    <labels>
+        <fullName>General_Label_ET4AE</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>General - Label - ET4AE</shortDescription>
+        <value>ExactTarget for AppExchange</value>
+    </labels>
+    <labels>
+        <fullName>General_Status_Cancelling</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>General - Status - Cancelling</shortDescription>
+        <value>Cancelling...</value>
+    </labels>
+    <labels>
+        <fullName>General_Status_Refreshing</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>General - Status - Refreshing</shortDescription>
+        <value>Refreshing...</value>
+    </labels>
+    <labels>
+        <fullName>General_Status_Submitting</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>General - Status - Submitting</shortDescription>
+        <value>Submitting...</value>
+    </labels>
+    <labels>
+        <fullName>General_Status_Updating</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>General - Status - Updating</shortDescription>
+        <value>Updating...</value>
+    </labels>
+    <labels>
+        <fullName>General_Status_Validating</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>General - Status - Validating</shortDescription>
+        <value>Validating...</value>
+    </labels>
+    <labels>
+        <fullName>General_URL_GoToET</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>General - URL - Go To ET</shortDescription>
+        <value>https://members.exacttarget.com</value>
+    </labels>
+    <labels>
+        <fullName>General_URL_GoToETText</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>General - URL - Go To ET Text</shortDescription>
+        <value>Go to ExactTarget</value>
+    </labels>
+    <labels>
+        <fullName>Login_Field_ETPassword</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Login - Field - ET Password</shortDescription>
+        <value>ExactTarget Password</value>
+    </labels>
+    <labels>
+        <fullName>Login_Field_ETUsername</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Login - Field - ET Username</shortDescription>
+        <value>ExactTarget Username</value>
+    </labels>
+    <labels>
+        <fullName>Login_Field_SFPassword</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Login - Field - SF Password</shortDescription>
+        <value>Salesforce Password</value>
+    </labels>
+    <labels>
+        <fullName>Login_Field_SFUsername</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Login - Field - SF Username</shortDescription>
+        <value>Salesforce Username</value>
+    </labels>
+    <labels>
+        <fullName>Login_Message_InvalidSalesforceCredentials</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Login - Message - Invalid Salesforce Credentials</shortDescription>
+        <value>Invalid or no Salesforce credentials found. Please check and try again.</value>
+    </labels>
+    <labels>
+        <fullName>Login_Message_NoAdminPresent</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Login - Message - No Admin Present</shortDescription>
+        <value>There is no integration admin configured. By submitting these credentials you have identified yourself as an integration admin.</value>
+    </labels>
+    <labels>
+        <fullName>Login_Message_PageLabel</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Login - Message - Page Label</shortDescription>
+        <value>Login Verification</value>
+    </labels>
+    <labels>
+        <fullName>SendEmail_Button_AddAnotherList</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Send Email - Button - Add Another List</shortDescription>
+        <value>Add Another List</value>
+    </labels>
+    <labels>
+        <fullName>SendEmail_Button_Close</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Send Email - Button - Close</shortDescription>
+        <value>Close</value>
+    </labels>
+    <labels>
+        <fullName>SendEmail_Button_EmailLink</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Send Email - Button - Email Link</shortDescription>
+        <value>Link Email</value>
+    </labels>
+    <labels>
+        <fullName>SendEmail_Button_EmailPreview</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Send Email - Button - Email Preview</shortDescription>
+        <value>Preview</value>
+    </labels>
+    <labels>
+        <fullName>SendEmail_Button_FindEmail</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Send Email - Button - Find Email</shortDescription>
+        <value>Find Email</value>
+    </labels>
+    <labels>
+        <fullName>SendEmail_Button_FindRecipientReports</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Send Email - Button - Find Recipient Reports</shortDescription>
+        <value>Find Report</value>
+    </labels>
+    <labels>
+        <fullName>SendEmail_Button_FindReport</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Send Email - Button - Find Report</shortDescription>
+        <value>Find Report</value>
+    </labels>
+    <labels>
+        <fullName>SendEmail_Button_FindSubscriberList</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Send Email - Button - Find Subscriber List</shortDescription>
+        <value>Find Subscriber List</value>
+    </labels>
+    <labels>
+        <fullName>SendEmail_Button_Send</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Send Email - Button - Send</shortDescription>
+        <value>Send</value>
+    </labels>
+    <labels>
+        <fullName>SendEmail_Error_CampaignRequired</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Send Email - Error - Campaign Required</shortDescription>
+        <value>Campaign is required.</value>
+    </labels>
+    <labels>
+        <fullName>SendEmail_Error_ContactRequired</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Send Email - Error - Contact Required</shortDescription>
+        <value>Contact is required.</value>
+    </labels>
+    <labels>
+        <fullName>SendEmail_Error_EmailSubjectRequired</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Send Email - Error - Email Subject Required</shortDescription>
+        <value>Subject is required.</value>
+    </labels>
+    <labels>
+        <fullName>SendEmail_Error_EmailTemplateRequired</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Send Email - Error - Email Template Required</shortDescription>
+        <value>Email Template is required.</value>
+    </labels>
+    <labels>
+        <fullName>SendEmail_Error_FromRequired</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Send Email - Error - From Required</shortDescription>
+        <value>From email or send classification is required.</value>
+    </labels>
+    <labels>
+        <fullName>SendEmail_Error_LeadRequired</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Send Email - Error - Lead Required</shortDescription>
+        <value>Lead is required.</value>
+    </labels>
+    <labels>
+        <fullName>SendEmail_Error_OptInRequired</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Send Email - Error - Opt In Required</shortDescription>
+        <value>Subscribers must be opted in.</value>
+    </labels>
+    <labels>
+        <fullName>SendEmail_Error_ReportRequired</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Send Email - Error - Report Required</shortDescription>
+        <value>Recipient report is required.</value>
+    </labels>
+    <labels>
+        <fullName>SendEmail_Error_SFPasswordRequired</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Send Email - Error - SF Password Required</shortDescription>
+        <value>Salesforce password is required for all sends that use Salesforce reports.</value>
+    </labels>
+    <labels>
+        <fullName>SendEmail_Error_SubscriberListRequired</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Send Email - Error - Subscriber List Required</shortDescription>
+        <value>Subscriber List is required.</value>
+    </labels>
+    <labels>
+        <fullName>SendEmail_Field_BusinessUnit</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Send Email - Field - BusinessUnit</shortDescription>
+        <value>Business Unit</value>
+    </labels>
+    <labels>
+        <fullName>SendEmail_Field_ExclusionLists</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Send Email - Field - Exclusion Lists</shortDescription>
+        <value>Exclusion Lists</value>
+    </labels>
+    <labels>
+        <fullName>SendEmail_Field_OptIn</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Send Email - Field - Opt In</shortDescription>
+        <value>I certify all of these people have opted in</value>
+    </labels>
+    <labels>
+        <fullName>SendEmail_Field_RecipientReport</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Send Email - Field - Recipient Report</shortDescription>
+        <value>Recipient Report</value>
+    </labels>
+    <labels>
+        <fullName>SendEmail_Field_Report</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Send Email - Field - Report</shortDescription>
+        <value>Additional Data</value>
+    </labels>
+    <labels>
+        <fullName>SendEmail_Field_SendClassification</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Send Email - Field - Send Classification</shortDescription>
+        <value>Send Classification:</value>
+    </labels>
+    <labels>
+        <fullName>SendEmail_Field_TargetAudience</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Send Email - Field - Target Audience</shortDescription>
+        <value>Target Audience</value>
+    </labels>
+    <labels>
+        <fullName>SendEmail_Help_BusinessUnits</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Send Email - Help - Business Units</shortDescription>
+        <value>Where the send will originate from.  This is determined by your rights and role granted by your system administrator.</value>
+    </labels>
+    <labels>
+        <fullName>SendEmail_Help_Campaign</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Send Email - Help - Campaign</shortDescription>
+        <value>A valid data Target Audience type.</value>
+    </labels>
+    <labels>
+        <fullName>SendEmail_Help_Contact</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Send Email - Help - Contact</shortDescription>
+        <value>A valid data Target Audience type.</value>
+    </labels>
+    <labels>
+        <fullName>SendEmail_Help_DedupeSubscribers</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Send Email - Help - Dedupe Subscribers</shortDescription>
+        <value>Prevents sending more than one email to the same email address for this send.</value>
+    </labels>
+    <labels>
+        <fullName>SendEmail_Help_EmailTemplate</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Send Email - Help - Email Template</shortDescription>
+        <value>The email template to be used with your send.</value>
+    </labels>
+    <labels>
+        <fullName>SendEmail_Help_ExclusionLists</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Send Email -Help - Exclusion Lists</shortDescription>
+        <value>A Salesforce.com report that contains email addresses of records to exclude from the Target Audience list.  Addresses on this list wil not be included in the send.</value>
+    </labels>
+    <labels>
+        <fullName>SendEmail_Help_From</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Send Email - Help - From</shortDescription>
+        <value>The email address or Send Classification that will appear in the From line of your email send.</value>
+    </labels>
+    <labels>
+        <fullName>SendEmail_Help_Lead</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Send Email - Help - Lead</shortDescription>
+        <value>A valid data Target Audience type.</value>
+    </labels>
+    <labels>
+        <fullName>SendEmail_Help_RecipientReport</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Send Email - Help - Recipient Report</shortDescription>
+        <value>A valid data Target Audience type.</value>
+    </labels>
+    <labels>
+        <fullName>SendEmail_Help_Report</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Send Email - Help - Report</shortDescription>
+        <value>A Salesforce.com report that contains data for personalization or segmentation purposes within your email.  Typically referenced using special tags or scripting.</value>
+    </labels>
+    <labels>
+        <fullName>SendEmail_Help_SendDateTime</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Send Email - Help - Send Date/Time</shortDescription>
+        <value>Date and Time the send will be added to the queue.  A blank value here will submit the send immediately.</value>
+    </labels>
+    <labels>
+        <fullName>SendEmail_Help_Subject</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Send Email - Help - Subject</shortDescription>
+        <value>The title for your email, may contain special personalization characters such as %first name%%.</value>
+    </labels>
+    <labels>
+        <fullName>SendEmail_Help_SubscriberList</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Send Email - Help - Subscriber List</shortDescription>
+        <value>A valid data Target Audience type.</value>
+    </labels>
+    <labels>
+        <fullName>SendEmail_Help_TargetAudience</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Send Email - Help - Target Audience</shortDescription>
+        <value>The source of data used for the send.</value>
+    </labels>
+    <labels>
+        <fullName>SendEmail_Message_SendQueued</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Send Email - Message - Send Queued</shortDescription>
+        <value>Your Send Email request has been queued.  Please visit the Reports section to view statuses on Send Email requests.</value>
+    </labels>
+    <labels>
+        <fullName>SendEmail_Status_Linking</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Send Email - Status - Linking</shortDescription>
+        <value>Creating link between email and report...</value>
+    </labels>
+    <labels>
+        <fullName>SendEmail_Status_Searching</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Send Email - Status - Searching</shortDescription>
+        <value>Searching...</value>
+    </labels>
+    <labels>
+        <fullName>SendEmail_Status_Sending</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Send Email - Status - Sending</shortDescription>
+        <value>Sending...</value>
+    </labels>
+    <labels>
+        <fullName>SendEmail_Tab</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Send Email - Tab</shortDescription>
+        <value>Send Email</value>
+    </labels>
+    <labels>
+        <fullName>Send_Email_Field_Suppression_Lists</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Send Email - Field - Suppression Lists</shortDescription>
+        <value>Suppression Lists</value>
+    </labels>
+    <labels>
+        <fullName>Send_Email_Help_Suppression_Lists</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Send Email -Help - Suppression Lists</shortDescription>
+        <value>An Exact Target Suppression List that contains email addresses of records to exclude from the Target Audience list. Addresses on this list wil not be included in the send.</value>
+    </labels>
+    <labels>
+        <fullName>Send_Field_Campaign</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Send - Field - Campaign</shortDescription>
+        <value>Campaign</value>
+    </labels>
+    <labels>
+        <fullName>Send_Field_Contact</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Send - Field - Contact</shortDescription>
+        <value>Contact</value>
+    </labels>
+    <labels>
+        <fullName>Send_Field_DedupeSubscribers</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Send - Field - Dedupe Subscribers</shortDescription>
+        <value>Dedupe Subscribers</value>
+    </labels>
+    <labels>
+        <fullName>Send_Field_Email</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Send - Field - Email</shortDescription>
+        <value>Email</value>
+    </labels>
+    <labels>
+        <fullName>Send_Field_From</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Send - Field - From</shortDescription>
+        <value>From</value>
+    </labels>
+    <labels>
+        <fullName>Send_Field_Lead</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Send - Field - Lead</shortDescription>
+        <value>Lead</value>
+    </labels>
+    <labels>
+        <fullName>Send_Field_Report</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Send - Field - Report</shortDescription>
+        <value>Report</value>
+    </labels>
+    <labels>
+        <fullName>Send_Field_SFPassword</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Send - Field - SF Password</shortDescription>
+        <value>Salesforce Password</value>
+    </labels>
+    <labels>
+        <fullName>Send_Field_SendDateTIme</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Send - Field - Send Date/TIme</shortDescription>
+        <value>Send Date and Time</value>
+    </labels>
+    <labels>
+        <fullName>Send_Field_SendId</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Send - Field - Send Id</shortDescription>
+        <value>Send Id</value>
+    </labels>
+    <labels>
+        <fullName>Send_Field_Status</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Send - Field - Status</shortDescription>
+        <value>Send Status</value>
+    </labels>
+    <labels>
+        <fullName>Send_Field_Subject</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Send - Field - Subject</shortDescription>
+        <value>Subject</value>
+    </labels>
+    <labels>
+        <fullName>Send_Field_SubscriberList</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Send - Field - Subscriber List</shortDescription>
+        <value>Subscriber List</value>
+    </labels>
+    <labels>
+        <fullName>ViewTracking_Message_RefreshError</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>View Tracking - Message - Refresh Error</shortDescription>
+        <value>Tracking refresh not available at this time</value>
+    </labels>
+    <labels>
+        <fullName>ViewTracking_Message_RefreshStarted</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>View Tracking - Message - Refresh Started</shortDescription>
+        <value>Tracking refresh requested.</value>
+    </labels>
+</CustomLabels>

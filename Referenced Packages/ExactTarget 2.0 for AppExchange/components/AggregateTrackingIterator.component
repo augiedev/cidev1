@@ -1,0 +1,99 @@
+<apex:component >
+	<apex:attribute name="metric" description="A single AggregateTrackingMetric record." type="ET4AE.AggregateTrackingMetric" required="true"/>
+	<apex:pageBlock title="{!metric.emailName}">
+		<apex:pageBlockSection columns="1" collapsible="false">
+			<apex:pageBlockSectionItem >
+				<apex:outputLabel value="Send Date"/>
+				<apex:outputText value="{0,time,MMMM d, yyyy}">
+					<apex:param value="{!metric.sendDate}"/>
+				</apex:outputText>
+			</apex:pageBlockSectionItem>
+			<apex:pageBlockSectionItem rendered="{!IF( NOT( ISNULL( metric.campaignName ) ), true, false )}">
+				<apex:outputLabel value="Campaign"/>
+				<apex:outputText value="{!metric.campaignName}"/>
+			</apex:pageBlockSectionItem>
+			<apex:pageBlockSectionItem >
+				<apex:outputLabel value="Subject"/>
+				<apex:outputText value="{!metric.subject}"/>
+			</apex:pageBlockSectionItem>
+			<apex:pageBlockSectionItem rendered="{!IF( NOT( ISNULL( metric.fromName ) ), true, false)}">
+				<apex:outputLabel value="From"/>
+				<apex:outputText value="{!metric.fromName} &lt;{!metric.fromAddress}&gt;"/>
+			</apex:pageBlockSectionItem>
+			<apex:pageBlockSectionItem rendered="{!IF( ISNULL( metric.fromName ), true, false )}">
+				<apex:outputLabel value="From"/>
+				<apex:outputText value="Unavailable"/>
+			</apex:pageBlockSectionItem>
+			<apex:pageBlockSectionItem >
+				<apex:outputLabel value="Last Updated"/>
+				<apex:outputField value="{!metric.emailResult.LastModifiedDate}"/>
+			</apex:pageBlockSectionItem>
+		</apex:pageBlockSection>
+		<apex:pageBlockSection columns="2" title="Top Level" collapsible="false">
+			<apex:pageBlockSectionItem >
+				<apex:outputLabel value="Sent"/>
+				<apex:outputText value="{!metric.numberSent}"/>
+			</apex:pageBlockSectionItem>
+			<apex:pageBlockSectionItem >
+				<apex:outputLabel value="Delivered"/>
+				<apex:outputText value="{!metric.numberDelivered}"/>
+			</apex:pageBlockSectionItem>
+			<apex:pageBlockSectionItem >
+				<apex:outputLabel value="Forwarded"/>
+				<apex:outputText value="{!metric.numberForwarded}"/>
+			</apex:pageBlockSectionItem>
+		</apex:pageBlockSection>
+		<apex:pageBlockSection columns="2" title="Opens and Clicks" collapsible="false">
+			<apex:pageBlockSectionItem >
+				<apex:outputLabel value="Unique Opens"/>
+				<apex:outputText value="{!metric.uniqueOpens}"/>
+			</apex:pageBlockSectionItem>
+			<apex:pageBlockSectionItem >
+				<!--
+				<apex:outputLabel value="Total Clicks"/>
+				<apex:outputText value="{!metric.totalClicks}"/>
+				-->
+			</apex:pageBlockSectionItem>
+			<apex:pageBlockSectionItem >
+				<apex:outputLabel value="Unique Clicks"/>
+				<apex:outputText value="{!metric.uniqueClicks}"/>
+			</apex:pageBlockSectionItem>
+		</apex:pageBlockSection>
+		<apex:pageBlockSection columns="2" title="Bounces and Unsubscribes" collapsible="false">
+			<apex:pageBlockSectionItem >
+				<apex:outputLabel value="Hard Bounces"/>
+				<apex:outputText value="{!metric.hardBounces}"/>
+			</apex:pageBlockSectionItem>
+			<apex:pageBlockSectionItem >
+				<apex:outputLabel value="Soft Bounces"/>
+				<apex:outputText value="{!metric.softBounces}"/>
+			</apex:pageBlockSectionItem>
+			<apex:pageBlockSectionItem >
+				<apex:outputLabel value="Unsubscribes"/>
+				<apex:outputText value="{!metric.numberUnsubscribed}"/>
+			</apex:pageBlockSectionItem>
+			<apex:pageBlockSectionItem >
+				<apex:outputLabel value="Existing Unsubscribes"/>
+				<apex:outputText value="{!metric.existingUnsubscribes}"/>
+			</apex:pageBlockSectionItem>
+		</apex:pageBlockSection>
+		<apex:pageBlockSection columns="2" title="Errors and Invalid Data" collapsible="false">
+			<apex:pageBlockSectionItem >
+				<apex:outputLabel value="Existing Undeliverables"/>
+				<apex:outputText value="{!metric.existingUndeliverables}"/>
+			</apex:pageBlockSectionItem>
+			<apex:pageBlockSectionItem >
+				<apex:outputLabel value="Invalid Addresses"/>
+				<apex:outputText value="{!metric.invalidAddresses}"/>
+			</apex:pageBlockSectionItem>
+			<apex:pageBlockSectionItem >
+				<apex:outputLabel value="Missing Addresses"/>
+				<apex:outputText value="{!metric.missingAddresses}"/>
+			</apex:pageBlockSectionItem>
+			<apex:pageBlockSectionItem >
+				<apex:outputLabel value="Errored"/>
+				<apex:outputText value="{!metric.numberErrored}"/>
+			</apex:pageBlockSectionItem>
+		</apex:pageBlockSection>
+	</apex:pageBlock>
+</apex:component>

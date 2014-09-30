@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <webLinks>
+        <fullName>Generate_Quote</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Generate Quote</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>{!REQUIRESCRIPT(&quot;/soap/ajax/30.0/connection.js&quot;)}
+{!REQUIRESCRIPT(&quot;/soap/ajax/30.0/apex.js&quot;)}
+
+var daxOpportunityNumber = &apos;{!Opportunity.DAX_Opportunity_Number__c}&apos;;
+var daxPrimaryQuoteNumber = &apos;{!Opportunity.DAX_Primary_Quote_Number__c}&apos;;
+var accountStatus = &apos;{!Opportunity.Account_Status__c}&apos;;
+var currentUser = window.UserContext.userId;
+var opportunityOwner = &apos;{!Opportunity.OwnerId}&apos;;
+var opportunityOwnerDAXNumber = &apos;{!Opportunity.DAX_Personnel_Number__c}&apos;;
+var currentUserDAXNumber = &apos;{!$User.DAX_Personnel_Number__c}&apos;;
+var currentUserCompanyNumber = &apos;{!TEXT( $User.Exact_Company_Number__c )}&apos;;
+var opportunityClosed = &apos;{!Opportunity.IsClosed}&apos;;
+var opportunityType = &apos;{!Opportunity.Type}&apos;;
+var daxQuoteCreator = &apos;{!$User.DAX_Quote_Creator__c}&apos;;
+
+if(daxOpportunityNumber == &apos;&apos;) {
+    alert(&quot;You cannot create a Quote in Dynamics AX for this Opportunity as it has not yet been interfaced to Dynamics AX. Please wait!&quot;);
+}
+else if (daxPrimaryQuoteNumber != &apos;&apos;) {
+    alert(&quot;You cannot create a Quote in Dynamics AX for this Opportunity because a Quote has already been created in Dynamics AX for this Opportunity.&quot;);
+}
+else if (currentUser != opportunityOwner &amp;&amp; daxQuoteCreator != &apos;true&apos;) {
+    alert(&quot;You need to be the Owner of the Opportunity in order to create a Quote for it in Dynamics AX&quot;);
+}
+else if (currentUserDAXNumber == &apos;0&apos;) {
+    alert(&quot;You cannot create a Quote in AX for this Opportunity as you are not setup as a user in AX&quot;);
+}
+else if (opportunityOwnerDAXNumber == &apos;&apos;) {
+    alert(&quot;You cannot create a Quote in AX for this Opportunity as the Owner is not yet setup in AX&quot;);
+}
+else if (accountStatus == &apos;Blocked&apos;) {
+    alert(&quot;The Account for this Opportunity is currently Blocked in Dynamics AX. It is not possible to create a Quote for a Customer that is Blocked&quot;);
+}
+else if (opportunityType == &apos;&apos;) {
+    alert(&quot;You need to enter the Type of the Opportunity in order to create a Quote for it in Dynamics AX&quot;);
+}
+else if (opportunityClosed == &apos;1&apos;) {
+    alert(&quot;You cannot create a Quote for a Closed Opportunity. Please create a new Opportunity&quot;);
+}
+else {
+    var daxAccountType = &apos;C&apos;;
+    var daxAccountNumber = &apos;{!Opportunity.DAX_Customer_Number__c}&apos;
+    if (daxAccountNumber == &apos;&apos;) {
+        daxAccountType = &apos;P&apos;;
+        daxAccountNumber = &apos;{!Opportunity.DAX_Prospect_Number__c}&apos;;
+    }
+
+    var http = &apos;http://&apos;;
+    var slash = &apos;/&apos;;
+    var ampersand = &apos;&amp;&apos;;
+    var eConServerName = &apos;lffpaxfsmt01&apos;;
+    var eConEnvironment = &apos;test&apos;;
+    var eConStartUpUI = &apos;eConEngineHtml.aspx?environment=test&apos;;
+    var eConModelName = &apos;model=Test%20model/Quote&apos;;
+    var eConModelVersion = &apos;modelversion=1.6.0&apos;;
+    var eConDefaultParameters = &apos;context=default&amp;language=default&amp;formatlanguage=default&amp;studio=true&apos;;
+    var eConCusOrProp = &apos;CustOrProsp=&apos; + daxAccountType;
+    var eConCusPropNumber = &apos;Number=&apos; + daxAccountNumber;
+    var eConDAXOppId = &apos;OppId=&apos; + daxOpportunityNumber;
+    var eConCompany = &apos;company=&apos; + currentUserCompanyNumber + &apos;&amp;user=SchembW&amp;type=1&amp;configtype=configuration&amp;backend=axapta&amp;newconf=true&amp;active=true&amp;mobile=false&apos;;
+    var eConOpportunityType = &apos;Type=&apos; + opportunityType;
+    var eConSalesTaker = &apos;SalesTaker={!$User.FirstName} {!$User.LastName}&apos;;
+    var eConSalesResponsible = &apos;SalesResponsible={!Opportunity.OwnerFullName}&apos;;
+	
+    var eConURL = http + eConServerName + slash + eConEnvironment + slash + eConStartUpUI + ampersand + eConModelName + ampersand + eConModelVersion + ampersand + eConDefaultParameters + ampersand + eConCusOrProp + ampersand + eConCusPropNumber + ampersand + eConDAXOppId + ampersand + eConCompany;
+ //+ ampersand + eConOpportunityType + ampersand + eConSalesTaker + ampersand + eConSalesResponsible;
+    var eConURLProperties = &apos;location=yes,height=&apos; + (screen.availHeight-200) + &apos;,width=&apos; + (screen.availWidth-200) + &apos;,scrollbars=yes,status=yes&apos;;
+    alert(eConURL);
+
+    window.open(eConURL, &apos;_blank&apos;, eConURLProperties);
+}</url>
+    </webLinks>
+</CustomObject>

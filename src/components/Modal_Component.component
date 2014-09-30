@@ -1,0 +1,46 @@
+<apex:component >
+<apex:attribute name="title" type="String" description="The title that appears at the top of the Modal" required="true" />
+<apex:attribute name="showPopup" type="boolean" description="Indicates whether to show the Modal or not" required="true" />
+
+<style type="text/css">
+.custPopup{
+    background-color: white;
+    border-width: 1px;
+    border-style: solid;
+    border-color: black;
+    z-index: 9999;
+    left: 50%;
+    padding:10px;
+    position: absolute;
+    width: 600px;
+    margin-left: -325px;
+    top:75px;
+}
+.popupBackground{
+    background-color:black;
+    opacity: 0.20;
+    filter: alpha(opacity = 20);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 9998;
+}
+</style>
+
+<apex:form >
+	<apex:outputPanel id="headerPanel" rendered="{!showPopup}">
+		<apex:outputPanel styleClass="popupBackground" layout="block" />
+
+		<apex:outputPanel styleClass="custPopup" layout="block" rendered="{!showPopup}">
+			<apex:pageBlock >
+				<h1>{!title}</h1>
+				<hr/>			
+				<apex:componentBody />
+			</apex:pageBlock>
+		</apex:outputPanel>
+	</apex:outputPanel>
+</apex:form>
+
+</apex:component>

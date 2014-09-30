@@ -1,0 +1,1690 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
+    <labels>
+        <fullName>ChatterAudit_BatchJobEmailMessage</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>BatchJobEmailMessage</shortDescription>
+        <value>Your batch job ChatterAuditBatchUpdate has finished.&lt;br/&gt;executed totalJobItems processed without any exceptions thrown and numberOfErrors batches threw unhandled exceptions.&lt;br/&gt; Total of Records processed : proccessedRecords</value>
+    </labels>
+    <labels>
+        <fullName>ChatterAudit_BatchJobEmailTitle</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>BatchJobEmailTitle</shortDescription>
+        <value>[ChatterAudit] Batch job completed</value>
+    </labels>
+    <labels>
+        <fullName>ChatterAudit_BatchJobPreLoadEmailMessage</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>ChatterAudit_BatchJobPreLoadEmailMessage</shortDescription>
+        <value>It executed  totalJobItems jobs, importing proccessedRecords FeedItems and their comments.</value>
+    </labels>
+    <labels>
+        <fullName>ChatterAudit_ChatterAudit_ERROR_TEXT_CUSTOM_SETTING_NOT_CONFIGURED_3</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>ERROR_TEXT_CUSTOM_SETTING_NOT_CONFIGURED_3</shortDescription>
+        <value>Error: Custom Setting [name] not found.</value>
+    </labels>
+    <labels>
+        <fullName>ChatterAudit_ChatterAudit_ERROR_TEXT_CUSTOM_SETTING_NOT_CONFIGURED_4</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>ERROR_TEXT_CUSTOM_SETTING_NOT_CONFIGURED_4</shortDescription>
+        <value>Error: Although the Custom Setting exists, some value/s are not properly configured.</value>
+    </labels>
+    <labels>
+        <fullName>ChatterAudit_ChatterAudit_ERROR_TEXT_CUSTOM_SETTING_NOT_CONFIGURED_5</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>ERROR_TEXT_CUSTOM_SETTING_NOT_CONFIGURED_5</shortDescription>
+        <value>Please refer to the guide located in the Chatter Compliance Setup Tab (First Steps section).</value>
+    </labels>
+    <labels>
+        <fullName>ChatterAudit_ConfirmDialog_deleteRecords</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>ConfirmDialog_deleteRecords</shortDescription>
+        <value>This action will delete all displayed records. Are you sure?</value>
+    </labels>
+    <labels>
+        <fullName>ChatterAudit_ERROR_TEXT_CUSTOM_SETTING_NOT_CONFIGURED_1</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>ERROR_TEXT_CUSTOM_SETTING_NOT_CONFIGURED_1</shortDescription>
+        <value>Application Chatter Compliance is not working properly.</value>
+    </labels>
+    <labels>
+        <fullName>ChatterAudit_ERROR_TEXT_CUSTOM_SETTING_NOT_CONFIGURED_2</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>ERROR_TEXT_CUSTOM_SETTING_NOT_CONFIGURED_1</shortDescription>
+        <value>Please review the instructions in the Chatter Compliance Setup page.</value>
+    </labels>
+    <labels>
+        <fullName>ChatterAudit_ERROR_TEXT_CUSTOM_SETTING_NOT_CONFIGURED_SUBJECT</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>ERROR_TEXT_CUSTOM_SETTING_NOT_CONFIGURED_SUBJECT</shortDescription>
+        <value>Chatter Compliance Application Warning : missing configuration.</value>
+    </labels>
+    <labels>
+        <fullName>ChatterAudit_ErrorMessages_ammountOfRecords</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>ErrorMessages_ammountOfRecords</shortDescription>
+        <value>The amount of records must be greater than 0.</value>
+    </labels>
+    <labels>
+        <fullName>ChatterAudit_ErrorMessages_chooseAGroup</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>ErrorMessages_chooseAGroup</shortDescription>
+        <value>You must enter a Group Name  for this type of search.</value>
+    </labels>
+    <labels>
+        <fullName>ChatterAudit_ErrorMessages_chooseAPairOfUsers</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>ErrorMessages_chooseAPairOfUsers</shortDescription>
+        <value>You must choose a pair of Users for this type of search.</value>
+    </labels>
+    <labels>
+        <fullName>ChatterAudit_ErrorMessages_chooseAUser</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>ErrorMessages_chooseAUser</shortDescription>
+        <value>You must choose a User for this type of search.</value>
+    </labels>
+    <labels>
+        <fullName>ChatterAudit_ErrorMessages_chooseAnOption</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>ErrorMessages_chooseAnOption</shortDescription>
+        <value>You must choose at least one option  for this type of search.</value>
+    </labels>
+    <labels>
+        <fullName>ChatterAudit_ErrorMessages_invalidDateRange</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>ErrorMessages_invalidDateRange</shortDescription>
+        <value>Date Range is invalid</value>
+    </labels>
+    <labels>
+        <fullName>ChatterAudit_ErrorMessages_mostThousandChars</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>ErrorMessages_mostThousandChars</shortDescription>
+        <value>Search by text can contain at most 1000 characters.</value>
+    </labels>
+    <labels>
+        <fullName>ChatterAudit_ErrorMessages_mustContainTwoChars</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>ErrorMessages_mustContainTwoChars</shortDescription>
+        <value>Search by text must contain at least two characters.</value>
+    </labels>
+    <labels>
+        <fullName>ChatterAudit_ErrorMessages_nameCannotBeEmpty</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>ErrorMessages_nameCannotBeEmpty</shortDescription>
+        <value>Name can not be empty. If you do not know the name use the Show All instead</value>
+    </labels>
+    <labels>
+        <fullName>ChatterAudit_ErrorMessages_noRecordsToExport</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>ErrorMessages_noRecordsToExport</shortDescription>
+        <value>There are no records to export</value>
+    </labels>
+    <labels>
+        <fullName>ChatterAudit_ErrorMessages_resultSetSize</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>ChatterAudit_ErrorMessages_resultSetSize</shortDescription>
+        <value>The result set exceeds the application limits(MAX_RECORDS), in order to get a more accurate result please add more filter criteria.</value>
+    </labels>
+    <labels>
+        <fullName>ChatterAudit_ExceptionMessage_manual_delete_forbidden</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>ExceptionMessage_manual_delete_forbidden</shortDescription>
+        <value>ERROR: manual deletion/edition of items is currently forbidden</value>
+    </labels>
+    <labels>
+        <fullName>ChatterAudit_ExceptionMessages_governorLimit_Heap</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>ExceptionMessages_governorLimit_Heap</shortDescription>
+        <value>GOVERNOR LIMITS : HEAP SIZE  NEAR MAXIMUN SIZE</value>
+    </labels>
+    <labels>
+        <fullName>ChatterAudit_ExceptionMessages_governorLimit_Scripts</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>ExceptionMessages_governorLimit_Scripts</shortDescription>
+        <value>GOVERNOR LIMITS : ScriptStatements  count  NEAR MAXIMUN</value>
+    </labels>
+    <labels>
+        <fullName>ChatterAudit_ExportedFile_row_Body</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>ExportedFile_row_Body</shortDescription>
+        <value>Body</value>
+    </labels>
+    <labels>
+        <fullName>ChatterAudit_ExportedFile_row_CommentID</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>ExportedFile_row_CommentID</shortDescription>
+        <value>CommentID</value>
+    </labels>
+    <labels>
+        <fullName>ChatterAudit_ExportedFile_row_CreatedById</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>ExportedFile_row_CreatedById</shortDescription>
+        <value>CreatedById</value>
+    </labels>
+    <labels>
+        <fullName>ChatterAudit_ExportedFile_row_CreatedDate</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>ExportedFile_row_CreatedDate</shortDescription>
+        <value>CreatedDate</value>
+    </labels>
+    <labels>
+        <fullName>ChatterAudit_ExportedFile_row_FileTitle</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>ChatterAudit_ExportedFile_row_FileTitle</shortDescription>
+        <value>Title</value>
+    </labels>
+    <labels>
+        <fullName>ChatterAudit_ExportedFile_row_Id</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>ExportedFile_row_Id</shortDescription>
+        <value>Id</value>
+    </labels>
+    <labels>
+        <fullName>ChatterAudit_ExportedFile_row_InsertedByName</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>ExportedFile_row_InsertedByName</shortDescription>
+        <value>InsertedByName</value>
+    </labels>
+    <labels>
+        <fullName>ChatterAudit_ExportedFile_row_ItemId</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>ExportedFile_row_ItemId</shortDescription>
+        <value>ItemId</value>
+    </labels>
+    <labels>
+        <fullName>ChatterAudit_ExportedFile_row_LinkUrl</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>ExportedFile_row_LinkUrl</shortDescription>
+        <value>LinkUrl</value>
+    </labels>
+    <labels>
+        <fullName>ChatterAudit_ExportedFile_row_ParentId</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>ExportedFile_row_ParentId</shortDescription>
+        <value>ParentId</value>
+    </labels>
+    <labels>
+        <fullName>ChatterAudit_ExportedFile_row_ParentObjectName</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>ChatterAudit_ExportedFile_row_ParentObjectName</shortDescription>
+        <value>ParentObjectName</value>
+    </labels>
+    <labels>
+        <fullName>ChatterAudit_ExportedFile_row_ParentObjectType</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>ExportedFile_row_ParentObjectType</shortDescription>
+        <value>ParentObjectType</value>
+    </labels>
+    <labels>
+        <fullName>ChatterAudit_ExportedFile_row_RelatedRecordID</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>ChatterAudit_ExportedFile_row_RelatedRecordID</shortDescription>
+        <value>RelatedRecordId</value>
+    </labels>
+    <labels>
+        <fullName>ChatterAudit_ExportedFile_row_Type</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>ExportedFile_row_Type</shortDescription>
+        <value>Type</value>
+    </labels>
+    <labels>
+        <fullName>ChatterAudit_ExportedFile_row_commentBody</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>ExportedFile_row_commentBody</shortDescription>
+        <value>commentBody</value>
+    </labels>
+    <labels>
+        <fullName>ChatterAudit_ExportedFile_row_contentDescription</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>ExportedFile_row_contentDescription</shortDescription>
+        <value>contentDescription</value>
+    </labels>
+    <labels>
+        <fullName>ChatterAudit_ExportedFile_row_contentFileName</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>ExportedFile_row_contentFileName</shortDescription>
+        <value>contentFileName</value>
+    </labels>
+    <labels>
+        <fullName>ChatterAudit_ExportedFile_row_contentSize</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>ExportedFile_row_contentSize</shortDescription>
+        <value>contentSize</value>
+    </labels>
+    <labels>
+        <fullName>ChatterAudit_ExportedFile_row_contentType</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>ExportedFile_row_contentType</shortDescription>
+        <value>contentType</value>
+    </labels>
+    <labels>
+        <fullName>ChatterAudit_ExportedFile_row_detailPage</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>ExportedFile_row_detailPage</shortDescription>
+        <value>detailPage</value>
+    </labels>
+    <labels>
+        <fullName>ChatterAudit_ExportedFile_row_fullArchivedCommentList</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>ExportedFile_row_fullArchivedCommentList</shortDescription>
+        <value>fullArchivedCommentList</value>
+    </labels>
+    <labels>
+        <fullName>ChatterAudit_ExportedFile_row_insertedById</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>ExportedFile_row_insertedById</shortDescription>
+        <value>insertedById</value>
+    </labels>
+    <labels>
+        <fullName>ChatterAudit_ExportedFile_row_isDeleted</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>ExportedFile_row_isDeleted</shortDescription>
+        <value>isDeleted</value>
+    </labels>
+    <labels>
+        <fullName>ChatterAudit_FileSizeErrorEmailMessage</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>FileSizeErrorEmailMessage</shortDescription>
+        <value>The generated document size exceeds the limit of 5MB. Try exporting a smaller result set by adding more filter criteria.</value>
+    </labels>
+    <labels>
+        <fullName>ChatterAudit_InitiallImport_Btn</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>ChatterAudit_InitiallImport_Btn</shortDescription>
+        <value>Start import</value>
+    </labels>
+    <labels>
+        <fullName>ChatterAudit_InitiallImport_DescP1</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>ChatterAudit_InitiallImport_DescP1</shortDescription>
+        <value>Before using Chatter Compliance application all chatter posts,comments and private messages that have been generated prior to installing the compliance app will be automatically loaded. For more information, refer to the Configuration Tab.</value>
+    </labels>
+    <labels>
+        <fullName>ChatterAudit_InitiallImport_DescP2</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>ChatterAudit_InitiallImport_DescP2</shortDescription>
+        <value>This action is only available this one time.</value>
+    </labels>
+    <labels>
+        <fullName>ChatterAudit_InitiallImport_DescP3</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>ChatterAudit_InitiallImport_DescP3</shortDescription>
+        <value>After ChatterAudit starts to archive new posts and comments you won&apos;t receive this notification.</value>
+    </labels>
+    <labels>
+        <fullName>ChatterAudit_InitiallImport_Title</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>ChatterAudit_InitiallImport_Title</shortDescription>
+        <value>Import Chatter posts and comments</value>
+    </labels>
+    <labels>
+        <fullName>ChatterAudit_LOADING</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>LOADING</shortDescription>
+        <value>Loading...</value>
+    </labels>
+    <labels>
+        <fullName>ChatterAudit_LookUpPage_TName</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>LookUpPage_Name</shortDescription>
+        <value>Name</value>
+    </labels>
+    <labels>
+        <fullName>ChatterAudit_MAIL_TEXT_exception_part1</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>MAIL_TEXT_exception_part1</shortDescription>
+        <value>There are a number of possible causes for this issue.  You may have exceeded your record limit.  You may have exceeded your file storage limit.  In either case, you can find additional storage resources by:</value>
+    </labels>
+    <labels>
+        <fullName>ChatterAudit_MAIL_TEXT_exception_part2</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>MAIL_TEXT_exception_part2</shortDescription>
+        <value>Checking your recycle bin and deleting old data from the bin</value>
+    </labels>
+    <labels>
+        <fullName>ChatterAudit_MAIL_TEXT_exception_part3</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>MAIL_TEXT_exception_part3</shortDescription>
+        <value>Cleaning up the Files section of your org</value>
+    </labels>
+    <labels>
+        <fullName>ChatterAudit_MAIL_TEXT_exception_part4</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>MAIL_TEXT_exception_part4</shortDescription>
+        <value>Purchasing additional storage resources</value>
+    </labels>
+    <labels>
+        <fullName>ChatterAudit_MAIL_TEXT_export_part1</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>MAIL_TEXT_export_part1</shortDescription>
+        <value>Your Chatter Compliance file export is completed. You can access and download the file via the following link :</value>
+    </labels>
+    <labels>
+        <fullName>ChatterAudit_MAIL_TEXT_purge_part1</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>MAIL_TEXT_purge_part1</shortDescription>
+        <value>Your selected records have been purged.</value>
+    </labels>
+    <labels>
+        <fullName>ChatterAudit_MAIL_TEXT_subject</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>MAIL_TEXT_subject</shortDescription>
+        <value>Chatter Compliance Export at</value>
+    </labels>
+    <labels>
+        <fullName>ChatterAudit_MAIL_TEXT_subject_exception</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>ChatterAudit_MAIL_TEXT_subject_exception</shortDescription>
+        <value>Chatter Compliance exception at</value>
+    </labels>
+    <labels>
+        <fullName>ChatterAudit_OrganizationId</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>OrganizationId</shortDescription>
+        <value>Organization Id</value>
+    </labels>
+    <labels>
+        <fullName>ChatterAudit_OrganizationName</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>OrganizationName</shortDescription>
+        <value>Organization Name</value>
+    </labels>
+    <labels>
+        <fullName>ChatterAudit_Parent</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>ChatterAudit_Parent</shortDescription>
+        <value>Parent</value>
+    </labels>
+    <labels>
+        <fullName>ChatterAudit_PurgePage_Title</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>PurgePage_Title</shortDescription>
+        <value>Purge</value>
+    </labels>
+    <labels>
+        <fullName>ChatterAudit_PurgePage_tDateRange</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>PurgePage_tDateRange</shortDescription>
+        <value>Date Range</value>
+    </labels>
+    <labels>
+        <fullName>ChatterAudit_PurgePage_tExportAndDumpRecords</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>PurgePage_tExportAndDumpRecords</shortDescription>
+        <value>Dump Records</value>
+    </labels>
+    <labels>
+        <fullName>ChatterAudit_PurgePage_tFilterByArchivedDate</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>PurgePage_tFilterByArchivedDate</shortDescription>
+        <value>Filter by Archived Date</value>
+    </labels>
+    <labels>
+        <fullName>ChatterAudit_PurgePage_tHelpText</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>PurgePage_tHelpText</shortDescription>
+        <value>Dump Records</value>
+    </labels>
+    <labels>
+        <fullName>ChatterAudit_PurgePage_tRecordsFound</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>PurgePage_tRecordsFound</shortDescription>
+        <value>Records Found :</value>
+    </labels>
+    <labels>
+        <fullName>ChatterAudit_PurgePage_tSearch</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>PurgePage_tSearch</shortDescription>
+        <value>Search</value>
+    </labels>
+    <labels>
+        <fullName>ChatterAudit_PurgePage_tSubmit</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>PurgePage_tSubmit</shortDescription>
+        <value>Submit</value>
+    </labels>
+    <labels>
+        <fullName>ChatterAudit_SearchPage_tAllUsers</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>SearchPage_tAllUsers</shortDescription>
+        <value>All Users</value>
+    </labels>
+    <labels>
+        <fullName>ChatterAudit_SearchPage_tBSearch</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>SearchPage_tBSearch</shortDescription>
+        <value>Search</value>
+    </labels>
+    <labels>
+        <fullName>ChatterAudit_SearchPage_tBody</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>SearchPage_tBody</shortDescription>
+        <value>Body</value>
+    </labels>
+    <labels>
+        <fullName>ChatterAudit_SearchPage_tCompleteView</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>SearchPage_tCompleteView</shortDescription>
+        <value>Complete View.</value>
+    </labels>
+    <labels>
+        <fullName>ChatterAudit_SearchPage_tDateRange</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>SearchPage_tDateRange</shortDescription>
+        <value>Date Range</value>
+    </labels>
+    <labels>
+        <fullName>ChatterAudit_SearchPage_tExport</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>SearchPage_tExport</shortDescription>
+        <value>Export</value>
+    </labels>
+    <labels>
+        <fullName>ChatterAudit_SearchPage_tExportRecords</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>SearchPage_tExportRecords</shortDescription>
+        <value>Export Records</value>
+    </labels>
+    <labels>
+        <fullName>ChatterAudit_SearchPage_tFileFormat</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>SearchPage_tFileFormat</shortDescription>
+        <value>File Format :</value>
+    </labels>
+    <labels>
+        <fullName>ChatterAudit_SearchPage_tGroup</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>SearchPage_tGroup</shortDescription>
+        <value>Group</value>
+    </labels>
+    <labels>
+        <fullName>ChatterAudit_SearchPage_tHelpText</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>SearchPage_tHelpText</shortDescription>
+        <value>Export allows the user to create a file of any search results generated from a search inquiry</value>
+    </labels>
+    <labels>
+        <fullName>ChatterAudit_SearchPage_tHelpTextXlsComplete</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>SearchPage_tHelpTextXlsComplete</shortDescription>
+        <value>Complete File: For Public Messages contains all the data and meta data associated with a given post, for Private Messages contains same data as a quick view.</value>
+    </labels>
+    <labels>
+        <fullName>ChatterAudit_SearchPage_tHelpTextXlsQuick</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>SearchPage_tHelpTextXlsQuick</shortDescription>
+        <value>Quick View contains the same elements presented in the Search results – User, Body, Date, Type &amp; View</value>
+    </labels>
+    <labels>
+        <fullName>ChatterAudit_SearchPage_tInvolving</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>SearchPage_tInvolving</shortDescription>
+        <value>Involving</value>
+    </labels>
+    <labels>
+        <fullName>ChatterAudit_SearchPage_tOneUser</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>SearchPage_tOneUser</shortDescription>
+        <value>1 User</value>
+    </labels>
+    <labels>
+        <fullName>ChatterAudit_SearchPage_tOptions</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>SearchPage_tOptions</shortDescription>
+        <value>Options</value>
+    </labels>
+    <labels>
+        <fullName>ChatterAudit_SearchPage_tPostsandCommentsongroupsuserbelongsto</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>SearchPage_tPostsandCommentsongroupsuserbelongsto</shortDescription>
+        <value>Posts and Comments on groups user belongs to</value>
+    </labels>
+    <labels>
+        <fullName>ChatterAudit_SearchPage_tPostsmadebyuserOneonuserTwosprofileandviceversa</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>SearchPage_tPostsmadebyuserOneonuserTwosprofileandviceversa</shortDescription>
+        <value>Posts made by user 1 on user 2&apos;s profile and viceversa</value>
+    </labels>
+    <labels>
+        <fullName>ChatterAudit_SearchPage_tPoststouserswallbyothers</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>SearchPage_tPoststouserswallbyothers</shortDescription>
+        <value>Posts and Comments to user&apos;s wall by others</value>
+    </labels>
+    <labels>
+        <fullName>ChatterAudit_SearchPage_tPostswereuserOneanduserTwohaveinteracted</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>SearchPage_tPostswereuserOneanduserTwohaveinteracted</shortDescription>
+        <value>Posts where user 1 and user 2 have interacted</value>
+    </labels>
+    <labels>
+        <fullName>ChatterAudit_SearchPage_tQuickView</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>SearchPage_tQuickView</shortDescription>
+        <value>Quick View.</value>
+    </labels>
+    <labels>
+        <fullName>ChatterAudit_SearchPage_tRecordsFound</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>SearchPage_tRecordsFound</shortDescription>
+        <value>Records Found :</value>
+    </labels>
+    <labels>
+        <fullName>ChatterAudit_SearchPage_tSearch</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>SearchPage_tSearch</shortDescription>
+        <value>Search:</value>
+    </labels>
+    <labels>
+        <fullName>ChatterAudit_SearchPage_tTwoUsers</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>SearchPage_tTwoUsers</shortDescription>
+        <value>2 Users</value>
+    </labels>
+    <labels>
+        <fullName>ChatterAudit_SearchPage_tUser</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>SearchPage_tUser</shortDescription>
+        <value>User</value>
+    </labels>
+    <labels>
+        <fullName>ChatterAudit_SearchPage_tUserCreatedthePostComment</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>SearchPage_tUserCreatedthePostComment</shortDescription>
+        <value>User Created the Post/Comment</value>
+    </labels>
+    <labels>
+        <fullName>ChatterAudit_SearchPage_tView</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>SearchPage_tView</shortDescription>
+        <value>Archive Link</value>
+    </labels>
+    <labels>
+        <fullName>ChatterAudit_SearchPage_tView_Chatter_Record</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>SearchPage_tView_Chatter_Record</shortDescription>
+        <value>Chatter</value>
+    </labels>
+    <labels>
+        <fullName>ChatterAudit_SearchPage_tsearchAndExportFilterOptionsTitle</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>SearchPage_tsearchAndExportFilterOptionsTitle</shortDescription>
+        <value>Search &amp; Export -- Filter Options</value>
+    </labels>
+    <labels>
+        <fullName>ChatterAudit_Search_tPostsandCommentsonprofilesofusersselecteduserisfollowing</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Search_tPostsandCommentsonprofilesofusersselecteduserisfollowing</shortDescription>
+        <value>Posts and Comments on profiles of users selected user is following</value>
+    </labels>
+    <labels>
+        <fullName>ChatterAudit_aboutPage_Label0</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>aboutPage_Label0</shortDescription>
+        <value>Chatter Compliance Setup</value>
+    </labels>
+    <labels>
+        <fullName>ChatterAudit_aboutPage_Label01</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>aboutPage_Label01</shortDescription>
+        <value>Application Description</value>
+    </labels>
+    <labels>
+        <fullName>ChatterAudit_aboutPage_Label1</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>aboutPage_Label1</shortDescription>
+        <value>The Chatter Compliance application is an archiving tool for all Chatter related data. It can be used as a lightweight compliance tool and the custom object records it generates can be used to extract Chatter data into other systems. The main features are as follows:</value>
+    </labels>
+    <labels>
+        <fullName>ChatterAudit_aboutPage_Label15</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>aboutPage_Label15</shortDescription>
+        <value>Name: default will be prepopulated. Do not change this</value>
+    </labels>
+    <labels>
+        <fullName>ChatterAudit_aboutPage_Label16</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>aboutPage_Label16</shortDescription>
+        <value>Batch Update Frequency: The number of hours between each batch run</value>
+    </labels>
+    <labels>
+        <fullName>ChatterAudit_aboutPage_Label17</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>aboutPage_Label17</shortDescription>
+        <value>Chatter Compliance OwnerId: Id of the user who will own all app created records. This user&apos;s profile must be granted creation permissions the custom objects installed with the package</value>
+    </labels>
+    <labels>
+        <fullName>ChatterAudit_aboutPage_Label18</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>aboutPage_Label18</shortDescription>
+        <value>Active: Indicates if the batch process is currently running or not</value>
+    </labels>
+    <labels>
+        <fullName>ChatterAudit_aboutPage_Label2</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>aboutPage_Label2</shortDescription>
+        <value>User Interface for searching across archived posts, comments and private messages</value>
+    </labels>
+    <labels>
+        <fullName>ChatterAudit_aboutPage_Label21</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>aboutPage_Label21</shortDescription>
+        <value>Sorry, an error occurred , please check following error message:</value>
+    </labels>
+    <labels>
+        <fullName>ChatterAudit_aboutPage_Label22</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>aboutPage_Label22</shortDescription>
+        <value>Status for the batch process:</value>
+    </labels>
+    <labels>
+        <fullName>ChatterAudit_aboutPage_Label23</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>aboutPage_Label23</shortDescription>
+        <value>not Running</value>
+    </labels>
+    <labels>
+        <fullName>ChatterAudit_aboutPage_Label24</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>aboutPage_Label24</shortDescription>
+        <value>Search &amp; Export</value>
+    </labels>
+    <labels>
+        <fullName>ChatterAudit_aboutPage_Label25</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>aboutPage_Label25</shortDescription>
+        <value>General search options</value>
+    </labels>
+    <labels>
+        <fullName>ChatterAudit_aboutPage_Label26</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>aboutPage_Label26</shortDescription>
+        <value>The search functionality provides a basic form for filtering chatter messages by keyword and date range. To carry out a search on all post/comments, leave “All Users” option selected.</value>
+    </labels>
+    <labels>
+        <fullName>ChatterAudit_aboutPage_Label27</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>aboutPage_Label27</shortDescription>
+        <value>Type the keyword you want found as part of the message.</value>
+    </labels>
+    <labels>
+        <fullName>ChatterAudit_aboutPage_Label28</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>aboutPage_Label28</shortDescription>
+        <value>Choose the start and end date for the range desired</value>
+    </labels>
+    <labels>
+        <fullName>ChatterAudit_aboutPage_Label29</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>aboutPage_Label29</shortDescription>
+        <value>“Involving” provides additional criteria so that messages created by all users, created by only one user, created in conversations between two users or messages created inside a collaboration group can be specified</value>
+    </labels>
+    <labels>
+        <fullName>ChatterAudit_aboutPage_Label3</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>aboutPage_Label3</shortDescription>
+        <value>Export of search results into Excel format</value>
+    </labels>
+    <labels>
+        <fullName>ChatterAudit_aboutPage_Label30</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>aboutPage_Label30</shortDescription>
+        <value>Involving 1 User</value>
+    </labels>
+    <labels>
+        <fullName>ChatterAudit_aboutPage_Label31</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>aboutPage_Label31</shortDescription>
+        <value>This option lets you search for chatter details around a specific user.</value>
+    </labels>
+    <labels>
+        <fullName>ChatterAudit_aboutPage_Label32</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>aboutPage_Label32</shortDescription>
+        <value>User: Click on the magnifying icon to open the author lookup. This field is required for this type of search</value>
+    </labels>
+    <labels>
+        <fullName>ChatterAudit_aboutPage_Label33</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>aboutPage_Label33</shortDescription>
+        <value>The Search will return:</value>
+    </labels>
+    <labels>
+        <fullName>ChatterAudit_aboutPage_Label34</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>aboutPage_Label34</shortDescription>
+        <value>All post/comments created by the selected user</value>
+    </labels>
+    <labels>
+        <fullName>ChatterAudit_aboutPage_Label35</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>aboutPage_Label35</shortDescription>
+        <value>All messages made on the selected user&apos;s chatter wall.</value>
+    </labels>
+    <labels>
+        <fullName>ChatterAudit_aboutPage_Label36</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>aboutPage_Label36</shortDescription>
+        <value>All post/comments on collaboration groups the selected user is a current member of. Note that the package does not keep track of membership, only data for the current memberships will be returned.</value>
+    </labels>
+    <labels>
+        <fullName>ChatterAudit_aboutPage_Label37</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>aboutPage_Label37</shortDescription>
+        <value>All post/comments made on the profiles of users the selected user is following. Note that the packaged does not keep track of the history of follows/unfollows. Only data for the users currently being followed will be returned</value>
+    </labels>
+    <labels>
+        <fullName>ChatterAudit_aboutPage_Label38</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>aboutPage_Label38</shortDescription>
+        <value>LookUp feature</value>
+    </labels>
+    <labels>
+        <fullName>ChatterAudit_aboutPage_Label39</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>aboutPage_Label39</shortDescription>
+        <value>The list displays details for users matching the search criteria. The columns: Name, Title and Email are retrieved from the user object. The column &apos;Posted under these names&apos; holds the list of different names the user has been known as in the system.</value>
+    </labels>
+    <labels>
+        <fullName>ChatterAudit_aboutPage_Label4</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>aboutPage_Label4</shortDescription>
+        <value>Functionality to purge records from the archive custom objects</value>
+    </labels>
+    <labels>
+        <fullName>ChatterAudit_aboutPage_Label40</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>aboutPage_Label40</shortDescription>
+        <value>Enter the name of the user</value>
+    </labels>
+    <labels>
+        <fullName>ChatterAudit_aboutPage_Label41</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>aboutPage_Label41</shortDescription>
+        <value>Click the filter button and the list will return one record per user with a matching name</value>
+    </labels>
+    <labels>
+        <fullName>ChatterAudit_aboutPage_Label42</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>aboutPage_Label42</shortDescription>
+        <value>Clicking on this button will reload the result list displaying all the users in the org</value>
+    </labels>
+    <labels>
+        <fullName>ChatterAudit_aboutPage_Label43</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>aboutPage_Label43</shortDescription>
+        <value>To select any of the users click on the link in the name of the one you want to choose</value>
+    </labels>
+    <labels>
+        <fullName>ChatterAudit_aboutPage_Label44</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>aboutPage_Label44</shortDescription>
+        <value>Involving 2 Users</value>
+    </labels>
+    <labels>
+        <fullName>ChatterAudit_aboutPage_Label45</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>aboutPage_Label45</shortDescription>
+        <value>This option narrows the result set to all conversation between two users.</value>
+    </labels>
+    <labels>
+        <fullName>ChatterAudit_aboutPage_Label46</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>aboutPage_Label46</shortDescription>
+        <value>Name for first user</value>
+    </labels>
+    <labels>
+        <fullName>ChatterAudit_aboutPage_Label47</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>aboutPage_Label47</shortDescription>
+        <value>Name for second user</value>
+    </labels>
+    <labels>
+        <fullName>ChatterAudit_aboutPage_Label48</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>aboutPage_Label48</shortDescription>
+        <value>Search will return:</value>
+    </labels>
+    <labels>
+        <fullName>ChatterAudit_aboutPage_Label49</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>aboutPage_Label49</shortDescription>
+        <value>Posts made by user1 on user2&apos;s wall and vice versa</value>
+    </labels>
+    <labels>
+        <fullName>ChatterAudit_aboutPage_Label5</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>aboutPage_Label5</shortDescription>
+        <value>It consists of a set of triggers and apex logic for capturing chatter post and comments and a batch job to copy private messages into the archive objects.</value>
+    </labels>
+    <labels>
+        <fullName>ChatterAudit_aboutPage_Label50</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>aboutPage_Label50</shortDescription>
+        <value>Threads where both users are involved</value>
+    </labels>
+    <labels>
+        <fullName>ChatterAudit_aboutPage_Label51</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>aboutPage_Label51</shortDescription>
+        <value>Collaboration Groups</value>
+    </labels>
+    <labels>
+        <fullName>ChatterAudit_aboutPage_Label52</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>aboutPage_Label52</shortDescription>
+        <value>This option narrows the result set to all messages within the selected group.</value>
+    </labels>
+    <labels>
+        <fullName>ChatterAudit_aboutPage_Label53</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>aboutPage_Label53</shortDescription>
+        <value>Name for the group</value>
+    </labels>
+    <labels>
+        <fullName>ChatterAudit_aboutPage_Label54</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>aboutPage_Label54</shortDescription>
+        <value>Groups LookUp</value>
+    </labels>
+    <labels>
+        <fullName>ChatterAudit_aboutPage_Label55</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>aboutPage_Label55</shortDescription>
+        <value>The list displays details of groups matching the search criteria. The columns returned are: Name, Description and Owner.  The column &apos;Other names&apos; holds the list of different names that were registered for the same group in the archived tables.</value>
+    </labels>
+    <labels>
+        <fullName>ChatterAudit_aboutPage_Label56</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>aboutPage_Label56</shortDescription>
+        <value>Name of the group</value>
+    </labels>
+    <labels>
+        <fullName>ChatterAudit_aboutPage_Label57</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>aboutPage_Label57</shortDescription>
+        <value>Click the filter button</value>
+    </labels>
+    <labels>
+        <fullName>ChatterAudit_aboutPage_Label58</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>aboutPage_Label58</shortDescription>
+        <value>Clicking this button will reload the result list displaying all the collaboration groups in the org</value>
+    </labels>
+    <labels>
+        <fullName>ChatterAudit_aboutPage_Label59</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>aboutPage_Label59</shortDescription>
+        <value>Select the group you want to audit by clicking on his name</value>
+    </labels>
+    <labels>
+        <fullName>ChatterAudit_aboutPage_Label6</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>aboutPage_Label6</shortDescription>
+        <value>It can easily be extended to support other standard and custom objects.</value>
+    </labels>
+    <labels>
+        <fullName>ChatterAudit_aboutPage_Label60</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>aboutPage_Label60</shortDescription>
+        <value>Export ResultSet</value>
+    </labels>
+    <labels>
+        <fullName>ChatterAudit_aboutPage_Label61</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>aboutPage_Label61</shortDescription>
+        <value>This functionality enables the export of a search result. The export is executed as a background process, and when the file is generated the user submitting the action will get an email notification. The files are stored in a folder named: ChatterAuditEXPORT</value>
+    </labels>
+    <labels>
+        <fullName>ChatterAudit_aboutPage_Label62</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>aboutPage_Label62</shortDescription>
+        <value>The number of items found (could be post or comments or Private messages)</value>
+    </labels>
+    <labels>
+        <fullName>ChatterAudit_aboutPage_Label63</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>aboutPage_Label63</shortDescription>
+        <value>Export as excel file with only rows matching the search terms</value>
+    </labels>
+    <labels>
+        <fullName>ChatterAudit_aboutPage_Label64</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>aboutPage_Label64</shortDescription>
+        <value>Export as excel file with entire threads containing matching search terms</value>
+    </labels>
+    <labels>
+        <fullName>ChatterAudit_aboutPage_Label65</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>aboutPage_Label65</shortDescription>
+        <value>Start the export process (will run in the background)</value>
+    </labels>
+    <labels>
+        <fullName>ChatterAudit_aboutPage_Label66</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>aboutPage_Label66</shortDescription>
+        <value>Purge</value>
+    </labels>
+    <labels>
+        <fullName>ChatterAudit_aboutPage_Label68</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>aboutPage_Label68</shortDescription>
+        <value>Loading previous Chatter Data</value>
+    </labels>
+    <labels>
+        <fullName>ChatterAudit_aboutPage_Label69</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>aboutPage_Label69</shortDescription>
+        <value>Before using Chatter Compliance application all chatter posts,comments and private messages that have been generated prior to installing the compliance app will be automatically loaded. For more information, refer to the Configuration Tab.</value>
+    </labels>
+    <labels>
+        <fullName>ChatterAudit_aboutPage_Label7</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>aboutPage_Label7</shortDescription>
+        <value>Setup</value>
+    </labels>
+    <labels>
+        <fullName>ChatterAudit_aboutPage_Label70</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>aboutPage_Label70</shortDescription>
+        <value>The import of all Chatter data is done via a background process and you will receive an email when it is completed.</value>
+    </labels>
+    <labels>
+        <fullName>ChatterAudit_aboutPage_Label71</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>aboutPage_Label71</shortDescription>
+        <value>The app uses a batch process to keep track of events affecting chatter model that can not be monitored using triggers. This process will keep track of any updates regarding the deletion of entities of type Collaboration Groups.</value>
+    </labels>
+    <labels>
+        <fullName>ChatterAudit_aboutPage_Label72</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>aboutPage_Label72</shortDescription>
+        <value>Use the button displayed below to start/stop the batch process. Before finishing its execution, this batch will schedule its next run using the value selected in the Batch Update Frequency in Custom Settings.</value>
+    </labels>
+    <labels>
+        <fullName>ChatterAudit_aboutPage_Label73</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>aboutPage_Label73</shortDescription>
+        <value>Batch process</value>
+    </labels>
+    <labels>
+        <fullName>ChatterAudit_aboutPage_Label74</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>aboutPage_Label74</shortDescription>
+        <value>Limits in search results and exported records</value>
+    </labels>
+    <labels>
+        <fullName>ChatterAudit_aboutPage_Label75</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>aboutPage_Label75</shortDescription>
+        <value>The search results are limited to 3500 maximum records.</value>
+    </labels>
+    <labels>
+        <fullName>ChatterAudit_aboutPage_Label76</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>aboutPage_Label76</shortDescription>
+        <value>The maximum number of records enabled for Quick Export is 3500 maximum records.</value>
+    </labels>
+    <labels>
+        <fullName>ChatterAudit_aboutPage_Label77</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>aboutPage_Label77</shortDescription>
+        <value>The maximum number of records enabled for Complete Export is 1500 maximum records.</value>
+    </labels>
+    <labels>
+        <fullName>ChatterAudit_aboutPage_Label78</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>aboutPage_Label78</shortDescription>
+        <value>Control to prevent deletion of content files associated to Chatter Post/Comments (if they are still archived)</value>
+    </labels>
+    <labels>
+        <fullName>ChatterAudit_aboutPage_Label79</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>aboutPage_Label79</shortDescription>
+        <value>Archived Private Messages Job Id : Refer to Private Messages Tab</value>
+    </labels>
+    <labels>
+        <fullName>ChatterAudit_aboutPage_Label8</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>aboutPage_Label8</shortDescription>
+        <value>The app relies on a Custom Settings for managing configuration details. To access and set the Custom Settings follow the below instructions:</value>
+    </labels>
+    <labels>
+        <fullName>ChatterAudit_aboutPage_Label80</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>aboutPage_Label80</shortDescription>
+        <value>Archived Private Messages Update Freq : Refer to Private Messages Tab</value>
+    </labels>
+    <labels>
+        <fullName>ChatterAudit_aboutPage_Label81</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>aboutPage_Label81</shortDescription>
+        <value>Archived Private Messages Update Last Ex : Refer to Private Messages Tab</value>
+    </labels>
+    <labels>
+        <fullName>ChatterAudit_aboutPage_Label82</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>aboutPage_Label82</shortDescription>
+        <value>Content Version Delete Blocker: By using this you will be able to disable the deletion of files associated to post/comments. (For archived posts or comments)</value>
+    </labels>
+    <labels>
+        <fullName>ChatterAudit_aboutPage_Label83</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>aboutPage_Label83</shortDescription>
+        <value>Private Messages Batch</value>
+    </labels>
+    <labels>
+        <fullName>ChatterAudit_aboutPage_Label84</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>aboutPage_Label84</shortDescription>
+        <value>Choose whether you will search through Chatter Private Messages or through post and comments.</value>
+    </labels>
+    <labels>
+        <fullName>ChatterAudit_aboutPage_Label85</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>aboutPage_Label85</shortDescription>
+        <value>Archived records can be deleted by using the purge functionality, this tool allows you to remove a set of Archived private messages, posts and all their related archived comments.</value>
+    </labels>
+    <labels>
+        <fullName>ChatterAudit_aboutPage_Label86</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>aboutPage_Label86</shortDescription>
+        <value>To use this you must first define a valid date range, filter the records and then click the Submit button.</value>
+    </labels>
+    <labels>
+        <fullName>ChatterAudit_aboutPage_Label87</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>aboutPage_Label87</shortDescription>
+        <value>Please take into consideration that Archived Private Messages and archived FeedItems records are deleted using a synchronous process and the comments are deleted by a background process.</value>
+    </labels>
+    <labels>
+        <fullName>ChatterAudit_aboutPage_Label88</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>aboutPage_Label88</shortDescription>
+        <value>Choose this option to purge Chatter Post/Comments</value>
+    </labels>
+    <labels>
+        <fullName>ChatterAudit_aboutPage_Label89</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>aboutPage_Label89</shortDescription>
+        <value>Choose this option to purge Chatter Private Messages</value>
+    </labels>
+    <labels>
+        <fullName>ChatterAudit_aboutPage_Label90</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>aboutPage_Label90</shortDescription>
+        <value>Display the type of the Chatter Post</value>
+    </labels>
+    <labels>
+        <fullName>ChatterAudit_aboutPage_Label91</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>aboutPage_Label91</shortDescription>
+        <value>Display the type of the Chatter Post</value>
+    </labels>
+    <labels>
+        <fullName>ChatterAudit_aboutPage_Label92</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>aboutPage_Label92</shortDescription>
+        <value>Displays the post date of creation</value>
+    </labels>
+    <labels>
+        <fullName>ChatterAudit_aboutPage_Label93</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>aboutPage_Label93</shortDescription>
+        <value>Indicates the date when the post was created</value>
+    </labels>
+    <labels>
+        <fullName>ChatterAudit_aboutPage_Label94</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>aboutPage_Label94</shortDescription>
+        <value>Displays the User who created the post</value>
+    </labels>
+    <labels>
+        <fullName>ChatterAudit_aboutPage_Label95</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>aboutPage_Label95</shortDescription>
+        <value>Indicates if the post has been flagged for retention</value>
+    </labels>
+    <labels>
+        <fullName>ChatterAudit_aboutPage_Label96</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>aboutPage_Label96</shortDescription>
+        <value>Date range to filter posts</value>
+    </labels>
+    <labels>
+        <fullName>ChatterAudit_aboutPage_Label97</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>aboutPage_Label97</shortDescription>
+        <value>Retention Bit Usage</value>
+    </labels>
+    <labels>
+        <fullName>ChatterAudit_aboutPage_Label98</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>aboutPage_Label98</shortDescription>
+        <value>You can select which elements you don&apos;t want to delete in the purge. Do this by clicking on any record&apos;s &apos;Retention&apos; cell, after making a choice, to save the change click on any other cell in the table (otherwise changes WONT be saved).</value>
+    </labels>
+    <labels>
+        <fullName>ChatterAudit_aboutPage_Label99</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>aboutPage_Label99</shortDescription>
+        <value>Welcome to Chatter Compliance V2!!!</value>
+    </labels>
+    <labels>
+        <fullName>ChatterAudit_conversationErrorA</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>conversationErrorA</shortDescription>
+        <value>A user conversation with him/herself cannot be displayed.</value>
+    </labels>
+    <labels>
+        <fullName>ChatterAudit_deleteBlock</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>ChatterAudit_deleteBlock</shortDescription>
+        <value>Cannot delete this document</value>
+    </labels>
+    <labels>
+        <fullName>ChatterAudit_errorMessage</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>errorMessage</shortDescription>
+        <value>Error:</value>
+    </labels>
+    <labels>
+        <fullName>ChatterAudit_importChatterDataBtn_alert</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>ChatterAudit_importChatterDataBtn_alert</shortDescription>
+        <value>The import of all Chatter data is taken care by a background process and you will receive an email when it is completed.</value>
+    </labels>
+    <labels>
+        <fullName>ChatterAudit_purge_retention_title</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>ChatterAudit_purge_retention_title</shortDescription>
+        <value>Retention Bit Usage</value>
+    </labels>
+    <labels>
+        <fullName>ChatterAudit_purge_retention_usage</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>ChatterAudit_purge_retention_usage</shortDescription>
+        <value>You can select which elements you don&apos;t want to delete in the purge. Do this by clicking on any record&apos;s &quot;Retention&quot; cell, after making a choice, to save the change click on any other cell in the table (otherwise changes WONT be saved).</value>
+    </labels>
+    <labels>
+        <fullName>ChatterAudit_searchExportedMaxNumber</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>searchExportedMaxNumber</shortDescription>
+        <value>&lt;br/&gt; Note that the exported file will contain at most 1500 records.</value>
+    </labels>
+    <labels>
+        <fullName>ChatterAudit_searchExportedText</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>searchExportedText</shortDescription>
+        <value>Your file export has successfully been submitted.&lt;br/&gt; You will be receiving an email with a link to download the file in the near future.&lt;br/&gt; (the time to create the file depends on the size of the file being created).&lt;br/&gt; Note that if the file&apos;s size exceeds 5mb, the file will not be generated and you will receive an email detailing this issue.</value>
+    </labels>
+    <labels>
+        <fullName>ChatterAudit_searchReachedMaxRecords</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>searchReachedMaxRecords</shortDescription>
+        <value>You have reached the maximum amount of records that can be displayed. &lt;br/&gt;In order to get more accurate results you can modify the filter options.&lt;br/&gt;Note that you can export at most MAXIMUM_POST_4_EXPORT records.</value>
+    </labels>
+    <labels>
+        <fullName>ChatterAudit_tBSearch</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>tBSearch</shortDescription>
+        <value>Search</value>
+    </labels>
+    <labels>
+        <fullName>c_arowner</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Archived Records Owner</shortDescription>
+        <value>Archived Records Owner</value>
+    </labels>
+    <labels>
+        <fullName>c_backgroundprocesses</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Background Processes</shortDescription>
+        <value>Background Processes</value>
+    </labels>
+    <labels>
+        <fullName>c_configuration</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Configuration</shortDescription>
+        <value>Configuration</value>
+    </labels>
+    <labels>
+        <fullName>c_cuf</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Change Update Frequency</shortDescription>
+        <value>Change Update Frequency</value>
+    </labels>
+    <labels>
+        <fullName>c_cvdb</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Content Version Delete Blocker</shortDescription>
+        <value>Content Version Delete Blocker</value>
+    </labels>
+    <labels>
+        <fullName>c_firststeps</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>First Steps</shortDescription>
+        <value>First Steps</value>
+    </labels>
+    <labels>
+        <fullName>c_inotes</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Installation Notes</shortDescription>
+        <value>To make this package fully compatible with complex orgs, test methods will not be executed during installation.</value>
+    </labels>
+    <labels>
+        <fullName>c_inotes_p1</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Installation Notes</shortDescription>
+        <value>For the private messages functionality to work correctly you should clone your System Administrator profile and set the Manage chatter Messages permission to true. Then install the application with a user attached to that profile.</value>
+    </labels>
+    <labels>
+        <fullName>c_inotes_p2</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Installation Notes</shortDescription>
+        <value>If during installation you find a failure related to &quot;CRM Content&quot; dependency, this can be fixed by enabling CRM Content feature in your organization.</value>
+    </labels>
+    <labels>
+        <fullName>c_installationNotes</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Installation Notes</shortDescription>
+        <value>Installation Notes</value>
+    </labels>
+    <labels>
+        <fullName>c_pcdl</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Previous chatter data loaded</shortDescription>
+        <value>Previous chatter data loaded</value>
+    </labels>
+    <labels>
+        <fullName>c_pm</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Private Messages</shortDescription>
+        <value>Private Messages</value>
+    </labels>
+    <labels>
+        <fullName>c_pmessages_p1</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Private Messages</shortDescription>
+        <value>Since private messages don&apos;t have a trigger, chatter compliance uses a batch process to archive those messages.</value>
+    </labels>
+    <labels>
+        <fullName>c_pmessages_p10</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Private Messages</shortDescription>
+        <value>First, if the field from point C has a value, this means that a batch is currently executing, so you must go to your organization &quot;Monitoring&quot; -­‐-­‐ &quot;Scheduled Jobs&quot; and stop the current scheduled job (this job will be called &quot;Chatter Compliance Private Messages Audit -­‐-­‐&quot; followed by a datetime ).</value>
+    </labels>
+    <labels>
+        <fullName>c_pmessages_p11</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Private Messages</shortDescription>
+        <value>If you don&apos;t find the scheduled, go to the next step.</value>
+    </labels>
+    <labels>
+        <fullName>c_pmessages_p12</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Private Messages</shortDescription>
+        <value>You can leave the field from point B empty. If you want to archive all private messages in the organization without any datetime restrictions leave it blank, otherwise select the date from when you want to start archiving private messages.</value>
+    </labels>
+    <labels>
+        <fullName>c_pmessages_p2</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Private Messages</shortDescription>
+        <value>By default, this batch will be set up the first time you open the chatter compliance search page.</value>
+    </labels>
+    <labels>
+        <fullName>c_pmessages_p3</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Private Messages</shortDescription>
+        <value>This batch will run at 0:00 and 12:00pm every day by default, follow the steps below to customize the batch frequency.</value>
+    </labels>
+    <labels>
+        <fullName>c_pmessages_p4</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Private Messages</shortDescription>
+        <value>Go to your custom settings and select &quot;Manage&quot; ChatterComplianceSettings.</value>
+    </labels>
+    <labels>
+        <fullName>c_pmessages_p5</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Private Messages</shortDescription>
+        <value>Edit ChatterCompliance default custom setting.</value>
+    </labels>
+    <labels>
+        <fullName>c_pmessages_p6</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Private Messages</shortDescription>
+        <value>A)   Update frequency in hours.</value>
+    </labels>
+    <labels>
+        <fullName>c_pmessages_p7</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Private Messages</shortDescription>
+        <value>B)   After each batch execution, chatter compliance will save the last execution datetime, this will be used for the next batch run to start archiving private messages from that date to current datetime.</value>
+    </labels>
+    <labels>
+        <fullName>c_pmessages_p8</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Private Messages</shortDescription>
+        <value>C)   This is a parameter for the application, it will always save the last batch execution Id, and if it’s the first time the batch is scheduled it will be automatically set to &quot;Pending&quot;.</value>
+    </labels>
+    <labels>
+        <fullName>c_pmessages_p9</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Private Messages</shortDescription>
+        <value>If you want to change the frequency, you must take into consideration a few steps:</value>
+    </labels>
+    <labels>
+        <fullName>c_privatemessages</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Private Messages</shortDescription>
+        <value>Private Messages</value>
+    </labels>
+    <labels>
+        <fullName>c_purge</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Purge</shortDescription>
+        <value>Purge</value>
+    </labels>
+    <labels>
+        <fullName>c_sbatch</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Start Batch</shortDescription>
+        <value>Start Batch</value>
+    </labels>
+    <labels>
+        <fullName>c_searchexport</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Search &amp; Export</shortDescription>
+        <value>Search &amp; Export</value>
+    </labels>
+    <labels>
+        <fullName>c_starthere</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Start Here</shortDescription>
+        <value>Start Here</value>
+    </labels>
+    <labels>
+        <fullName>c_text1</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>c_text1</shortDescription>
+        <value>The system will automatically assign a value to this field using the Id of the User that installed the application. This user must have a profile with the &quot;Manage chatter messages&quot; permission active, otherwise the application will fail.</value>
+    </labels>
+    <labels>
+        <fullName>c_text2</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>c_text2</shortDescription>
+        <value>After installation the system will schedule a batch process to get all posts / comments in Chatter. If you wish to run this batch again, just unmark the &quot;Previous chatter data loaded&quot; checkbox and the next time you open the search page the batch will run, when it is finished it will mark the checkbox again.</value>
+    </labels>
+    <labels>
+        <fullName>c_text3</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Protect files attached to a chatter conversation by setting this field ON</shortDescription>
+        <value>Protect files attached to a chatter conversation by setting this field ON</value>
+    </labels>
+    <labels>
+        <fullName>c_text4</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>c_text4</shortDescription>
+        <value>The Archived Private Messages Update Frequency will be set by default to 12 hours. This means that the batch process will run every 12 hours and backup every private message in the organization. On the first run it will backup every message up to the current date. The following executions will start from the date of the last execution and stop at the current date once again.</value>
+    </labels>
+    <labels>
+        <fullName>c_text5</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>c_text4</shortDescription>
+        <value>You can either change the frequency (by doing this the next batch execution will be scheduled with the new chosen frequency) or reset the last execution date if you wish to backup, once again, every private message in your organization.</value>
+    </labels>
+    <labels>
+        <fullName>customSOk</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>customSOk</shortDescription>
+        <value>The user that installed this package is attached to a profile that does not have &quot;Manage Chatter Messages&quot; permission enabled.  This permission is required for the batch job that copies Private Messages into the archive tables to work.  Please ensure that user is assigned to a custom profile with the &quot;Manage Chatter Messages&quot; permission enabled.</value>
+    </labels>
+    <labels>
+        <fullName>preloadingText</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>preloadingText</shortDescription>
+        <value>Chatter Compliance Preloading batch is running, you will receive an email when the batch execution is completed.</value>
+    </labels>
+</CustomLabels>

@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Individual Email Result</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Individual Email Results</value>
+    </caseValues>
+    <fields>
+        <label><!-- Campaign --></label>
+        <name>Campaign__c</name>
+        <relationshipLabel><!-- Individual Email Results --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Contact --></label>
+        <name>Contact__c</name>
+        <relationshipLabel><!-- Individual Email Results --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Date Bounced --></label>
+        <name>DateBounced__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date Opened --></label>
+        <name>DateOpened__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date Sent --></label>
+        <name>DateSent__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date Unsubscribed --></label>
+        <name>DateUnsubscribed__c</name>
+    </fields>
+    <fields>
+        <label><!-- Email Result Out of Sync --></label>
+        <name>EmailResultOutOfSync__c</name>
+    </fields>
+    <fields>
+        <label><!-- Email Result --></label>
+        <name>EmailResult__c</name>
+        <relationshipLabel><!-- Individual Email Results --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- From Address --></label>
+        <name>FromAddress__c</name>
+    </fields>
+    <fields>
+        <label><!-- From Name --></label>
+        <name>FromName__c</name>
+    </fields>
+    <fields>
+        <label><!-- Hard Bounce --></label>
+        <name>HardBounce__c</name>
+    </fields>
+    <fields>
+        <label><!-- Lead --></label>
+        <name>Lead__c</name>
+        <relationshipLabel><!-- Individual Email Results --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Merge Id --></label>
+        <name>MergeId__c</name>
+    </fields>
+    <fields>
+        <label><!-- Number of Total Clicks --></label>
+        <name>NumberOfTotalClicks__c</name>
+    </fields>
+    <fields>
+        <label><!-- Number of Unique Clicks --></label>
+        <name>NumberOfUniqueClicks__c</name>
+    </fields>
+    <fields>
+        <label><!-- Opened --></label>
+        <name>Opened__c</name>
+    </fields>
+    <fields>
+        <label><!-- Report --></label>
+        <name>Report__c</name>
+    </fields>
+    <fields>
+        <label><!-- Send Definition --></label>
+        <name>SendDefinition__c</name>
+        <relationshipLabel><!-- Individual Email Results --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Soft Bounce --></label>
+        <name>SoftBounce__c</name>
+    </fields>
+    <fields>
+        <label><!-- Subject Line --></label>
+        <name>SubjectLine__c</name>
+    </fields>
+    <layouts>
+        <layout>Individual Email Result Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Delivery Statistics --></label>
+            <section>Delivery Statistics</section>
+        </sections>
+    </layouts>
+    <startsWith>Vowel</startsWith>
+</CustomObjectTranslation>

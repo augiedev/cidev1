@@ -1,0 +1,12 @@
+<apex:page tabStyle="LL_LotusLiveTab__tab" controller="IBM.LL_ErrorController">
+<apex:sectionHeader title="LotusLive" subtitle="{!$Label.ibm__ll_error}"/>
+
+<apex:pageBlock >
+<h3>{!$Label.ll_error_title}</h3>
+<br></br><br></br>
+
+<apex:outputText value="{!msg}" escape="true" />
+
+</apex:pageBlock>
+
+</apex:page>

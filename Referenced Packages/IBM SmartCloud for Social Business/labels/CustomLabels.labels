@@ -1,0 +1,711 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
+    <labels>
+        <fullName>ll_access_files</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>access files</shortDescription>
+        <value>Access and share your LotusLive files</value>
+    </labels>
+    <labels>
+        <fullName>ll_action</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>actions</shortDescription>
+        <value>Action</value>
+    </labels>
+    <labels>
+        <fullName>ll_activities</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>activities</shortDescription>
+        <value>Activities</value>
+    </labels>
+    <labels>
+        <fullName>ll_activity</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>activity</shortDescription>
+        <value>Activity</value>
+    </labels>
+    <labels>
+        <fullName>ll_activity_goal</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>activity goal</shortDescription>
+        <value>Activity Goal</value>
+    </labels>
+    <labels>
+        <fullName>ll_activity_posted</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>activity posted</shortDescription>
+        <value>The activity was created</value>
+    </labels>
+    <labels>
+        <fullName>ll_authenticating</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>authenticating</shortDescription>
+        <value>Authenticating with LotusLive...</value>
+    </labels>
+    <labels>
+        <fullName>ll_author</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>author</shortDescription>
+        <value>Author</value>
+    </labels>
+    <labels>
+        <fullName>ll_best_regards</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>best regards</shortDescription>
+        <value>Best Regards,</value>
+    </labels>
+    <labels>
+        <fullName>ll_close</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>close</shortDescription>
+        <value>Cancel</value>
+    </labels>
+    <labels>
+        <fullName>ll_company</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>company</shortDescription>
+        <value>Comapany</value>
+    </labels>
+    <labels>
+        <fullName>ll_configure</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>configure</shortDescription>
+        <value>Configure LotusLive</value>
+    </labels>
+    <labels>
+        <fullName>ll_configuring</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>configuring</shortDescription>
+        <value>Configuring LotusLive</value>
+    </labels>
+    <labels>
+        <fullName>ll_create</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>create</shortDescription>
+        <value>Create</value>
+    </labels>
+    <labels>
+        <fullName>ll_create_activity</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>create activity</shortDescription>
+        <value>Create LotusLive Activity</value>
+    </labels>
+    <labels>
+        <fullName>ll_date_modified</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>date modified</shortDescription>
+        <value>Date Modified</value>
+    </labels>
+    <labels>
+        <fullName>ll_document</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>document</shortDescription>
+        <value>Document</value>
+    </labels>
+    <labels>
+        <fullName>ll_dont_have_account</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>dont have account</shortDescription>
+        <value>If you don&apos;t have a LotusLive meeting ID already, &lt;a href=&quot;https://apps.lotuslive.com/manage/account/public/trial/showCreateTrialAccount?trialType=engage&quot;&gt;sign up&lt;/a&gt; for a no-cost LotusLive Engage trial today. 
+Once you have a meeting ID, click on the &quot;Configure LotusLive&quot; link below and get started.</value>
+    </labels>
+    <labels>
+        <fullName>ll_download</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>download</shortDescription>
+        <value>Download</value>
+    </labels>
+    <labels>
+        <fullName>ll_duration</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>duration</shortDescription>
+        <value>Duration (min)</value>
+    </labels>
+    <labels>
+        <fullName>ll_edit</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>edit</shortDescription>
+        <value>Edit</value>
+    </labels>
+    <labels>
+        <fullName>ll_email</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>email</shortDescription>
+        <value>Email Address</value>
+    </labels>
+    <labels>
+        <fullName>ll_email_invitation_title</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>email invitation title</shortDescription>
+        <value>LotusLive Meeting Invitation</value>
+    </labels>
+    <labels>
+        <fullName>ll_error</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>error</shortDescription>
+        <value>Error</value>
+    </labels>
+    <labels>
+        <fullName>ll_error_title</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>error title</shortDescription>
+        <value>Problem encountered authenticating with the LotusLive server :</value>
+    </labels>
+    <labels>
+        <fullName>ll_file_shared</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>file shared</shortDescription>
+        <value>File was shared</value>
+    </labels>
+    <labels>
+        <fullName>ll_file_shared_more</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>file shared more</shortDescription>
+        <value>Selected contacts are being notified e-mail about your file sharing. You can share with more contacts now.</value>
+    </labels>
+    <labels>
+        <fullName>ll_files</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>files</shortDescription>
+        <value>Files</value>
+    </labels>
+    <labels>
+        <fullName>ll_fileshare_error</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>File share error</shortDescription>
+        <value>File share returned error message:</value>
+    </labels>
+    <labels>
+        <fullName>ll_fileshare_exception</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>file share exception</shortDescription>
+        <value>Problem encountered sharing your file.  Error message:</value>
+    </labels>
+    <labels>
+        <fullName>ll_four_ways</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>four ways</shortDescription>
+        <value>With LotusLive Engage for Salesforce CRM you can schedule and host meetings in four easy ways.</value>
+    </labels>
+    <labels>
+        <fullName>ll_get_started</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>get started</shortDescription>
+        <value>To get started</value>
+    </labels>
+    <labels>
+        <fullName>ll_getfiles_exception</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Get files exception</shortDescription>
+        <value>Problem was encountered getting your list of files.  Error message:</value>
+    </labels>
+    <labels>
+        <fullName>ll_help</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>help</shortDescription>
+        <value>Help</value>
+    </labels>
+    <labels>
+        <fullName>ll_home</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>home</shortDescription>
+        <value>Home</value>
+    </labels>
+    <labels>
+        <fullName>ll_host</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>host</shortDescription>
+        <value>Host</value>
+    </labels>
+    <labels>
+        <fullName>ll_host_meeting</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>host meeting</shortDescription>
+        <value>Host a LotusLive Meeting</value>
+    </labels>
+    <labels>
+        <fullName>ll_host_meeting_btn</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>host meeting btn</shortDescription>
+        <value>Host Meeting</value>
+    </labels>
+    <labels>
+        <fullName>ll_instant_meeting</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>instant meeting</shortDescription>
+        <value>Instant Meeting</value>
+    </labels>
+    <labels>
+        <fullName>ll_invitation_sent</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>invitation sent</shortDescription>
+        <value>The Invitation was sent.</value>
+    </labels>
+    <labels>
+        <fullName>ll_invite</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>invite</shortDescription>
+        <value>Invite</value>
+    </labels>
+    <labels>
+        <fullName>ll_invite_selected</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>invite selected</shortDescription>
+        <value>Invite Selected</value>
+    </labels>
+    <labels>
+        <fullName>ll_join</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>join</shortDescription>
+        <value>Join</value>
+    </labels>
+    <labels>
+        <fullName>ll_join_another</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>join another</shortDescription>
+        <value>Join Meeting ID:</value>
+    </labels>
+    <labels>
+        <fullName>ll_join_meeting</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>join meeting</shortDescription>
+        <value>Join a LotusLive Meeting</value>
+    </labels>
+    <labels>
+        <fullName>ll_join_time</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>join time</shortDescription>
+        <value>Join Time</value>
+    </labels>
+    <labels>
+        <fullName>ll_launch_later</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>launch later</shortDescription>
+        <value>or launch it later by going to LotusLive tab.</value>
+    </labels>
+    <labels>
+        <fullName>ll_let_us_know</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>let us know</shortDescription>
+        <value>Let us know what you think</value>
+    </labels>
+    <labels>
+        <fullName>ll_meeting</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Meeting</shortDescription>
+        <value>Meeting</value>
+    </labels>
+    <labels>
+        <fullName>ll_meeting_events</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Meeting Events</shortDescription>
+        <value>Upcoming Meeting Events</value>
+    </labels>
+    <labels>
+        <fullName>ll_meeting_invite</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>meeting invite</shortDescription>
+        <value>Meeting Invite</value>
+    </labels>
+    <labels>
+        <fullName>ll_meeting_name</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>meeting name</shortDescription>
+        <value>Meeting Name</value>
+    </labels>
+    <labels>
+        <fullName>ll_meeting_not_found</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>meeting not found</shortDescription>
+        <value>The meeting details were not found. Most likely this meeting was not attended by participants.</value>
+    </labels>
+    <labels>
+        <fullName>ll_meeting_report</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>meeting report</shortDescription>
+        <value>LotusLive Meeting Report</value>
+    </labels>
+    <labels>
+        <fullName>ll_meetings</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Meetings</shortDescription>
+        <value>LotusLive Meetings</value>
+    </labels>
+    <labels>
+        <fullName>ll_message</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>message</shortDescription>
+        <value>Message (optional)</value>
+    </labels>
+    <labels>
+        <fullName>ll_more_lotuslive</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>more lotuslive</shortDescription>
+        <value>More LotusLive</value>
+    </labels>
+    <labels>
+        <fullName>ll_name</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>name</shortDescription>
+        <value>Name</value>
+    </labels>
+    <labels>
+        <fullName>ll_need_meeting_od</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>need meeting od</shortDescription>
+        <value>you will need a LotusLive Engage meeting ID.</value>
+    </labels>
+    <labels>
+        <fullName>ll_new_activity</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>new activity</shortDescription>
+        <value>New Activity</value>
+    </labels>
+    <labels>
+        <fullName>ll_new_event</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>new event</shortDescription>
+        <value>New Meeting Event</value>
+    </labels>
+    <labels>
+        <fullName>ll_opportunity_related</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>opportunity related</shortDescription>
+        <value>Opportunity related Contacts</value>
+    </labels>
+    <labels>
+        <fullName>ll_participants</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>participants</shortDescription>
+        <value>Participants</value>
+    </labels>
+    <labels>
+        <fullName>ll_please_join</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>please join</shortDescription>
+        <value>Please join my LotusLive meeting at the following address</value>
+    </labels>
+    <labels>
+        <fullName>ll_post_new_activity</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>post new activity</shortDescription>
+        <value>You can now create more activities or close this window.</value>
+    </labels>
+    <labels>
+        <fullName>ll_presented_docs</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>presented files</shortDescription>
+        <value>Presented Documents</value>
+    </labels>
+    <labels>
+        <fullName>ll_read_only</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>read only</shortDescription>
+        <value>Allow Read Only Access</value>
+    </labels>
+    <labels>
+        <fullName>ll_recent_meetings</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>recent meetings</shortDescription>
+        <value>Recent Meetings</value>
+    </labels>
+    <labels>
+        <fullName>ll_search</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>search</shortDescription>
+        <value>Search</value>
+    </labels>
+    <labels>
+        <fullName>ll_search_results</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>search results</shortDescription>
+        <value>Search Results</value>
+    </labels>
+    <labels>
+        <fullName>ll_select_invitees</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>select invitees</shortDescription>
+        <value>Please select invitees to send an invite to</value>
+    </labels>
+    <labels>
+        <fullName>ll_select_sharees</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>select contacts to share</shortDescription>
+        <value>Please select at least one contact to share the file with</value>
+    </labels>
+    <labels>
+        <fullName>ll_send_additional</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>send additional</shortDescription>
+        <value>You can also send additional invites.</value>
+    </labels>
+    <labels>
+        <fullName>ll_send_link</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>send link</shortDescription>
+        <value>Send Link</value>
+    </labels>
+    <labels>
+        <fullName>ll_share</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>share</shortDescription>
+        <value>Share</value>
+    </labels>
+    <labels>
+        <fullName>ll_share_error_reason</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>share error reason</shortDescription>
+        <value>received error reason:</value>
+    </labels>
+    <labels>
+        <fullName>ll_share_file</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>share file</shortDescription>
+        <value>Share File</value>
+    </labels>
+    <labels>
+        <fullName>ll_share_with_selectexd</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>share with selected</shortDescription>
+        <value>Share with Selected</value>
+    </labels>
+    <labels>
+        <fullName>ll_show_full_report</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>show full report</shortDescription>
+        <value>Show Full Report</value>
+    </labels>
+    <labels>
+        <fullName>ll_size</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>size</shortDescription>
+        <value>Size</value>
+    </labels>
+    <labels>
+        <fullName>ll_start_meeting</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>start meeting</shortDescription>
+        <value>Start Meeting</value>
+    </labels>
+    <labels>
+        <fullName>ll_start_meeting_now</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>start meeting now</shortDescription>
+        <value>Start your meeting now</value>
+    </labels>
+    <labels>
+        <fullName>ll_start_time</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>start time</shortDescription>
+        <value>Start Time</value>
+    </labels>
+    <labels>
+        <fullName>ll_subject</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>subject</shortDescription>
+        <value>Subject</value>
+    </labels>
+    <labels>
+        <fullName>ll_time_started</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>time started</shortDescription>
+        <value>Time Started</value>
+    </labels>
+    <labels>
+        <fullName>ll_title</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>title</shortDescription>
+        <value>Title</value>
+    </labels>
+    <labels>
+        <fullName>ll_todo</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>todo</shortDescription>
+        <value>ToDo Activity</value>
+    </labels>
+    <labels>
+        <fullName>ll_todos</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>todos</shortDescription>
+        <value>Meeting Follow-up Activities</value>
+    </labels>
+    <labels>
+        <fullName>ll_type</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>type</shortDescription>
+        <value>Type</value>
+    </labels>
+    <labels>
+        <fullName>ll_user_config</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>user config</shortDescription>
+        <value>Refresh Config</value>
+    </labels>
+    <labels>
+        <fullName>ll_userid</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>userId</shortDescription>
+        <value>User id</value>
+    </labels>
+    <labels>
+        <fullName>ll_view_activities</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>ll_view_activities</shortDescription>
+        <value>View Recent LotusLive Activities</value>
+    </labels>
+    <labels>
+        <fullName>ll_way_four</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>way four</shortDescription>
+        <value>&quot;Opportunities Tab&quot; to invite opportunity-related contacts to a meeting using the invitation dialog or opportunity window.</value>
+    </labels>
+    <labels>
+        <fullName>ll_way_one</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>way one</shortDescription>
+        <value>&quot;Start Meeting&quot; to instantly launch your meeting and send invites.</value>
+    </labels>
+    <labels>
+        <fullName>ll_way_three</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>way three</shortDescription>
+        <value>&quot;New Meeting Event&quot; to schedule upcoming meetings and invite anyone in your Salesforce CRM users, leads or contacts database or associate the event with a specific Opportunity.</value>
+    </labels>
+    <labels>
+        <fullName>ll_way_two</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>way two</shortDescription>
+        <value>&quot;Send Link&quot; to invite anyone in your database to join a meeting.</value>
+    </labels>
+    <labels>
+        <fullName>ll_welcome_header</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>welcome header</shortDescription>
+        <value>Welcome to LotusLive Engage for Salesforce CRM. Now you can run more effective meetings, conduct demos or share your desktop right from your Salesforce CRM dashboard.</value>
+    </labels>
+    <labels>
+        <fullName>ll_welcome_title</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>welcome title</shortDescription>
+        <value>Welcome to IBM LotusLive</value>
+    </labels>
+    <labels>
+        <fullName>ll_within_users</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>within users</shortDescription>
+        <value>Within User, Leads and Contacts</value>
+    </labels>
+    <labels>
+        <fullName>ll_your_meeting</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>your meeting</shortDescription>
+        <value>ID:</value>
+    </labels>
+    <labels>
+        <fullName>ll_your_meeting_url</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>your meeting URL</shortDescription>
+        <value>Your meeting URL:</value>
+    </labels>
+</CustomLabels>

@@ -1,0 +1,60 @@
+<apex:page controller="ET4AE.SupportRequestControl" action="{!initialize}" showHeader="false" sidebar="false" tabStyle="ExactTarget__tab">
+	<apex:stylesheet value="{!$Resource.ET4AE__ExactTargetStyles}"/>
+	<apex:form id="supportRequestForm">
+		<script type="text/javascript">
+			function refreshParentDiv()
+			{
+				window.refreshDashboard();
+			}
+			function cancelButton()
+			{
+				window.close();
+			}
+		</script>
+		<apex:pageBlock id="supportRequestPage" title="Support Request">
+		
+			<!-- General Form Errors -->
+			<apex:pageBlockSection id="pageMessages" rendered="{!IF( hasErrors, true, false )}">
+				<apex:outputPanel styleClass="errors" layout="block">
+					<apex:pageBlockSectionItem >
+						<apex:pageMessages />
+					</apex:pageBlockSectionItem>
+				</apex:outputPanel>
+			</apex:pageBlockSection>
+		
+			<!-- Form Buttons -->
+				<apex:pageBlockButtons location="bottom" rendered="{!IF(onSuccess,false,true)}">
+					<apex:actionStatus id="submitStatus">
+						<apex:facet name="start">
+							<img class="spinnerSmall" src="{!URLFOR( $Resource.ET4AE__ExactTargetImages, 'loading.gif' )}"/>
+						</apex:facet>
+						<apex:facet name="stop">
+							<apex:commandButton action="{!save}" value="{!$Label.et4ae__General_Button_Submit}" rerender="supportRequestForm" status="submitStatus" oncomplete="refreshParentDiv();"/>
+						</apex:facet>
+					</apex:actionStatus>
+					<apex:commandButton value="{!$Label.et4ae__SendEmail_Button_Close}" onclick="return cancelButton();"/>
+				</apex:pageBlockButtons>
+				
+			<apex:pageBlockSection columns="1">
+				<apex:outputText rendered="{!IF(onSuccess,false,true)}" value="{!$Label.et4ae__AdminDashboard_Message_HelpRequestDescription}"/>
+				
+				<!-- Send Id -->
+				<apex:pageBlockSectionItem rendered="{!IF(onSuccess,false,true)}">
+					<apex:outputLabel for="sendId" value="{!$Label.et4ae__General_Field_SendId}"/>
+					<apex:outputText id="sendId" value="{!send.name}"/>
+				</apex:pageBlockSectionItem>
+				
+				<!-- Comments -->
+				<apex:pageBlockSectionItem rendered="{!IF(onSuccess,false,true)}">
+					<apex:outputLabel for="comments" value="{!$Label.et4ae__AdminDashboard_Field_Comments}"/>
+					<apex:inputField id="comments" value="{!send.ET4AE__SupportRequestComments__c}" style="width: 300px; height: 100px;"/>
+				</apex:pageBlockSectionItem>
+				
+				<apex:outputPanel id="supportRequestSubmitConfirmWrapper" rendered="{!IF(onSuccess,true,false)}">
+						<p>Your support ticket has been submitted.</p>
+						<p><apex:commandButton value="{!$Label.et4ae__SendEmail_Button_Close}" onclick="return cancelButton();"/></p>
+				</apex:outputPanel>
+			</apex:pageBlockSection>
+		</apex:pageBlock>
+	</apex:form>
+</apex:page>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Email Link</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Email Links</value>
+    </caseValues>
+    <fields>
+        <label><!-- Email Id --></label>
+        <name>EmailId__c</name>
+    </fields>
+    <fields>
+        <label><!-- Email Name --></label>
+        <name>EmailName__c</name>
+    </fields>
+    <fields>
+        <label><!-- Recipient Element Id --></label>
+        <name>RecipientElementId__c</name>
+    </fields>
+    <fields>
+        <label><!-- Recipient Element Name --></label>
+        <name>RecipientElementName__c</name>
+    </fields>
+    <startsWith>Vowel</startsWith>
+</CustomObjectTranslation>

@@ -1,0 +1,22 @@
+<apex:page tabStyle="LL_LotusLiveTab__tab" controller="IBM.LL_ActivityListController">
+    <apex:outputPanel rendered="{!need_auth}">
+        <script type="text/javascript">
+            window.name = window.location.href;
+            window.location.replace("LL_Auth");
+        </script>
+    </apex:outputPanel>
+    <apex:sectionHeader title="LotusLive" subtitle="{!$Label.ibm__ll_activities}" help="/apex/LL_Help?topic=activity"/>
+    <apex:pageBlock >
+        <apex:pageBlockTable value="{!entries}" var="entry">
+             
+            <apex:column width="150px">
+               <apex:facet name="header">{!$Label.ibm__ll_name}</apex:facet> 
+               <a href="{!entry.Link}" >{!entry.Title}</a>  
+             </apex:column>                          
+
+            <apex:column value="{!entry.Content}" headerValue="{!$Label.ibm__ll_activity_goal}"/>
+            <apex:column value="{!entry.UpdatedStr}" headerValue="{!$Label.ibm__ll_date_modified}" width="150px"/>                         
+            
+        </apex:pageBlockTable>
+    </apex:pageBlock>
+</apex:page>

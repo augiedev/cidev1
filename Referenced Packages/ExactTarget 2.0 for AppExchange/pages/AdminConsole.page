@@ -1,0 +1,334 @@
+<apex:page controller="ET4AE.AdminConsoleControl" action="{!initialize}" tabStyle="ExactTarget__tab">		
+	<apex:form id="adminConsoleForm">
+		<script type="text/javascript">
+			//var previousAggregateTrackingState = true;
+			var previousIndividualTrackingState = false;
+			var previousIndividualLinkState = false;
+			var previousSentEventsTracking = false;
+			/*function toggleAggregateLevelCheckBox(fldAggregate,fldIndividual) 
+			{
+				// Identify Aggregate Tracking checkbox.
+				var AggregateTrackingElement = document.getElementById( fldAggregate );
+				var IndividualTrackingElement = document.getElementById( fldIndividual );
+				//AggregateTrackingElement.checked = IndividualTrackingElement.checked || previousAggregateTrackingState;
+				IndividualTrackingElement.checked = AggregateTrackingElement.checked && previousIndividualTrackingState;
+				//AggregateTrackingElement.disabled = IndividualTrackingElement.checked;
+				IndividualTrackingElement.disabled = !AggregateTrackingElement.checked;
+			}
+				
+			function toggleAggregateLevelCheckBoxPreviousState(fldAggregate,fldIndividual)
+			{
+				previousAggregateTrackingState = (document.getElementById(fldAggregate).checked);
+				if (previousAggregateTrackingState == false)
+					document.getElementById(fldIndividual).checked = previousAggregateTrackingState;
+			}*/
+			
+			function toggleIndividualLevelCheckBox(fldAggregate,fldIndividual,fldIndividualLink,fldSentEvents)
+			{
+				var AggregateTrackingElement = document.getElementById( fldAggregate );
+				var IndividualLinkElement = document.getElementById( fldIndividualLink );
+				var IndividualTrackingElement = document.getElementById( fldIndividual );
+				var SentEventsElement = document.getElementById( fldSentEvents );
+				IndividualTrackingElement.checked = previousIndividualTrackingState && AggregateTrackingElement.checked;
+				IndividualTrackingElement.disabled = !AggregateTrackingElement.checked;
+				toggleIndividualLinkCheckBox(fldAggregate,fldIndividual,fldIndividualLink);
+				toggleSentEventsCheckBox(fldAggregate,fldIndividual,fldSentEvents);
+			}
+			
+			function toggleIndividualLevelCheckBoxPreviousState(fldAggregate,fldIndividual,fldIndividualLink,fldSentEvents)
+			{
+				previousIndividualTrackingState = (document.getElementById(fldIndividual).checked);
+				var AggregateTrackingElement = document.getElementById( fldAggregate );
+				if (previousIndividualTrackingState == false)
+				{
+					document.getElementById(fldIndividualLink).disabled = !(previousIndividualTrackingState && AggregateTrackingElement.checked);
+					document.getElementById(fldSentEvents).disabled = !(previousSentEventsTracking && AggregateTrackingElement.checked);
+				}	
+			}
+			
+			function toggleIndividualLinkCheckBox(fldAggregate,fldIndividual,fldIndividualLink)
+			{
+				var AggregateTrackingElement = document.getElementById( fldAggregate );
+				var IndividualLinkElement = document.getElementById( fldIndividualLink );
+				var IndividualTrackingElement = document.getElementById( fldIndividual );
+				IndividualLinkElement.checked = previousIndividualLinkState && AggregateTrackingElement.checked && IndividualTrackingElement.checked;
+				IndividualLinkElement.disabled = !(AggregateTrackingElement.checked && IndividualTrackingElement.checked)
+			}
+			
+			function toggleSentEventsCheckBox(fldAggregate,fldIndividual,fldSentEvents)
+			{
+				var AggregateTrackingElement = document.getElementById( fldAggregate );
+				var SentEventsElement = document.getElementById( fldSentEvents );
+				var IndividualTrackingElement = document.getElementById( fldIndividual );
+				SentEventsElement.checked = previousSentEventsTracking && AggregateTrackingElement.checked && IndividualTrackingElement.checked;
+				SentEventsElement.disabled = !(AggregateTrackingElement.checked && IndividualTrackingElement.checked)
+			}
+			
+			function toggleIndividualLinkCheckBoxPreviousState(fldAggregate,fldIndividual,fldIndividualLink)
+			{
+				previousIndividualLinkState = (document.getElementById(fldIndividualLink).checked);
+			}
+			
+			function toggleSentEventsCheckBoxPreviousState(fldAggregate,fldIndividual,fldSentEvents)
+			{
+				previousSentEventsTracking = (document.getElementById(fldSentEvents).checked);
+			}
+			
+			function launchPrompt()
+			{
+				/*hUsername = prompt('Please enter your ExactTarget Administrator Username:', '');
+				hPassword = prompt('Please enter your ExactTarget Administrator Password:', '');
+				if (hUsername == '' || hPassword == '')
+				{
+					alert('Invalid credentials provided. Please try again.');
+				}*/
+				var j$ = jQuery.noConflict();
+				j$(function()
+				{
+					j$('#usernamePwdPrompt').dialog(
+					{
+						resizeable: false,
+						height: 200,
+						width: 300,
+						modal: true
+					});
+				});
+			}
+			
+			function ResetAlerts()
+			{
+				jQuery( '[id$=lblMissingUsername]' ).hide();
+				jQuery( '[id$=lblMissingPassword]' ).hide();
+			}
+			
+			function ResetTestArea()
+			{
+				ResetAlerts();
+				jQuery( '[id$=txtUsername]' ).val('');
+				jQuery( '[id$=txtPassword]' ).val('');
+				var j$ = jQuery.noConflict();
+				j$(function()
+				{
+					j$('#usernamePwdPrompt').dialog(
+					{
+						resizeable: false,
+						height: 200,
+						width: 300,
+						modal: true,
+						autoopen: false
+					});
+				});
+				jQuery( '[id$=usernamePwdPrompt]' ).dialog('close');
+			}
+			
+			function ValidateEntries()
+			{
+				if (jQuery( '[id$=txtUsername]' ).val() == null || jQuery( '[id$=txtUsername]' ).val() == '')
+				{
+					jQuery( '[id$=lblMissingUsername]' ).show();
+					return false;
+				}
+				else
+				{
+					jQuery( '[id$=lblMissingUsername]' ).hide();
+				}
+				
+				if (jQuery( '[id$=txtPassword]' ).val() == null || jQuery( '[id$=txtPassword]' ).val() == '')
+				{
+					jQuery( '[id$=lblMissingPassword]' ).show();
+					return false;
+				}
+				else
+				{
+					jQuery( '[id$=lblMissingPassword]' ).hide();
+				}
+				
+				/*jQuery('[id$=hUsername]').val(jQuery( '[id$=txtUsername]' ).val());
+				jQuery('[id$=hPassword]').val(jQuery( '[id$=txtPassword]' ).val());
+				*/
+				
+				OnValidationSuccess(jQuery( '[id$=txtUsername]' ).val(),jQuery( '[id$=txtPassword]' ).val());
+				return true;
+			}
+		</script>
+		
+		<apex:pageBlock id="adminConsolePage" title="{!$Label.et4ae__AdminConsole_Tab}">
+		
+			<!-- General Form Errors -->
+			<apex:outputPanel layout="block" id="pageErrorMessagesWrapper">
+			<apex:pageBlockSection id="pageMessages" rendered="{!IF( hasErrors, true, false )}">
+				<apex:outputPanel styleClass="errors" layout="block">
+					<apex:pageBlockSectionItem >
+						<apex:pageMessages />
+					</apex:pageBlockSectionItem>
+				</apex:outputPanel>
+			</apex:pageBlockSection>
+			</apex:outputPanel>
+			
+			<apex:pageBlockSection title="Integration Admin" collapsible="false" columns="2">
+				
+				<!-- ExactTarget Stack -->
+				<apex:pageBlockSectionItem helpText="{!$Label.et4ae__AdminConsole_Help_ETStack}">
+					<apex:outputLabel for="exactTargetStack" value="{!$Label.et4ae__AdminConsole_Field_ETStack}"/>
+					<apex:inputField id="exactTargetStack" value="{!adminConsole.ET4AE__ExactTargetStack__c}"/>
+				</apex:pageBlockSectionItem>
+				
+				<!-- Support Ticket Recipient -->
+				<apex:pageBlockSectionItem helpText="{!$Label.et4ae__AdminConsole_Help_SupportTicketRecipient}">
+					<apex:outputLabel for="supportTicketRecipient" value="{!$Label.et4ae__AdminConsole_Field_SupportTicketRecipient}"/>
+					<apex:inputField id="supportTicketRecipient" value="{!adminConsole.ET4AE__SupportTicketRecipient__c}"/>
+				</apex:pageBlockSectionItem>
+			
+				<!-- ExactTarget Org Id -->
+				<apex:pageBlockSectionItem id="selectedEtOrgId" helpText="{!$Label.et4ae__AdminConsole_Help_ETOrgId}">
+					<apex:outputLabel for="exactTargetOrgId" value="{!$Label.et4ae__AdminConsole_Field_ETOrgId}"/>
+					<apex:inputField id="exactTargetOrgId" value="{!adminConsole.ET4AE__ExactTargetOrgId__c}"/>
+				</apex:pageBlockSectionItem>
+				
+				<!-- Sandbox Flag -->
+				<apex:pageBlockSectionItem helpText="{!$Label.et4ae__AdminConsole_Help_SandboxFlag}">
+					<apex:outputLabel for="sandboxFlag" value="{!$Label.et4ae__AdminConsole_Field_SandboxFlag}"/>
+					<apex:inputField id="sandboxFlag" value="{!adminConsole.ET4AE__IsSandbox__c}"/>
+				</apex:pageBlockSectionItem>
+			
+			<!-- Enable Public Reports Access Flag -->
+				<apex:pageBlockSectionItem helpText="{!$Label.et4ae__Admin_Console_Help_Personal_Reports_Flag}">
+					<apex:outputLabel for="enablePublicReportsFlag" value="{!$Label.et4ae__AdminConsole_Field_Enable_Personal_Reports_Flag}"/>
+					<apex:inputField id="enablePublicReportsFlag" value="{!adminConsole.ET4AE__Is_Personal_Report_Accessible__c}"/>
+				</apex:pageBlockSectionItem>
+			</apex:pageBlockSection>
+
+			<!-- Integrated Users -->
+			<apex:pageBlockSection id="integratedUsersSelector" title="Users" collapsible="false" columns="1">
+				<apex:pageBlockSectionItem helpText="{!$Label.et4ae__AdminConsole_Help_IntegrationUsers}">
+					<apex:outputLabel for="selectedUser" value="{!$Label.et4ae__AdminConsole_Field_IntegrationUsers}"/>
+					<apex:inputField id="selectedUser" value="{!adminConsole.ET4AE__IntegrationUserPassThrough__c}"/>
+				</apex:pageBlockSectionItem>
+				<apex:pageBlockSectionItem >
+					<apex:outputText id="numIntegratedUsers" value="{!selectedUserIdsCount} Users Enabled"/>
+					<apex:actionStatus id="integratedUsersStatus">
+						<apex:facet name="start">
+							<img class="spinnerSmall" src="{!URLFOR( $Resource.ET4AE__ExactTargetImages, 'loading.gif' )}"/>
+						</apex:facet>
+						<apex:facet name="stop">
+							<apex:commandButton action="{!addIntegratedUsers}" value="Add User" rerender="integratedUsersSelector" status="integratedUsersStatus"/>
+						</apex:facet>
+					</apex:actionStatus>
+				</apex:pageBlockSectionItem>
+			</apex:pageBlockSection>
+			
+			<apex:pageBlockSection title="Failure Handling" collapsible="false" columns="1">
+				<!-- Retry Rule -->
+				<apex:pageBlockSectionItem helpText="{!$Label.et4ae__AdminConsole_Help_RetryRule}">
+					<apex:outputLabel for="retryRule" value="{!$Label.et4ae__AdminConsole_Field_RetryRule}"/>
+					<apex:inputField id="retryRule" value="{!adminConsole.ET4AE__RetryRule__c}"/>
+				</apex:pageBlockSectionItem>
+		
+				<apex:pageBlockSectionItem helpText="{!$Label.et4ae__AdminConsole_Help_NumberOfRetries}">
+					<apex:outputLabel for="numberOfRetries" value="{!$Label.et4ae__AdminConsole_Field_NumberOfRetries}"/>
+					<apex:inputField id="numberOfRetries" value="{!adminConsole.ET4AE__NumberOfRetries__c}"/>
+				</apex:pageBlockSectionItem>
+			</apex:pageBlockSection>
+			
+			<apex:pageBlockSection id="trackingSection" title="Tracking" collapsible="false" columns="2">
+				<!-- Tracking Settings -->
+				<apex:pageBlockSectionItem helpText="{!$Label.et4ae__AdminConsole_Help_AggregateLevelTracking}" id="aggregateTrackingSection">
+					<apex:outputLabel for="trackingLevelAggregate" value="{!$Label.et4ae__AdminConsole_Field_AggregateLevelTracking}"/>
+					<apex:inputCheckbox id="trackingLevelAggregate" value="{!adminConsole.ET4AE__TrackingLevelAggregate__c}" onclick="javascript:toggleIndividualLevelCheckBox('{!$Component.trackingLevelAggregate}','{!$Component.adminConsoleForm.adminConsolePage.trackingSection.individualTrackingSection.trackingLevelIndividual}','{!$Component.adminConsoleForm.adminConsolePage.trackingSection.individualLinkTrackingSection.trackingLinkIndividual}','{!$Component.adminConsoleForm.adminConsolePage.trackingSection.sentEventsTrackingSection.sentEventsTracking}');"/>
+				</apex:pageBlockSectionItem>
+
+				<!-- Matched Records Tracking -->
+				<apex:pageBlockSectionItem helpText="{!$Label.et4ae__AdminConsole_Help_WriteToAnyAllMatchingRecords}">
+					<apex:outputLabel for="matchedRecordsTracking" value="{!$Label.et4ae__AdminConsole_Field_WriteToAnyAllMatchingRecords}"/>
+					<apex:inputField value="{!adminConsole.ET4AE__MatchedRecordTracking__c}"/>
+				</apex:pageBlockSectionItem>
+	
+				<apex:pageBlockSectionItem helpText="{!$Label.et4ae__AdminConsole_Help_IndividualLevelTracking}" id="individualTrackingSection">
+					<apex:outputLabel for="trackingLevelIndividual" value="{!$Label.et4ae__AdminConsole_Field_IndividualLevelTracking}"/>
+					<apex:inputCheckbox id="trackingLevelIndividual" value="{!adminConsole.ET4AE__TrackingLevelIndividual__c}" disabled="{!NOT(adminConsole.ET4AE__TrackingLevelAggregate__c)}" onclick="javascript:toggleIndividualLinkCheckBox('{!$Component.adminConsoleForm.adminConsolePage.trackingSection.aggregateTrackingSection.trackingLevelAggregate}','{!$Component.trackingLevelIndividual}','{!$Component.adminConsoleForm.adminConsolePage.trackingSection.individualLinkTrackingSection.trackingLinkIndividual}');toggleIndividualLevelCheckBoxPreviousState('{!$Component.adminConsoleForm.adminConsolePage.trackingSection.aggregateTrackingSection.trackingLevelAggregate}','{!$Component.trackingLevelIndividual}','{!$Component.adminConsoleForm.adminConsolePage.trackingSection.individualLinkTrackingSection.trackingLinkIndividual}','{!$Component.adminConsoleForm.adminConsolePage.trackingSection.sentEventsTrackingSection.sentEventsTracking}');toggleSentEventsCheckBox('{!$Component.adminConsoleForm.adminConsolePage.trackingSection.aggregateTrackingSection.trackingLevelAggregate}','{!$Component.trackingLevelIndividual}','{!$Component.adminConsoleForm.adminConsolePage.trackingSection.sentEventsTrackingSection.sentEventsTracking}')">
+					</apex:inputCheckbox>
+				</apex:pageBlockSectionItem>
+				
+				<!-- Tracking Expiration -->
+				<apex:pageBlockSectionItem helpText="{!$Label.et4ae__AdminConsole_Help_TrackingExpirationDays}">
+					<apex:outputLabel for="trackingExpirationDays" value="{!$Label.et4ae__AdminConsole_Field_TrackingExpirationDays}"/>
+					<apex:inputField id="trackingExpirationDays" value="{!adminConsole.ET4AE__TrackingExpirationDays__c}"/>
+				</apex:pageBlockSectionItem>
+				
+				<apex:pageBlockSectionItem helpText="{!$Label.et4ae__AdminConsole_Help_IndividualLinkTracking}" id="individualLinkTrackingSection" rendered="{!mtAdminConsole.ET4AE__Is_ChainBuilder_Enabled__c}">
+					<apex:outputLabel for="trackingLinkIndividual" value="{!$Label.et4ae__AdminConsole_Field_IndividualLinkTracking}"/>
+					<apex:inputCheckbox id="trackingLinkIndividual" value="{!adminConsole.ET4AE__Individual_Link_Tracking__c}" disabled="{!NOT(adminConsole.ET4AE__TrackingLevelIndividual__c)}" onclick="javascript:toggleIndividualLinkCheckBoxPreviousState('{!$Component.adminConsoleForm.adminConsolePage.trackingSection.aggregateTrackingSection.trackingLevelAggregate}','{!$Component.adminConsoleForm.adminConsolePage.trackingSection.individualTrackingSection.trackingLevelIndividual}','{!$Component.trackingLinkIndividual}');">
+					</apex:inputCheckbox>
+				</apex:pageBlockSectionItem>
+				
+				<apex:pageBlockSectionItem helpText="{!$Label.et4ae__AdminConsole_Help_SentEventsTracking}" id="sentEventsTrackingSection" rendered="{!mtAdminConsole.ET4AE__Is_ChainBuilder_Enabled__c}">
+					<apex:outputLabel for="sentEventsTracking" value="{!$Label.et4ae__AdminConsole_Field_SentEventsTracking}"/>
+					<apex:inputCheckbox id="sentEventsTracking" value="{!adminConsole.ET4AE__Sent_Events_Tracking__c}" disabled="{!NOT(adminConsole.ET4AE__TrackingLevelIndividual__c)}" onclick="javascript:toggleSentEventsCheckBoxPreviousState('{!$Component.adminConsoleForm.adminConsolePage.trackingSection.aggregateTrackingSection.trackingLevelAggregate}','{!$Component.adminConsoleForm.adminConsolePage.trackingSection.individualTrackingSection.trackingLevelIndividual}','{!$Component.sentEventsTracking}');">
+					</apex:inputCheckbox>
+				</apex:pageBlockSectionItem>
+				
+			</apex:pageBlockSection>
+			
+			<apex:pageBlockSection >
+				<input type="button" class="button" value="Test" onclick="launchPrompt();" />
+					<!-- <apex:param assignTo="{!tempETUsername}" id="hUsername" value="" />
+					<apex:param assignTo="{!tempETPassword}" id="hPassword" value="" /> -->
+			</apex:pageBlockSection>
+			
+			<!-- Form Buttons -->
+				<apex:pageBlockSection columns="1">
+				<!-- <apex:pageBlockButtons location="bottom" id="submitBtn"> -->
+					<!-- <apex:pageBlockSectionItem > -->
+					<apex:outputpanel id="submitbtnWrapper">
+					<apex:actionStatus id="submitStatus">
+						<apex:facet name="start">
+							<img class="spinnerSmall" src="{!URLFOR( $Resource.ET4AE__ExactTargetImages, 'loading.gif' )}" style="margin-left: 40%"/>
+						</apex:facet>
+						<apex:facet name="stop">
+							<apex:commandButton action="{!save}" value="{!$Label.et4ae__General_Button_Submit}" disabled="{!IF( isTestSuccess, false, true )}" rerender="adminConsoleForm" status="submitStatus" id="saveAdminConsole" style="margin-left: 40%" />
+						</apex:facet>
+					</apex:actionStatus>
+					</apex:outputpanel>
+				<!-- </apex:pageBlockButtons> -->
+				<!-- </apex:pageBlockSectionItem> -->
+				</apex:pageBlockSection>
+			
+		</apex:pageBlock>
+		
+		<div id="usernamePwdPrompt" style="display:none">
+			<div>
+			<apex:outputLabel for="tempETUsername" value="Please enter an ExactTarget Admin Username: "/>
+			<apex:inputText id="txtUsername" onclick="ResetAlerts();"/>
+			<label style="display:none;color: Red" id="lblMissingUsername">Please enter a Username</label>
+			</div>
+			<br />
+			<div>
+			<apex:outputLabel for="tempETPassword" value="Please enter an ExactTarget Admin Password: "/>
+			<apex:inputSecret id="txtPassword" onclick="ResetAlerts();" />
+			<label style="display:none;color: Red" id="lblMissingPassword">Please enter a Password</label>
+			</div>
+
+			<apex:actionStatus id="testStatus">
+				<apex:facet name="start">
+					<img class="spinnerSmall" src="{!URLFOR( $Resource.ET4AE__ExactTargetImages, 'loading.gif' )}"/>
+				</apex:facet>
+				<apex:facet name="stop">
+					<input type="button" value="Submit" class="button" onclick="return ValidateEntries();" />
+				</apex:facet>
+			</apex:actionStatus>
+						
+		</div>
+		<apex:includeScript value="{!URLFOR($Resource.ET4AE__jQueryUI, 'jquery-ui-1.9.2.custom/js/jquery-1.8.3.js')}"/>   
+    	<apex:includeScript value="{!URLFOR($Resource.ET4AE__jQueryUI, 'jquery-ui-1.9.2.custom/js/jquery-ui-1.9.2.custom.min.js')}"/> 
+    	<apex:stylesheet value="{!URLFOR($Resource.ET4AE__jQueryUI, 'jquery-ui-1.9.2.custom/css/smoothness/jquery-ui-1.9.2.custom.min.css')}"/> 
+
+		<script type="text/javascript">
+			
+		</script>
+		
+		<apex:actionFunction action="{!testIntegration}" name="OnValidationSuccess" rerender="pageErrorMessagesWrapper,submitbtnWrapper" onComplete="ResetTestArea();" status="testStatus">
+				<apex:param assignTo="{!tempETUsername}" name="hUsername" value="" />
+				<apex:param assignTo="{!tempETPassword}" name="hPassword" value="" />
+		</apex:actionFunction>
+	</apex:form>
+</apex:page>

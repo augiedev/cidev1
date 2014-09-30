@@ -1,0 +1,29 @@
+<apex:page tabStyle="LL_LotusLiveTab__tab" standardController="Opportunity" extensions="IBM.LL_FilesController">
+    <apex:outputPanel rendered="{!need_auth}">
+        <script type="text/javascript">
+            window.name = window.location.href;
+            window.location.replace("LL_Auth");
+        </script>
+    </apex:outputPanel>
+    <apex:sectionHeader title="LotusLive" subtitle="{!$Label.ibm__ll_files}" help="/apex/LL_Help?topic=files"/>
+    <apex:pageBlock >
+        <apex:pageBlockTable value="{!entries}" var="entry">
+             
+            <apex:column >
+               <apex:facet name="header">{!$Label.ibm__ll_name}</apex:facet> 
+               <a href="{!entry.Link}" >{!entry.Title}</a>  
+             </apex:column>                          
+
+            <apex:column value="{!entry.UpdatedStr}" headerValue="{!$Label.ibm__ll_date_modified}"/>    
+            <apex:column value="{!entry.FileSize} KB" headerValue="{!$Label.ibm__ll_size}"/>                     
+            <apex:column value="{!entry.Author}" headerValue="{!$Label.ibm__ll_author}"/>    
+            
+            <apex:column >
+               <apex:facet name="header">{!$Label.ibm__ll_action}</apex:facet> 
+               <a href="{!entry.Download}" >{!$Label.ll_download}</a> | 
+               <a href="#" onclick="openIntegration('/apex/ll_fileshare?fid={!entry.Id}&fn={!entry.Title}&oid={!optId}', 'height=500,width=500,location=no,resizable=yes,toolbar=no,status=no,menubar=no,scrollbars=1', 1)">{!$Label.ll_share}</a>
+             </apex:column>                                
+            
+        </apex:pageBlockTable>
+    </apex:pageBlock>
+</apex:page>

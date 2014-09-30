@@ -1,0 +1,17 @@
+<apex:component controller="IBM.LL_MeetingReportController">
+
+    <apex:pageBlock title="{!$Label.ibm__ll_recent_meetings}">
+       
+        <apex:pageBlockTable value="{!MeetingReportList}" var="mr">
+            <apex:column >
+               <apex:facet name="header">{!$Label.ibm__ll_meeting_name}</apex:facet> 
+               <a href="/{!mr.ID}">{!mr.Name}</a>
+             </apex:column>         
+            <apex:column value="{!mr.CreatedDate}" headerValue="{!$Label.ibm__ll_time_started}"/>           
+            <apex:column value="{!mr.IBM__Host__c}" headerValue="{!$Label.ibm__ll_host}"/>           
+        </apex:pageBlockTable>
+        <div style="margin-top:7px"><a href="{!meetingReportUrl}">{!$Label.ibm__ll_show_full_report}</a></div>
+        
+    </apex:pageBlock>
+
+</apex:component>

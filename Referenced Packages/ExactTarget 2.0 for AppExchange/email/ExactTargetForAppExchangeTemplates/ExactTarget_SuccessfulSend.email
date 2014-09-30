@@ -1,0 +1,12 @@
+Dear {!SendDefinition__c.OwnerFirstName},
+
+The following send, initiated on {!SendDefinition__c.CreatedDate},  was completed successfully
+
+Subject - {!SendDefinition__c.Subject__c}
+Email - {!SendDefinition__c.EmailName__c}
+Target Lead - {!SendDefinition__c.Lead__c}
+Target Contact- {!SendDefinition__c.Contact__c}
+Target Campaign- {!SendDefinition__c.Campaign__c}
+
+Regards,
+ - ExactTarget for Appexchange notifier

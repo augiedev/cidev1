@@ -1,0 +1,32 @@
+<apex:page controller="ET4AE.ExactTargetMainControl" tabStyle="ExactTarget__tab" action="{!init}">
+	
+	<!-- CSS -->
+	<apex:stylesheet value="{!$Resource.ET4AE__ExactTargetStyles}"/>
+
+	<apex:pageBlock title="{!$Label.et4ae__General_Label_ET4AE}">
+		<a href="{!etURL}" target="_blank">{!$Label.et4ae__General_URL_GoToETText}</a>
+		<apex:tabPanel switchType="client" id="mainTabs" value="{!defaultTab}">
+			<apex:tab label="{!$Label.et4ae__SendEmail_Tab}" name="sendEmail" id="sendEmailTab" rendered="{!IF( isAdminConsolePresent, true, false )}">
+				<apex:include pageName="ET4AE__SendEmail"/>
+			</apex:tab>
+			<apex:tab label="{!$Label.et4ae__AdminDashboard_Tab}" name="dashboard" id="dashboardTab" rendered="{!IF( isAdminConsolePresent, true, false )}">
+				<apex:include pageName="ET4AE__Dashboard"/>
+			</apex:tab>
+			<apex:tab label="{!$Label.et4ae__AdminConsole_Tab}" name="adminConsole" id="adminConsoleTab" rendered="{!IF( $User.ExactTargetForAppExchangeAdmin__c = true, true, false )}">
+				<apex:include pageName="ET4AE__AdminConsole"/>
+			</apex:tab>
+			<apex:tab label="{!$Label.et4ae__BUConsole_Tab}" name="buConsole" id="buConsoleTab" rendered="{!IF( AND( isAdminConsolePresent, $User.ExactTargetForAppExchangeAdmin__c = true ), true, false )}">
+				<apex:include pageName="ET4AE__BusinessUnitsConsole"/>
+			</apex:tab>
+			<apex:tab label="{!$Label.et4ae__EmailConsole_Tab}" name="emailConsole" id="emailConsoleTab" rendered="{!IF( AND( isAdminConsolePresent, $User.ExactTargetForAppExchangeAdmin__c = true ), true, false )}">
+				<apex:include pageName="ET4AE__EmailConsole"/>
+			</apex:tab>
+			<!-- 
+			<apex:tab label="Users Console" name="usersConsole" id="usersConsoleTab" rendered="{!IF( AND( isAdminConsolePresent, $User.ExactTargetForAppExchangeAdmin__c = true ), true, false )}">
+				<apex:include pageName="UsersConsole"/>
+			</apex:tab>
+			-->
+		</apex:tabPanel>
+	</apex:pageBlock>
+	
+</apex:page>

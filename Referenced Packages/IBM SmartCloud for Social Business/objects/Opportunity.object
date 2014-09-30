@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <webLinks>
+        <fullName>LL_OptyMeetingInviteBtn</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Invite to LotusLive Meeting</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>openIntegration(&apos;/apex/ll_meetinginvite?oid={!Opportunity.Id}&amp;on={!URLENCODE(Opportunity.Name)}&apos;, &apos;height=500,width=500,location=no,resizable=yes,toolbar=no,status=no,menubar=no,scrollbars=1&apos;, 1)</url>
+    </webLinks>
+    <webLinks>
+        <fullName>LL_OptyStartMeetingBtn</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Start LotusLive Meeting</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>{!REQUIRESCRIPT(&quot;/soap/ajax/22.0/connection.js&quot;)} 
+{!REQUIRESCRIPT(&quot;/resource/1263504594000/IBM__ll_utils&quot;)} 
+
+startMeeting(&quot;{!JSENCODE(Opportunity.Id)}&quot;, &quot;{!JSENCODE(Opportunity.Name)} {!JSENCODE($Label.ibm__ll_meeting)}&quot;, &quot;{!JSENCODE($User.Id)}&quot;, &quot;{!JSENCODE($User.FirstName)} {!JSENCODE($User.LastName)}&quot;, &quot;{!JSENCODE($Setup.LL_Config__c.ServerUrl__c)}&quot;);</url>
+    </webLinks>
+    <webLinks>
+        <fullName>ll_activity</fullName>
+        <availability>online</availability>
+        <displayType>link</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Create LotusLive Activity</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>openIntegration(&apos;/apex/ll_activity?oid={!Opportunity.Id}&apos;, &apos;height=400,width=500,location=no,resizable=yes,toolbar=no,status=no,menubar=no,scrollbars=1&apos;, 1)</url>
+    </webLinks>
+    <webLinks>
+        <fullName>ll_files</fullName>
+        <availability>online</availability>
+        <displayType>link</displayType>
+        <height>600</height>
+        <linkType>page</linkType>
+        <masterLabel>Share LotusLive Files</masterLabel>
+        <openType>sidebar</openType>
+        <page>LL_CMIS_ListFiles</page>
+        <protected>false</protected>
+    </webLinks>
+</CustomObject>

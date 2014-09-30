@@ -1,0 +1,8 @@
+<apex:page tabStyle="ExactTarget__tab">
+	<apex:pageBlock id="adminConsoleConfirmationWrapper" title="{!$Label.et4ae__AdminConsole_Message_PageLabel}">
+		<apex:pageBlockSection >
+			<p>{!$Label.et4ae__AdminConsole_Message_Confirmation}</p>
+			<p><a href="{!$Page.ET4AE__ExactTargetSwitchboard}">{!$Label.et4ae__AdminConsole_Message_ConfirmationLink}</a></p>
+		</apex:pageBlockSection>
+	</apex:pageBlock>
+</apex:page>

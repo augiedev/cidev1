@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Email address cnt.person</value>
+        </caseValues>
+        <name>email_contact</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Mailing State/County/Province</value>
+        </caseValues>
+        <name>mailing_state_contact</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Visit Address</value>
+        </caseValues>
+        <name>other_address_contact</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Visit City</value>
+        </caseValues>
+        <name>other_city_contact</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Visit Country</value>
+        </caseValues>
+        <name>other_country_contact</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Visit Phone</value>
+        </caseValues>
+        <name>other_phone_contact</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Visit State/County/Province</value>
+        </caseValues>
+        <name>other_state_contact</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Visit Street</value>
+        </caseValues>
+        <name>other_street_contact</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Visit Zip/Postal Code</value>
+        </caseValues>
+        <name>other_zip_contact</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <layouts>
+        <layout>Contact Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <webLinks>
+        <label><!-- SendExactTargetEmail --></label>
+        <name>SendExactTargetEmail</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- ViewEmailTracking --></label>
+        <name>ViewEmailTracking</name>
+    </webLinks>
+</CustomObjectTranslation>

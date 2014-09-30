@@ -1,0 +1,21 @@
+<apex:component controller="IBM.LL_MeetingEventsController">
+    <apex:form >
+      	<apex:pageBlock title="{!$Label.ibm__ll_meeting_events}">
+        	<apex:pageBlockButtons location="top">  
+            	<apex:commandButton action="{!URLFOR($Action.Activity.NewEvent, null, null, true)}&evt6={!inviteText}" value="{!$Label.ibm__ll_new_event}"/>
+        		</apex:pageBlockButtons>        
+        		<apex:pageBlockTable value="{!llEvents}" var="llEvent">             
+           		<apex:column >
+               	<apex:facet name="header">{!$Label.ibm__ll_subject}</apex:facet> 
+               		<a href="/{!llEvent.Id}?retURL={!$CurrentPage.URL}">{!llEvent.Subject}</a>
+           		</apex:column>             
+           		<apex:column value="{!llEvent.StartDateTime}" headerValue="{!$Label.ibm__ll_start_time}"/>            
+           		<apex:column >
+               		<apex:facet name="header">{!$Label.ibm__ll_action}</apex:facet> 
+               		<a href="#" onclick="startMeeting('{!JSENCODE(llEvent.WhatId)}', '{!JSENCODE(llEvent.Subject)} {!JSENCODE($Label.ibm__ll_meeting)}', '{!JSENCODE($User.Id)}', '{!JSENCODE($User.FirstName)} {!JSENCODE($User.LastName)}', '{!JSENCODE($Setup.LL_Config__c.ServerUrl__c)}', '{!JSENCODE($Api.Session_ID)}')">{!$Label.ibm__ll_start_meeting}</a> | 
+               		<a href="/{!llEvent.Id}/e?retURL={!$CurrentPage.URL}">{!$Label.ibm__ll_edit}</a>
+           		</apex:column>                        
+        	</apex:pageBlockTable>
+      	</apex:pageBlock>
+    </apex:form>
+</apex:component>

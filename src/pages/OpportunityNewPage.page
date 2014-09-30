@@ -1,0 +1,20 @@
+<apex:page standardController="Opportunity" extensions="OpportunityNewPageExtension" action="{!redirect}">
+
+<apex:detail subject="{!Opportunity.AccountId}" />
+
+<c:Modal_Component title="ERROR - Cannot Create Opportunity" showPopup="{!showPopup}">
+	<apex:componentBody >
+		<apex:outputText value="{!textMessage1}" /><br/>
+		
+		<apex:repeat value="{!fieldsNotFilledIn}" var="a">
+			<apex:outputText value="{!a}" /><br/>
+		</apex:repeat>
+		
+		<p><apex:outputText value="{!textMessage2}" /></p>
+		<div align="right">
+			<apex:commandButton value="        OK        " action="{!okButtonLink}"/>
+		</div>
+	</apex:componentBody>
+</c:Modal_Component>
+
+</apex:page>

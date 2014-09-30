@@ -1,0 +1,57 @@
+<apex:page standardController="IBM__LL_MeetingReport__c" extensions="IBM.LL_MeetingReportController" tabStyle="LL_LotusLiveTab__tab">
+<apex:outputPanel rendered="{!need_auth}">
+    <script type="text/javascript">
+        window.name = window.location.href;
+        window.location.replace("LL_Auth");
+    </script>
+</apex:outputPanel>
+<apex:sectionHeader title="{!$Label.ibm__ll_meeting_report}" subtitle="{!MeetingReport.Name}"/>
+
+<style>
+.MsgPanel {border: 1px solid #F77F00; width:530px; padding:10px; margin:auto; margin-bottom:10px}
+</style>
+<apex:outputPanel rendered="{!notfound}" layout="block" styleClass="MsgPanel">
+    <center>{!$Label.ibm__ll_meeting_not_found}</center>
+</apex:outputPanel>
+
+<apex:pageBlock title="{!$Label.ibm__ll_participants}">
+    <apex:pageBlockTable value="{!Participants}" var="Participant">
+         
+        <apex:column value="{!Participant.Name}" headerValue="{!$Label.ibm__ll_name}"/>  
+        <apex:column value="{!Participant.Company}" headerValue="{!$Label.ibm__ll_company}"/>    
+        <apex:column value="{!Participant.JoinTime}" headerValue="{!$Label.ibm__ll_join_time}"/>
+        <apex:column value="{!Participant.Duration}" headerValue="{!$Label.ibm__ll_duration}"/>
+        
+    </apex:pageBlockTable>
+</apex:pageBlock>
+
+<apex:pageBlock title="{!$Label.ibm__ll_presented_docs}">
+    <apex:pageBlockTable value="{!Files}" var="File">
+         
+       <apex:column >
+          <apex:facet name="header">{!$Label.ibm__ll_document}</apex:facet> 
+          <apex:variable value="" var="xFile"
+            rendered="{!IF(File.Link == null, false, true)}">
+            <a href="{!File.Link}">{!File.Title}</a>&nbsp;&nbsp;&nbsp;[<a href="{!File.Download}">{!$Label.ll_download}</a> ]
+         </apex:variable>
+         <apex:variable value="" var="xFile"
+            rendered="{!IF(File.Link == null, true, false)}">
+            <span>{!File.Title}</span>
+         </apex:variable>
+      </apex:column>
+        
+    </apex:pageBlockTable>  
+</apex:pageBlock>
+
+<apex:pageBlock title="{!$Label.ibm__ll_todos}">
+    <apex:pageBlockTable value="{!Activities}" var="Activity">
+         
+       <apex:column >
+          <apex:facet name="header">{!$Label.ibm__ll_todo}</apex:facet> 
+          <a href="{!Activity.Link}">{!Activity.Title}</a>  
+        </apex:column>
+        
+    </apex:pageBlockTable>  
+</apex:pageBlock>
+
+</apex:page>

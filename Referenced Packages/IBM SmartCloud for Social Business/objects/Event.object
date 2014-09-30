@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <webLinks>
+        <fullName>LL_EvntStartMeetingBtn</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Start LotusLive Meeting</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>{!REQUIRESCRIPT(&quot;/soap/ajax/22.0/connection.js&quot;)} 
+		{!REQUIRESCRIPT(&quot;/resource/1263504594000/IBM__ll_utils&quot;)} 
+		startMeeting(&quot;{!JSENCODE(Event.What)}&quot;, &quot;{!JSENCODE(Event.Subject)} {!JSENCODE($Label.ibm__ll_meeting)}&quot;, &quot;{!JSENCODE($User.Id)}&quot;, &quot;{!JSENCODE($User.FirstName)} {!JSENCODE($User.LastName)}&quot;, &quot;{!JSENCODE($Setup.LL_Config__c.ServerUrl__c)}&quot;);</url>
+    </webLinks>
+</CustomObject>

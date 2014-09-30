@@ -1,0 +1,69 @@
+<apex:page controller="ET4AE.EmailConsoleControl" tabStyle="ExactTarget__tab" action="{!initialize}">
+	<apex:form id="emailLinkForm">
+		<apex:pageBlock id="emailLinkPage" title="{!$Label.et4ae__EmailConsole_Tab}">
+		
+			<!-- General Form Errors -->
+			<apex:pageBlockSection id="pageMessages" rendered="{!IF( hasErrors, true, false )}">
+				<apex:outputPanel styleClass="errors" layout="block">
+					<apex:pageBlockSectionItem >
+						<apex:pageMessages />
+					</apex:pageBlockSectionItem>
+				</apex:outputPanel>
+			</apex:pageBlockSection>
+
+			<!-- Email Audience Preferences -->
+			<apex:pageBlockSection id="audiencePreferences" title="{!$Label.et4ae__EmailConsole_Tab_AudiencePreferences}" columns="1" collapsible="false">
+				<apex:pageBlockSectionItem helpText="{!$Label.et4ae__EmailConsole_Help_StandardAudience}">
+					<apex:outputLabel value="{!$Label.et4ae__EmailConsole_Field_StandardAudience}"/>
+					<apex:inputField value="{!adminConsole.ET4AE__StandardAudience__c}" style="width:auto;padding-right:5px;"/>
+				</apex:pageBlockSectionItem>
+				<apex:pageBlockSectionItem helpText="{!$Label.et4ae__EmailConsole_Help_PortalAudience}">
+					<apex:outputLabel value="{!$Label.et4ae__EmailConsole_Field_PortalAudience}"/>
+					<apex:inputField value="{!adminConsole.ET4AE__PortalAudience__c}" style="width:auto;padding-right:5px;"/>
+				</apex:pageBlockSectionItem>
+				<apex:pageBlockSectionItem >
+					<apex:outputText value=" "/>
+					<apex:actionStatus id="saveAudienceStatus">
+						<apex:facet name="start">
+							<img class="spinnerSmall" src="{!URLFOR( $Resource.ET4AE__ExactTargetImages, 'loading.gif' )}"/>
+						</apex:facet>
+						<apex:facet name="stop">
+							<apex:commandButton action="{!saveAudiencePref}" value="{!$Label.et4ae__EmailConsole_Button_SaveAudiencePref}" status="saveAudienceStatus" rerender="pageMessages"/>
+						</apex:facet>
+					</apex:actionStatus>
+				</apex:pageBlockSectionItem>
+			</apex:pageBlockSection>
+			
+			<!-- Email Links Display -->
+			<apex:pageBlockSection id="emailLinkDisplay" collapsible="false">
+				<apex:facet name="header">
+					<apex:actionStatus id="emailLinkStatus">
+						<apex:facet name="start">
+							<img class="spinnerSmall" src="{!URLFOR( $Resource.ET4AE__ExactTargetImages, 'loading.gif' )}"/>
+						</apex:facet>
+						<apex:facet name="stop">
+							<apex:outputText value="{!$Label.et4ae__EmailConsole_Tab_EmailLinks}"/>
+						</apex:facet>
+					</apex:actionStatus>
+				</apex:facet>
+				<apex:dataTable var="emailLink" value="{!emailLinks}" cellpadding="3" rowClasses="odd, even" rules="rows">
+					<apex:column >
+						<apex:facet name="header">{!$Label.et4ae__EmailConsole_Button_DeleteEmailLink}</apex:facet>
+						<apex:commandButton value="X" action="{!deleteEmailLink}" rerender="emailLinkDisplay,pageMessages" status="emailLinkStatus">
+							<apex:param name="emailLinkId" value="{!emailLink.id}"/>
+						</apex:commandButton>
+					</apex:column>
+					<apex:column >
+						<apex:facet name="header">{!$Label.et4ae__EmailConsole_Field_EmailName}</apex:facet>
+						<apex:outputText value="{!emailLink.ET4AE__EmailName__c}"/>
+					</apex:column>
+					<apex:column >
+						<apex:facet name="header">{!$Label.et4ae__EmailConsole_Field_RecipientElementName}</apex:facet>
+						<apex:outputText value="{!emailLink.ET4AE__RecipientElementName__c}"/>
+					</apex:column>
+				</apex:dataTable>
+			</apex:pageBlockSection>
+		
+		</apex:pageBlock>
+	</apex:form>
+</apex:page>

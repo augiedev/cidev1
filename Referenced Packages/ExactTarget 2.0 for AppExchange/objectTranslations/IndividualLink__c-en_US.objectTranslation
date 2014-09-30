@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Individual Link</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Individual Links</value>
+    </caseValues>
+    <fields>
+        <label><!-- ExactTarget Link ID --></label>
+        <name>ExactTargetLinkID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Individual Email Result --></label>
+        <name>Individual_Email_Result__c</name>
+        <relationshipLabel><!-- Individual Links --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Last Clicked --></label>
+        <name>Last_Clicked__c</name>
+    </fields>
+    <fields>
+        <label><!-- Link URL --></label>
+        <name>LinkURL__c</name>
+    </fields>
+    <fields>
+        <label><!-- Number of Total Clicks --></label>
+        <name>NumberOfTotalClicks__c</name>
+    </fields>
+    <fields>
+        <label><!-- Unique Link ID --></label>
+        <name>Unique_Link_ID__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

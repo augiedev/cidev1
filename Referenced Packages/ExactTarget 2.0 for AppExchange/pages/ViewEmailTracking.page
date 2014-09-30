@@ -1,0 +1,40 @@
+<apex:page controller="ET4AE.ViewEmailTrackingControl" standardStylesheets="true" showHeader="false" sidebar="false" action="{!initialize}" tabStyle="ExactTarget__tab">
+	<apex:stylesheet value="{!$Resource.ET4AE__ExactTargetStyles}"/>
+	<apex:form >
+		<apex:pageBlock rendered="{!AND( ISNULL( aggregateMetrics ), ISNULL( individualMetrics ) )}">
+			<apex:pageBlockButtons location="both">
+				<apex:commandButton value="{!$Label.et4ae__SendEmail_Button_Close}" onclick="self.close();"/>
+			</apex:pageBlockButtons>
+			<apex:pageBlockSection >
+				<apex:outputText value="No metrics found for the requested record"/>
+			</apex:pageBlockSection>
+		</apex:pageBlock>
+		<apex:pageBlock title="Email History for {!recordName}" rendered="{!OR( NOT( ISNULL( aggregateMetrics ) ), NOT( ISNULL( individualMetrics ) ) )}">
+			<apex:pageBlockSection id="pageMessages">
+				<apex:outputPanel styleClass="errors" layout="block" rendered="{!IF( hasErrors, true, false )}">
+					<apex:pageBlockSectionItem >
+						<apex:pageMessages />
+					</apex:pageBlockSectionItem>
+				</apex:outputPanel>
+			</apex:pageBlockSection>
+			<apex:pageBlockButtons location="both">
+				<apex:actionStatus id="refreshTrackingStatus" rendered="{!IF( AND( isAdmin, NOT( ISNULL( sendId ) ), sendId != '' ), true, false )}">
+					<apex:facet name="start">
+						<img class="spinnerSmall" src="{!URLFOR( $Resource.ET4AE__ExactTargetImages, 'loading.gif' )}"/>
+					</apex:facet>
+					<apex:facet name="stop">
+						<apex:commandButton action="{!refreshTracking}" value="{!$Label.et4ae__AdminDashboard_Button_RefreshTracking}" status="refreshTrackingStatus" rerender="pageMessages" style="margin-right: 20px;" rendered="{!showRefreshTrackingButton}"/>
+					</apex:facet>
+				</apex:actionStatus>
+				<apex:commandButton value="{!$Label.et4ae__SendEmail_Button_Close}" onclick="self.close();"/>
+			</apex:pageBlockButtons>
+			<b><apex:outputText value="Tracking Refresh is not available for Subscriber List based Sends" style="color:red; " rendered="{!NOT(showRefreshTrackingButton)}" /></b>
+			<apex:repeat var="metric" value="{!aggregateMetrics}" rendered="{!NOT( ISNULL( aggregateMetrics ) )}">
+				<c:AggregateTrackingIterator metric="{!metric}"/>
+			</apex:repeat>
+			<apex:repeat var="metric" value="{!individualMetrics}" rendered="{!NOT( ISNULL( individualMetrics ) )}">
+				<c:IndividualTrackingIterator metric="{!metric}"/>
+			</apex:repeat>
+		</apex:pageBlock>
+	</apex:form>
+</apex:page>

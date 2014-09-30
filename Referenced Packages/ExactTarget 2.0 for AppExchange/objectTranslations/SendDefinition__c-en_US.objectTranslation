@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Send Definition</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Send Definitions</value>
+    </caseValues>
+    <fields>
+        <label><!-- Business Units --></label>
+        <name>BusinessUnits__c</name>
+    </fields>
+    <fields>
+        <label><!-- Campaign --></label>
+        <name>Campaign__c</name>
+        <relationshipLabel><!-- Send Definitions --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Contact --></label>
+        <name>Contact__c</name>
+        <relationshipLabel><!-- Send Definitions --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Conversation Id --></label>
+        <name>ConversationId__c</name>
+    </fields>
+    <fields>
+        <label><!-- Custom Campaign ID --></label>
+        <name>Custom_Campaign_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Custom Campaign Name --></label>
+        <name>Custom_Campaign_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Dashboard Disable --></label>
+        <name>DashboardDisable__c</name>
+    </fields>
+    <fields>
+        <label><!-- Dedupe Subscribers --></label>
+        <name>DedupeSubscribers__c</name>
+    </fields>
+    <fields>
+        <label><!-- Email Id --></label>
+        <name>EmailId__c</name>
+    </fields>
+    <fields>
+        <label><!-- Email Name --></label>
+        <name>EmailName__c</name>
+    </fields>
+    <fields>
+        <label><!-- Exclusion Lists --></label>
+        <name>ExclusionLists__c</name>
+    </fields>
+    <fields>
+        <label><!-- Extra Data Report Id --></label>
+        <name>ExtraDataReportId__c</name>
+    </fields>
+    <fields>
+        <label><!-- Extra Data Report Name --></label>
+        <name>ExtraDataReportName__c</name>
+    </fields>
+    <fields>
+        <label><!-- From Email --></label>
+        <name>FromEmail__c</name>
+    </fields>
+    <fields>
+        <label><!-- From Name --></label>
+        <name>FromName__c</name>
+    </fields>
+    <fields>
+        <label><!-- Ready For Execution --></label>
+        <name>IsReadyForExecution__c</name>
+    </fields>
+    <fields>
+        <label><!-- Lead --></label>
+        <name>Lead__c</name>
+        <relationshipLabel><!-- Send Definitions --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Messages --></label>
+        <name>Messages__c</name>
+    </fields>
+    <fields>
+        <label><!-- Recipient Element --></label>
+        <name>RecipientElement__c</name>
+    </fields>
+    <fields>
+        <label><!-- Recipient Type --></label>
+        <name>RecipientType__c</name>
+        <picklistValues>
+            <masterLabel>CAMPAIGN</masterLabel>
+            <translation><!-- CAMPAIGN --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CONTACT</masterLabel>
+            <translation><!-- CONTACT --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LEAD</masterLabel>
+            <translation><!-- LEAD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>REPORT</masterLabel>
+            <translation><!-- REPORT --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SUBSCRIBER_LIST</masterLabel>
+            <translation><!-- SUBSCRIBER_LIST --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Recipients Opted In --></label>
+        <name>RecipientsOptedIn__c</name>
+    </fields>
+    <fields>
+        <label><!-- Report Id --></label>
+        <name>ReportId__c</name>
+    </fields>
+    <fields>
+        <label><!-- Report Name --></label>
+        <name>ReportName__c</name>
+    </fields>
+    <fields>
+        <label><!-- Salesforce Password --></label>
+        <name>SalesforcePassword__c</name>
+    </fields>
+    <fields>
+        <label><!-- Salesforce Username --></label>
+        <name>SalesforceUsername__c</name>
+    </fields>
+    <fields>
+        <label><!-- Send Classification Id --></label>
+        <name>SendClassificationId__c</name>
+    </fields>
+    <fields>
+        <label><!-- Send Status --></label>
+        <name>SendStatus__c</name>
+        <picklistValues>
+            <masterLabel>Complete</masterLabel>
+            <translation><!-- Complete --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Failed</masterLabel>
+            <translation><!-- Failed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New</masterLabel>
+            <translation><!-- New --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Processing</masterLabel>
+            <translation><!-- Processing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Submitted</masterLabel>
+            <translation><!-- Submitted --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Send Time --></label>
+        <name>SendTime__c</name>
+    </fields>
+    <fields>
+        <label><!-- Session Id --></label>
+        <name>SessionId__c</name>
+    </fields>
+    <fields>
+        <label><!-- Subject --></label>
+        <name>Subject__c</name>
+    </fields>
+    <fields>
+        <label><!-- Subscriber List Id --></label>
+        <name>SubscriberListId__c</name>
+    </fields>
+    <fields>
+        <label><!-- Subscriber List Name --></label>
+        <name>SubscriberListName__c</name>
+    </fields>
+    <fields>
+        <label><!-- Support Request Comments --></label>
+        <name>SupportRequestComments__c</name>
+    </fields>
+    <fields>
+        <label><!-- Support Request Status --></label>
+        <name>SupportRequestStatus__c</name>
+        <picklistValues>
+            <masterLabel>New</masterLabel>
+            <translation><!-- New --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Resolved</masterLabel>
+            <translation><!-- Resolved --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Submission Failed</masterLabel>
+            <translation><!-- Submission Failed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Submitted</masterLabel>
+            <translation><!-- Submitted --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Test --></label>
+        <name>Test__c</name>
+    </fields>
+    <fields>
+        <label><!-- isCallFromFuture --></label>
+        <name>isCallFromFuture__c</name>
+    </fields>
+    <layouts>
+        <layout>Send Definition Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Email Info --></label>
+            <section>Email Info</section>
+        </sections>
+        <sections>
+            <label><!-- Subscribers --></label>
+            <section>Subscribers</section>
+        </sections>
+        <sections>
+            <label><!-- Support Request --></label>
+            <section>Support Request</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

@@ -1,0 +1,95 @@
+<apex:page controller="IBM.LL_MeetingInviteController" tabStyle="LL_LotusLiveTab__tab" showHeader="false" title="{!$Label.ibm__ll_share_file}">
+<head>
+<style>
+.pageTitleIcon {background-image: url('/servlet/servlet.ImageServer?id=01580000000ontj&amp;oid=00D80000000ZolJ&amp;lastMod=1258140431000');}
+.sentMsgPanel {border: 1px solid #F77F00; width:430px; padding:10px; margin:auto}
+</style>
+<script type="text/javascript">
+var st;
+var is;
+function init()
+{
+    var optId = "{!JSENCODE(optId)}";
+    displaySearch();
+    
+    if (optId == "")
+    {
+        st.remove(1);
+    }
+}
+
+function displaySearch()
+{
+    if (st.value == "ALL")
+        is.style.display = "";
+    else
+        is.style.display = "none";
+}
+
+</script> 
+</head> 
+<body class="Custom290Tab">   
+    <apex:outputPanel rendered="{!need_auth}">
+        <script type="text/javascript">
+            window.name = window.location.href;
+            window.location.replace("LL_Auth");
+        </script>
+    </apex:outputPanel>
+           
+    <apex:sectionHeader title="LotusLive" subtitle="{!$Label.ibm__ll_share_file} '{!fileName}'"/>
+    <apex:pageMessages />
+    <apex:outputPanel id="sentMsgPanel" layout="block" rendered="{!invitaionSent}" styleClass="sentMsgPanel">
+    <strong>{!$Label.ibm__ll_file_shared}</strong> <br/><br/>
+    {!$Label.ibm__ll_file_shared_more}
+    </apex:outputPanel>
+    
+    <apex:form >
+ 
+    <p>
+        {!$Label.ibm__ll_search}
+        <apex:selectList id="searchType" value="{!searchType}" size="1" onchange="displaySearch()">
+            <apex:selectOption itemValue="ALL" itemLabel="{!$Label.ibm__ll_within_users}"/>
+            <apex:selectOption itemValue="OPT" itemLabel="{!$Label.ibm__ll_opportunity_related}"/>
+        </apex:selectList> 
+        <script type="text/javascript">st = document.getElementById("{!$Component.searchType}");</script>
+                 
+        <apex:inputText id="inputSearch" value="{!inputSearch}" />  
+        &nbsp;      
+        <apex:commandButton action="{!searchContacts}" value="Go"/> 
+        <script type="text/javascript">is = document.getElementById("{!$Component.inputSearch}");</script>      
+        <apex:inputHidden value="{!optId}" id="optId"/>
+    </p>
+        
+    <apex:pageBlock title="{!$Label.ibm__ll_search_results}">   
+        <apex:pageBlockButtons >  
+            <apex:commandButton action="{!shareFile}" value="{!$Label.ibm__ll_share_with_selectexd}"/>
+            <apex:commandButton value="{!$Label.ibm__ll_close}" onclick="window.close()"/>
+        </apex:pageBlockButtons>       
+        <apex:pageBlockTable value="{!ContactResultList}" var="contact">
+            <apex:column >
+                <apex:facet name="header">
+                    <apex:outputText value="{!$Label.ibm__ll_invite}" />
+                </apex:facet>
+                <apex:inputCheckbox value="{!contact.invite}"/>
+            </apex:column>
+            <apex:column value="{!contact.Name}" headerValue="{!$Label.ibm__ll_name}" />
+            <apex:column value="{!contact.Email}" headerValue="{!$Label.ibm__ll_email}"/>
+            <apex:column value="{!contact.Title}" headerValue="{!$Label.ibm__ll_title}"/>
+            <apex:column value="{!contact.RecType}" headerValue="{!$Label.ibm__ll_type}"/>
+            
+        </apex:pageBlockTable>
+        
+    </apex:pageBlock>
+    
+    <apex:inputCheckbox selected="true" value="{!readOnly}"/> {!$Label.ibm__ll_read_only}
+    
+    <apex:pageBlock title="{!$Label.ibm__ll_message}">   
+        <apex:inputTextarea id="messageText" value="{!messageText}" style="width:100%;height:100px"/>   
+    </apex:pageBlock>   
+    
+    </apex:form>
+    
+    <script type="text/javascript">init();</script>
+
+</body>
+</apex:page>

@@ -1,0 +1,37 @@
+<apex:page tabStyle="LL_LotusLiveTab__tab" controller="IBM.LL_ActivityController" showHeader="false" title="Post LotusLive Activity">
+<head>
+<style>
+.pageTitleIcon {background-image: url('/servlet/servlet.ImageServer?id=01580000000ontj&amp;oid=00D80000000ZolJ&amp;lastMod=1258140431000');}
+.sentMsgPanel {border: 1px solid #F77F00; width:440px; padding:10px; margin:auto; margin-bottom:10px}
+</style>
+</head>
+<body class="Custom290Tab">    
+    <apex:outputPanel rendered="{!need_auth}">
+        <script type="text/javascript">
+            window.name = window.location.href;
+            window.location.replace("LL_Auth");
+        </script>
+    </apex:outputPanel>
+          
+    <apex:sectionHeader title="LotusLive" subtitle="{!$Label.ibm__ll_activity}"/>   
+ 
+    <apex:outputPanel id="sentMsgPanel" layout="block" rendered="{!isPosted}" styleClass="sentMsgPanel">
+    <strong>{!$Label.ibm__ll_activity_posted}</strong> <br/><br/>
+    {!$Label.ibm__ll_post_new_activity}
+    </apex:outputPanel>
+        
+   <apex:form >
+   <apex:pageBlock title="{!$Label.ibm__ll_new_activity}">   
+    <apex:pageBlockButtons location="bottom" >  
+        <apex:commandButton action="{!createActivity}" value="{!$Label.ibm__ll_create}"/>
+        <apex:commandButton value="{!$Label.ibm__ll_close}" onclick="window.close()"/>
+    </apex:pageBlockButtons>
+               
+    <strong>Title:</strong><br/>
+    <apex:inputText id="title" value="{!title}" style="width:100%"/> <br/><br/>
+    <strong>Activity Goal:</strong><br/>  
+    <apex:inputTextarea id="content" value="{!content}" style="width:100%;height:100px"/>   
+    </apex:pageBlock>  
+    </apex:form>
+</body>
+</apex:page>

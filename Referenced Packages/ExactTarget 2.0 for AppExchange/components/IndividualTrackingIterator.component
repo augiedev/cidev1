@@ -1,0 +1,65 @@
+<apex:component >
+	<apex:attribute name="metric" description="A single IndividualTrackingMetric record." type="ET4AE.IndividualTrackingMetric" required="true"/>
+	<apex:pageBlock title="{!metric.emailName}">
+		<apex:pageBlockSection columns="1">
+			<apex:pageBlockSectionItem >
+				<apex:outputLabel value="Send Date"/>
+				<apex:outputText value="{0,time,MMMM d, yyyy}">
+					<apex:param value="{!metric.sendDate}"/>
+				</apex:outputText>
+			</apex:pageBlockSectionItem>
+			<apex:pageBlockSectionItem >
+				<apex:outputLabel value="Subject"/>
+				<apex:outputText value="{!metric.subject}"/>
+			</apex:pageBlockSectionItem>
+			<apex:pageBlockSectionItem rendered="{!IF( AND( NOT( ISNULL( metric.fromName ) ), metric.fromName != '' ), true, false )}">
+				<apex:outputLabel value="From"/>
+				<apex:outputText value="{!metric.fromName}{!IF( AND( NOT( ISNULL( metric.fromAddress ) ), metric.fromAddress != '' ), ' <' + metric.fromAddress + '>', '' )}"/>
+			</apex:pageBlockSectionItem>
+			<apex:pageBlockSectionItem rendered="{!IF( OR( ISNULL( metric.fromName ), metric.fromName == '' ), true, false )}">
+				<apex:outputLabel value="From"/>
+				<apex:outputText value="Unavailable"/>
+			</apex:pageBlockSectionItem>
+			<apex:pageBlockSectionItem >
+				<apex:outputLabel value="To"/>
+				<apex:outputText value="{!metric.email}"/>
+			</apex:pageBlockSectionItem>
+			<apex:pageBlockSectionItem rendered="{!IF( NOT( ISNULL( metric.campaignName ) ), true, false )}">
+				<apex:outputLabel value="Campaign"/>
+				<apex:outputText value="{!metric.campaignName}"/>
+			</apex:pageBlockSectionItem>
+		</apex:pageBlockSection>
+		<apex:pageBlockSection columns="2">
+			<apex:pageBlockSectionItem >
+				<apex:outputLabel value="Opened"/>
+				<apex:outputText value="{!IF( metric.isOpened, 'Yes', 'No' )}"/>
+			</apex:pageBlockSectionItem>
+			<apex:pageBlockSectionItem >
+				<apex:outputLabel value="Open Date"/>
+				<apex:outputText value="{0,time,MMMM d, yyyy}">
+					<apex:param value="{!metric.openDate}"/>
+				</apex:outputText>
+			</apex:pageBlockSectionItem>
+			<apex:pageBlockSectionItem >
+				<apex:outputLabel value="Total Clicks"/>
+				<apex:outputText value="{!metric.numberTotalClicks}"/>
+			</apex:pageBlockSectionItem>
+			<apex:pageBlockSectionItem >
+				<apex:outputLabel value="Unique Clicks"/>
+				<apex:outputText value="{!metric.numberUniqueClicks}"/>
+			</apex:pageBlockSectionItem>
+			<apex:pageBlockSectionItem >
+				<apex:outputLabel value="Bounce Date"/>
+				<apex:outputText value="{0,time,MMMM d, yyyy}">
+					<apex:param value="{!metric.bounceDate}"/>
+				</apex:outputText>
+			</apex:pageBlockSectionItem>
+			<apex:pageBlockSectionItem >
+				<apex:outputLabel value="Unsubscribe Date"/>
+				<apex:outputText value="{0,time,MMMM d, yyyy}">
+					<apex:param value="{!metric.unsubscribeDate}"/>
+				</apex:outputText>
+			</apex:pageBlockSectionItem>
+		</apex:pageBlockSection>
+	</apex:pageBlock>
+</apex:component>

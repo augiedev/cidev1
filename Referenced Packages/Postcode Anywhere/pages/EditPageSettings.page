@@ -1,0 +1,9 @@
+<apex:page showHeader="false" contentType="text/javascript" controller="pca.SettingsController">
+var pca_Settings = {!SettingsToJson},
+pca_Addresses = {!AddressIntegrationsToJson},
+pca_Businesses = {!BusinessIntegrationsToJson},
+pca_Payments = {!PaymentIntegrationsToJson},
+pca_Emails = {!EmailIntegrationsToJson},
+pca_Actions = {!CustomActionsToJson},
+pca_User = { id: "{!$User.Id}", profile: { id: "{!$Profile.Id}", name: "{!$Profile.Name}" }, theme: "{!$User.UITheme}" };
+</apex:page>

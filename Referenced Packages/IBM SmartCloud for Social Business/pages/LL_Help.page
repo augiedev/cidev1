@@ -1,0 +1,14 @@
+<apex:page tabStyle="LL_LotusLiveTab__tab" showHeader="false" title="{!$Label.ibm__ll_help}" controller="IBM.LL_HelpController">
+<head>
+<style>
+.pageTitleIcon {background-image: url('/servlet/servlet.ImageServer?id=01580000000ontj&amp;oid=00D80000000ZolJ&amp;lastMod=1258140431000');}
+</style>
+</head>
+<body class="Custom290Tab"> 
+<apex:sectionHeader title="LotusLive" subtitle="{!$Label.ibm__ll_help}"/>
+
+<apex:pageBlock title="{!helpTitle}">
+<apex:outputText value="{!helpText}" escape="false" />
+</apex:pageBlock>
+</body>
+</apex:page>

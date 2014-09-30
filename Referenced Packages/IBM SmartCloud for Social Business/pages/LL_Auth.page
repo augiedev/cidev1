@@ -1,0 +1,8 @@
+<apex:page controller="IBM.LL_AuthController" action="{!authorize}" showHeader="false">
+<apex:outputPanel rendered="{!need_redirect}">
+    <script type="text/javascript">
+        window.location.replace(window.name);
+    </script>
+</apex:outputPanel>
+<center>{!$Label.ibm__ll_authenticating}</center>
+</apex:page>

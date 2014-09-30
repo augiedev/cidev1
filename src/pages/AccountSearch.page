@@ -1,0 +1,95 @@
+<apex:page standardController="Account" extensions="AccountSearchControllerExtension" action="{!checkIfUserNeedsToBeRedirected}">
+<apex:form id="frmMain">
+    <apex:sectionHeader title="New Account" subtitle="Search" />
+        <apex:outputPanel id="msgs2">
+            <apex:pageMessages />
+        </apex:outputPanel>
+    <script>
+        function goSearch(e)
+        {
+            var key;
+
+            if(window.event)
+                key = window.event.keyCode; //IE
+            else if(e)
+                key = e.which;              //Firefox
+            else
+                return true;
+
+            if(key == 13)
+            {
+                var component = "{!$Component.frmMain.pbSearch.pbbSearch.btnSearch}";
+                document.getElementById(component).click();
+                return false;
+            }
+            else
+                return true;
+        }
+        
+        document.onkeypress = goSearch;
+    </script>
+
+        <apex:pageBlock id="pbSearch" title="Search Criteria" mode="edit">
+            <apex:pageBlockButtons id="pbbSearch">
+                <apex:commandButton id="btnSearch" value="Search" rerender="frmMain" action="{!searchAccounts}" status="status"/>
+                <apex:commandButton value="Create New" action="{!newAccount}" rendered="{!hasSearched}" onclick="{!confirmText}"/>
+                <apex:commandButton value="Cancel" action="{!cancel}"/>
+            </apex:pageBlockButtons>
+            <apex:pageBlockSection columns="1" >
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Name"/>
+                    <apex:inputText id="txtAccountName" value="{!name}"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Street"/>
+                    <apex:inputText value="{!street}"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="City"/>
+                    <apex:inputText value="{!city}"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="County"/>
+                    <apex:inputText value="{!county}"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="State"/>
+                    <apex:inputText value="{!state}"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Zip / Postal Code"/>
+                    <apex:inputText id="txtPostalCode" value="{!zipCode}"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Country"/>
+                    <apex:inputText value="{!country}"/>
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+        </apex:pageblock>
+
+        <apex:outputPanel id="msgs">
+            <apex:pageMessages />
+        </apex:outputPanel>
+    
+        <apex:pageBlock title="Matching Results">
+            <apex:actionStatus id="status">
+                <apex:facet name="start">
+                    <apex:image alt="Loading..." title="Loading..." value="/img/waiting_dots.gif"/>
+                </apex:facet>
+                <apex:facet name="stop">
+                    <apex:pageBlockTable value="{!results}" var="result" rendered="{!resultsFound}">
+                        <apex:column headerValue="Account Name">
+                            <apex:outputLink value="/{!result.account.id}" target="_blank">{!result.account.Name}</apex:outputLink>
+                        </apex:column>
+                        <apex:column headerValue="Shipping Address">
+                            <apex:outputText value="{!result.shippingAddress}" escape="false" />
+                        </apex:column>    
+                        <apex:column headerValue="Owner">
+                            <apex:outputLink value="/{!result.account.OwnerId}" target="_blank">{!result.account.Owner.Name}</apex:outputLink>
+                        </apex:column>
+                    </apex:pageBlockTable>
+                </apex:facet>
+            </apex:actionStatus>
+        </apex:pageblock>
+    </apex:form>
+</apex:page>

@@ -1,0 +1,707 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Translations xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customApplications>
+        <label><!-- ExactTarget for AppExchange --></label>
+        <name>ExactTargetForAppExchange</name>
+    </customApplications>
+    <customLabels>
+        <label><!-- Admin Console - Error - Admin User Invalid --></label>
+        <name>AdminConsole_Error_AdminUserInvalid</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Admin Console - Error - ET Org Id Required --></label>
+        <name>AdminConsole_Error_ETOrgIdRequired</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Admin Console - Error - ExactTarget Stack Required --></label>
+        <name>AdminConsole_Error_ETStackRequired</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Admin Console - Error - Number of Retries Invalid --></label>
+        <name>AdminConsole_Error_NumberOfRetriesInvalid</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Admin Console - Error - Retry Rule Required --></label>
+        <name>AdminConsole_Error_RetryRuleRequired</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Admin Console - Error - SF Password Required --></label>
+        <name>AdminConsole_Error_SFPasswordRequired</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Admin Console - Error - Salesforce Username Required --></label>
+        <name>AdminConsole_Error_SFUsernameRequired</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Admin Console - Error - Support Ticket Recipient Required --></label>
+        <name>AdminConsole_Error_SupportTicketRecipientRequired</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Admin Console - Error - Tracking Expiration Invalid --></label>
+        <name>AdminConsole_Error_TrackingExpirationInvalid</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Admin Console - Error - Write To Any/All Matching Records --></label>
+        <name>AdminConsole_Error_WriteToAnyAllMatchingRecords</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Admin Console - Field - Admin User --></label>
+        <name>AdminConsole_Field_AdminUser</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Admin Console - Field - Aggregate Level Tracking --></label>
+        <name>AdminConsole_Field_AggregateLevelTracking</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Admin Console - Field - ExactTarget Org Id --></label>
+        <name>AdminConsole_Field_ETOrgId</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Admin Console - Field - ExactTarget Stack --></label>
+        <name>AdminConsole_Field_ETStack</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Admin Console &gt; Field &gt; Personal Folder Access --></label>
+        <name>AdminConsole_Field_Enable_Personal_Reports_Flag</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Admin Console - Field - Individual Level Tracking --></label>
+        <name>AdminConsole_Field_IndividualLevelTracking</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- AdminConsole - Field - IndividualLinkTracking --></label>
+        <name>AdminConsole_Field_IndividualLinkTracking</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Admin Console - Field - Integration Users --></label>
+        <name>AdminConsole_Field_IntegrationUsers</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Admin Console - Field - Integration Users - Available Users --></label>
+        <name>AdminConsole_Field_IntegrationUsers_AvailableUsers</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Admin Console - Field - Integration Users - Selected Users --></label>
+        <name>AdminConsole_Field_IntegrationUsers_SelectedUsers</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Admin Console - Field - Number of Retries --></label>
+        <name>AdminConsole_Field_NumberOfRetries</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Admin Console - Field - Retry Rule --></label>
+        <name>AdminConsole_Field_RetryRule</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Admin Console - Field - Salesforce Password --></label>
+        <name>AdminConsole_Field_SFPassword</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Admin Console - Field - Salesforce Username --></label>
+        <name>AdminConsole_Field_SFUsername</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Admin Console - Field - Sandbox Flag --></label>
+        <name>AdminConsole_Field_SandboxFlag</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- AdminConsole - Field - SentEventsTracking --></label>
+        <name>AdminConsole_Field_SentEventsTracking</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Admin Console - Field - Support Ticket Recipient --></label>
+        <name>AdminConsole_Field_SupportTicketRecipient</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Admin Console - Field - Tracking Expiration (Days) --></label>
+        <name>AdminConsole_Field_TrackingExpirationDays</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Admin Console - Field - Write to any/all matching records --></label>
+        <name>AdminConsole_Field_WriteToAnyAllMatchingRecords</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Admin Console - Help - Admin User --></label>
+        <name>AdminConsole_Help_AdminUser</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Admin Console - Help - Aggregate Level Tracking --></label>
+        <name>AdminConsole_Help_AggregateLevelTracking</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Admin Console - Help - ET Org Id --></label>
+        <name>AdminConsole_Help_ETOrgId</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Admin Console - Help - ExactTarget Stack --></label>
+        <name>AdminConsole_Help_ETStack</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Admin Console - Help - Individual Level Tracking --></label>
+        <name>AdminConsole_Help_IndividualLevelTracking</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Individual Link Tracking Help --></label>
+        <name>AdminConsole_Help_IndividualLinkTracking</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Admin Console - Help - Integration Users --></label>
+        <name>AdminConsole_Help_IntegrationUsers</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Admin Console - Help - Number of Retries --></label>
+        <name>AdminConsole_Help_NumberOfRetries</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Admin Console - Help - Retry Rule --></label>
+        <name>AdminConsole_Help_RetryRule</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Admin Console - Help - SF Password --></label>
+        <name>AdminConsole_Help_SFPassword</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Admin Console - Help - SF Username --></label>
+        <name>AdminConsole_Help_SFUsername</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Admin Console - Help - Sandbox Flag --></label>
+        <name>AdminConsole_Help_SandboxFlag</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Sent Events Tracking Help --></label>
+        <name>AdminConsole_Help_SentEventsTracking</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Admin Console - Help - Support Ticket Recipient --></label>
+        <name>AdminConsole_Help_SupportTicketRecipient</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Admin Console - Help - Tracking Expiration Days --></label>
+        <name>AdminConsole_Help_TrackingExpirationDays</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Admin Console - Help - Write To Any All Matching Records --></label>
+        <name>AdminConsole_Help_WriteToAnyAllMatchingRecords</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Admin Console - Message - Confirmation --></label>
+        <name>AdminConsole_Message_Confirmation</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Admin Console - Message - Confirmation Link --></label>
+        <name>AdminConsole_Message_ConfirmationLink</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Admin Console - Message - Page Label --></label>
+        <name>AdminConsole_Message_PageLabel</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Admin Console - Tab --></label>
+        <name>AdminConsole_Tab</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Admin Dashboard - Button - Next Page --></label>
+        <name>AdminDashboard_Button_NextPage</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Admin Dashboard - Button - Previous Page --></label>
+        <name>AdminDashboard_Button_PreviousPage</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Admin Dashboard - Button - Refresh Tracking --></label>
+        <name>AdminDashboard_Button_RefreshTracking</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Admin Dashboard - Button - Report Problem --></label>
+        <name>AdminDashboard_Button_ReportProblem</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Admin Dashboard - Button - Search --></label>
+        <name>AdminDashboard_Button_Search</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Admin Dashboard - Button - View Tracking --></label>
+        <name>AdminDashboard_Button_ViewTracking</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Admin Dashboard - Field - Comments --></label>
+        <name>AdminDashboard_Field_Comments</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Admin Dashboard - Field - Created Date --></label>
+        <name>AdminDashboard_Field_CreatedDate</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Admin Dashboard - Field - Requestor --></label>
+        <name>AdminDashboard_Field_Requestor</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Admin Dashboard - Field - Subscriber Type --></label>
+        <name>AdminDashboard_Field_SubscriberType</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Admin Dashboard - Field - Subscribers --></label>
+        <name>AdminDashboard_Field_Subscribers</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Admin Dashboard - Field - Support --></label>
+        <name>AdminDashboard_Field_Support</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Admin Dashboard - Field - Support Status --></label>
+        <name>AdminDashboard_Field_SupportStatus</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Admin Dashboard - Field - Tracking --></label>
+        <name>AdminDashboard_Field_Tracking</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Admin Dashboard - Message - Help Request Description --></label>
+        <name>AdminDashboard_Message_HelpRequestDescription</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Admin Dashboard - Tab --></label>
+        <name>AdminDashboard_Tab</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Admin Console &gt; Help &gt; Personal Reports Flag --></label>
+        <name>Admin_Console_Help_Personal_Reports_Flag</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Business Units Console - Button - Select All --></label>
+        <name>BUConsole_Button_SelectAll</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Business Units Console - Button - Select None --></label>
+        <name>BUConsole_Button_SelectNone</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Business Units Console - Message - No Business Units Found --></label>
+        <name>BUConsole_Message_NoBUFound</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Business Units Console - Message - Page Label --></label>
+        <name>BUConsole_Message_PageLabel</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- BU Console - Tab --></label>
+        <name>BUConsole_Tab</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- ET Login Confirmation - Message - Confirmation --></label>
+        <name>ETLoginConfirmation_Message_Confirmation</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- ET Login Confirmation - Message - Confirmation Link --></label>
+        <name>ETLoginConfirmation_Message_ConfirmationLink</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- ET Login Confirmation - Message - Page Label --></label>
+        <name>ETLoginConfirmation_Message_PageLabel</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- ET Login - Field - ET Admin --></label>
+        <name>ETLogin_Field_ETAdmin</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- ET Login - Field - ET Password --></label>
+        <name>ETLogin_Field_ETPassword</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- ET Login - Field - ET Username --></label>
+        <name>ETLogin_Field_ETUsername</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- ET Login - Message - Login Invalid --></label>
+        <name>ETLogin_Message_LoginInvalid</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- ET Login - Message - Page Label --></label>
+        <name>ETLogin_Message_PageLabel</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- ET Login - Status - Attempting Login --></label>
+        <name>ETLogin_Status_AttemptingLogin</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Email Console - Button - Delete Email Link --></label>
+        <name>EmailConsole_Button_DeleteEmailLink</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Emai lConsole - Button - Save Audience Pref --></label>
+        <name>EmailConsole_Button_SaveAudiencePref</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Email Console - Field - Email Name --></label>
+        <name>EmailConsole_Field_EmailName</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Email Console - Field - Portal Audience --></label>
+        <name>EmailConsole_Field_PortalAudience</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Email Console - Field - Recipient Element Name --></label>
+        <name>EmailConsole_Field_RecipientElementName</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Email Console - Field - Standard Audience --></label>
+        <name>EmailConsole_Field_StandardAudience</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Email Console - Help - Portal Audience --></label>
+        <name>EmailConsole_Help_PortalAudience</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Email Console - Help - Standard Audience --></label>
+        <name>EmailConsole_Help_StandardAudience</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Email Console - Tab --></label>
+        <name>EmailConsole_Tab</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Email Console - Tab - Audience Preferences --></label>
+        <name>EmailConsole_Tab_AudiencePreferences</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Email Console - Tab - Email Links --></label>
+        <name>EmailConsole_Tab_EmailLinks</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- General - Button - Cancel --></label>
+        <name>General_Button_Cancel</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- General - Button - Refresh --></label>
+        <name>General_Button_Refresh</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- General - Button - Remove --></label>
+        <name>General_Button_Remove</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- General - Button - Submit --></label>
+        <name>General_Button_Submit</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- General - Field - Send Id --></label>
+        <name>General_Field_SendId</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- General - Label - ET4AE --></label>
+        <name>General_Label_ET4AE</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- General - Status - Cancelling --></label>
+        <name>General_Status_Cancelling</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- General - Status - Refreshing --></label>
+        <name>General_Status_Refreshing</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- General - Status - Submitting --></label>
+        <name>General_Status_Submitting</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- General - Status - Updating --></label>
+        <name>General_Status_Updating</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- General - Status - Validating --></label>
+        <name>General_Status_Validating</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- General - URL - Go To ET --></label>
+        <name>General_URL_GoToET</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- General - URL - Go To ET Text --></label>
+        <name>General_URL_GoToETText</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Login - Field - ET Password --></label>
+        <name>Login_Field_ETPassword</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Login - Field - ET Username --></label>
+        <name>Login_Field_ETUsername</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Login - Field - SF Password --></label>
+        <name>Login_Field_SFPassword</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Login - Field - SF Username --></label>
+        <name>Login_Field_SFUsername</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Login - Message - Invalid Salesforce Credentials --></label>
+        <name>Login_Message_InvalidSalesforceCredentials</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Login - Message - No Admin Present --></label>
+        <name>Login_Message_NoAdminPresent</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Login - Message - Page Label --></label>
+        <name>Login_Message_PageLabel</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Send Email - Button - Add Another List --></label>
+        <name>SendEmail_Button_AddAnotherList</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Send Email - Button - Close --></label>
+        <name>SendEmail_Button_Close</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Send Email - Button - Email Link --></label>
+        <name>SendEmail_Button_EmailLink</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Send Email - Button - Email Preview --></label>
+        <name>SendEmail_Button_EmailPreview</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Send Email - Button - Find Email --></label>
+        <name>SendEmail_Button_FindEmail</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Send Email - Button - Find Recipient Reports --></label>
+        <name>SendEmail_Button_FindRecipientReports</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Send Email - Button - Find Report --></label>
+        <name>SendEmail_Button_FindReport</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Send Email - Button - Find Subscriber List --></label>
+        <name>SendEmail_Button_FindSubscriberList</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Send Email - Button - Send --></label>
+        <name>SendEmail_Button_Send</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Send Email - Error - Campaign Required --></label>
+        <name>SendEmail_Error_CampaignRequired</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Send Email - Error - Contact Required --></label>
+        <name>SendEmail_Error_ContactRequired</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Send Email - Error - Email Subject Required --></label>
+        <name>SendEmail_Error_EmailSubjectRequired</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Send Email - Error - Email Template Required --></label>
+        <name>SendEmail_Error_EmailTemplateRequired</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Send Email - Error - From Required --></label>
+        <name>SendEmail_Error_FromRequired</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Send Email - Error - Lead Required --></label>
+        <name>SendEmail_Error_LeadRequired</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Send Email - Error - Opt In Required --></label>
+        <name>SendEmail_Error_OptInRequired</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Send Email - Error - Report Required --></label>
+        <name>SendEmail_Error_ReportRequired</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Send Email - Error - SF Password Required --></label>
+        <name>SendEmail_Error_SFPasswordRequired</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Send Email - Error - Subscriber List Required --></label>
+        <name>SendEmail_Error_SubscriberListRequired</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Send Email - Field - BusinessUnit --></label>
+        <name>SendEmail_Field_BusinessUnit</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Send Email - Field - Exclusion Lists --></label>
+        <name>SendEmail_Field_ExclusionLists</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Send Email - Field - Opt In --></label>
+        <name>SendEmail_Field_OptIn</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Send Email - Field - Recipient Report --></label>
+        <name>SendEmail_Field_RecipientReport</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Send Email - Field - Report --></label>
+        <name>SendEmail_Field_Report</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Send Email - Field - Send Classification --></label>
+        <name>SendEmail_Field_SendClassification</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Send Email - Field - Target Audience --></label>
+        <name>SendEmail_Field_TargetAudience</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Send Email - Help - Business Units --></label>
+        <name>SendEmail_Help_BusinessUnits</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Send Email - Help - Campaign --></label>
+        <name>SendEmail_Help_Campaign</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Send Email - Help - Contact --></label>
+        <name>SendEmail_Help_Contact</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Send Email - Help - Dedupe Subscribers --></label>
+        <name>SendEmail_Help_DedupeSubscribers</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Send Email - Help - Email Template --></label>
+        <name>SendEmail_Help_EmailTemplate</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Send Email -Help - Exclusion Lists --></label>
+        <name>SendEmail_Help_ExclusionLists</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Send Email - Help - From --></label>
+        <name>SendEmail_Help_From</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Send Email - Help - Lead --></label>
+        <name>SendEmail_Help_Lead</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Send Email - Help - Recipient Report --></label>
+        <name>SendEmail_Help_RecipientReport</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Send Email - Help - Report --></label>
+        <name>SendEmail_Help_Report</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Send Email - Help - Send Date/Time --></label>
+        <name>SendEmail_Help_SendDateTime</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Send Email - Help - Subject --></label>
+        <name>SendEmail_Help_Subject</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Send Email - Help - Subscriber List --></label>
+        <name>SendEmail_Help_SubscriberList</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Send Email - Help - Target Audience --></label>
+        <name>SendEmail_Help_TargetAudience</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Send Email - Message - Send Queued --></label>
+        <name>SendEmail_Message_SendQueued</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Send Email - Status - Linking --></label>
+        <name>SendEmail_Status_Linking</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Send Email - Status - Searching --></label>
+        <name>SendEmail_Status_Searching</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Send Email - Status - Sending --></label>
+        <name>SendEmail_Status_Sending</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Send Email - Tab --></label>
+        <name>SendEmail_Tab</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Send Email - Field - Suppression Lists --></label>
+        <name>Send_Email_Field_Suppression_Lists</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Send Email -Help - Suppression Lists --></label>
+        <name>Send_Email_Help_Suppression_Lists</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Send - Field - Campaign --></label>
+        <name>Send_Field_Campaign</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Send - Field - Contact --></label>
+        <name>Send_Field_Contact</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Send - Field - Dedupe Subscribers --></label>
+        <name>Send_Field_DedupeSubscribers</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Send - Field - Email --></label>
+        <name>Send_Field_Email</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Send - Field - From --></label>
+        <name>Send_Field_From</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Send - Field - Lead --></label>
+        <name>Send_Field_Lead</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Send - Field - Report --></label>
+        <name>Send_Field_Report</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Send - Field - SF Password --></label>
+        <name>Send_Field_SFPassword</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Send - Field - Send Date/TIme --></label>
+        <name>Send_Field_SendDateTIme</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Send - Field - Send Id --></label>
+        <name>Send_Field_SendId</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Send - Field - Status --></label>
+        <name>Send_Field_Status</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Send - Field - Subject --></label>
+        <name>Send_Field_Subject</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Send - Field - Subscriber List --></label>
+        <name>Send_Field_SubscriberList</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- View Tracking - Message - Refresh Error --></label>
+        <name>ViewTracking_Message_RefreshError</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- View Tracking - Message - Refresh Started --></label>
+        <name>ViewTracking_Message_RefreshStarted</name>
+    </customLabels>
+    <customTabs>
+        <label><!-- API Executor --></label>
+        <name>APIExecutor</name>
+    </customTabs>
+    <customTabs>
+        <label><!-- ExactTarget --></label>
+        <name>ExactTarget</name>
+    </customTabs>
+</Translations>

@@ -1,0 +1,2 @@
+<apex:page controller="ET4AE.ExactTargetSwitchboardControl" action="{!redirect}" tabStyle="ExactTarget__tab">
+</apex:page>

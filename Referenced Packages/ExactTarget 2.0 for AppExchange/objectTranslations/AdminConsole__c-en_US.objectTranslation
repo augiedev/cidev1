@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Admin Console</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Admin Consoles</value>
+    </caseValues>
+    <fields>
+        <label><!-- Admin Salesforce Password --></label>
+        <name>AdminSalesforcePassword__c</name>
+    </fields>
+    <fields>
+        <label><!-- Admin Salesforce Username --></label>
+        <name>AdminSalesforceUsername__c</name>
+    </fields>
+    <fields>
+        <label><!-- Admin User --></label>
+        <name>AdminUser__c</name>
+        <relationshipLabel><!-- Admin Consoles (Admin User) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Business Unit Ids --></label>
+        <name>BusinessUnitIds__c</name>
+    </fields>
+    <fields>
+        <label><!-- Custom Campaign Enabled --></label>
+        <name>Custom_Campaign_Enabled__c</name>
+    </fields>
+    <fields>
+        <label><!-- ExactTarget Org Id --></label>
+        <name>ExactTargetOrgId__c</name>
+    </fields>
+    <fields>
+        <label><!-- ExactTarget Stack --></label>
+        <name>ExactTargetStack__c</name>
+        <picklistValues>
+            <masterLabel>PS</masterLabel>
+            <translation><!-- PS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>S1</masterLabel>
+            <translation><!-- S1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>S4</masterLabel>
+            <translation><!-- S4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>S6</masterLabel>
+            <translation><!-- S6 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ST1</masterLabel>
+            <translation><!-- ST1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ST2</masterLabel>
+            <translation><!-- ST2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ST3</masterLabel>
+            <translation><!-- ST3 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Setting to indicate whether the client wants to enable link tracking through the integration --></help>
+        <label><!-- Individual Link Tracking --></label>
+        <name>Individual_Link_Tracking__c</name>
+    </fields>
+    <fields>
+        <label><!-- Integration User Pass-Through --></label>
+        <name>IntegrationUserPassThrough__c</name>
+        <relationshipLabel><!-- Admin Consoles (Integration User Pass-Through) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Sandbox --></label>
+        <name>IsSandbox__c</name>
+    </fields>
+    <fields>
+        <label><!-- ChainBuilder Enabled --></label>
+        <name>Is_ChainBuilder_Enabled__c</name>
+    </fields>
+    <fields>
+        <label><!-- Is Personal Report Accessible --></label>
+        <name>Is_Personal_Report_Accessible__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sync Subscribers Enabled --></label>
+        <name>Is_Sync_Subscribers_Enabled__c</name>
+    </fields>
+    <fields>
+        <label><!-- Matched Record Tracking --></label>
+        <name>MatchedRecordTracking__c</name>
+        <picklistValues>
+            <masterLabel>All Records</masterLabel>
+            <translation><!-- All Records --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>One Record</masterLabel>
+            <translation><!-- One Record --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Number of Retries --></label>
+        <name>NumberOfRetries__c</name>
+    </fields>
+    <fields>
+        <label><!-- Portal Audience --></label>
+        <name>PortalAudience__c</name>
+        <picklistValues>
+            <masterLabel>Campaign</masterLabel>
+            <translation><!-- Campaign --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Report</masterLabel>
+            <translation><!-- Report --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Subscriber List</masterLabel>
+            <translation><!-- Subscriber List --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Retry Rule --></label>
+        <name>RetryRule__c</name>
+        <picklistValues>
+            <masterLabel>Abort Send</masterLabel>
+            <translation><!-- Abort Send --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Retry N Times</masterLabel>
+            <translation><!-- Retry N Times --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Retry Until Complete</masterLabel>
+            <translation><!-- Retry Until Complete --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Sent Events Tracking --></label>
+        <name>Sent_Events_Tracking__c</name>
+    </fields>
+    <fields>
+        <label><!-- Server URL --></label>
+        <name>ServerURL__c</name>
+    </fields>
+    <fields>
+        <label><!-- Standard Audience --></label>
+        <name>StandardAudience__c</name>
+        <picklistValues>
+            <masterLabel>Campaign</masterLabel>
+            <translation><!-- Campaign --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Report</masterLabel>
+            <translation><!-- Report --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Subscriber List</masterLabel>
+            <translation><!-- Subscriber List --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Support Ticket Recipient --></label>
+        <name>SupportTicketRecipient__c</name>
+    </fields>
+    <fields>
+        <label><!-- Test --></label>
+        <name>Test__c</name>
+    </fields>
+    <fields>
+        <label><!-- Tracking Expiration (Days) --></label>
+        <name>TrackingExpirationDays__c</name>
+    </fields>
+    <fields>
+        <label><!-- Aggregate Level Tracking --></label>
+        <name>TrackingLevelAggregate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Individual Level Tracking --></label>
+        <name>TrackingLevelIndividual__c</name>
+    </fields>
+    <fields>
+        <label><!-- Allow Additional Data Reports --></label>
+        <name>allowAdditionalDataReports__c</name>
+    </fields>
+    <layouts>
+        <layout>Admin Console Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Vowel</startsWith>
+</CustomObjectTranslation>

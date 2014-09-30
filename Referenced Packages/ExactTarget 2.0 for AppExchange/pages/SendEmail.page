@@ -1,0 +1,808 @@
+<apex:page controller="ET4AE.SendEmailControl" action="{!initialize}" tabStyle="ExactTarget__tab">
+    <apex:form id="sendEmailForm" styleClass="fieldForm">
+        <apex:actionFunction name="selectEmailJS" action="{!selectEmail}" rerender="emailName,emailSubject,exactTargetEmails,emailPreviewLinkWrapper,recipientReportWrapper" status="clickEmailStatus">
+            <apex:param name="emailId" value=""/>
+            <apex:param name="emailName" value=""/>
+            <apex:param name="emailSubject" value=""/>
+        </apex:actionFunction>
+        <!-- Comment by Arjun. Include for August Release -->
+        <apex:actionFunction name="selectSubscriberListJS" action="{!selectSubscriberList}" rerender="subscriberListWrapper,recipientReportWrapper,additionalDataReportWrapper," status="listSubscriberListsStatus">
+            <apex:param name="subscriberListId" value=""/>
+            <apex:param name="subscriberListName" value=""/>
+        </apex:actionFunction>
+         <!-- End of added part by Arjun -->
+         <!-- Comment by Arjun. Include for September Release -->
+        <apex:actionFunction name="selectSuppressionListJS" action="{!selectSuppressionList}" rerender="suppressionLists" status="listSuppressionListsStatus">
+            <apex:param name="suppressionListId" value=""/>
+            <apex:param name="suppressionListName" value=""/>
+        </apex:actionFunction>
+        <apex:actionFunction name="changeTargetAudienceJS" action="{!changeSendType}" rerender="exclusionListSection,addlDataSection,audienceSection,pageButtons,selectedFromWrapper" status="targetAudienceStatus" oncomplete="swapFromSource();" >
+            <apex:param assignTo="{!isFromSelected}" value="" name="selectedIFrom"/>
+            <apex:param assignTo="{!isSCSelected}" value="" name="selectedISC"/>
+        </apex:actionFunction>
+        <apex:actionFunction name="changeBusinessUnitJS" action="{!changeBU}" rerender="emailWrapper,emailSubject,sendClassificationWrapper,subscriberListWrapper" status="businessUnitsStatus" oncomplete="swapFromSource();" >
+            <apex:param assignTo="{!isFromSelected}" value="" name="selectedIFrom"/>
+            <apex:param assignTo="{!isSCSelected}" value="" name="selectedISC"/>
+        </apex:actionFunction>  
+         <!-- End of added part by Arjun -->
+        <apex:pageBlock id="sendEmailPage" title="{!$Label.et4ae__SendEmail_Tab}">
+
+            <!-- General Form Errors -->
+            <apex:pageBlockSection id="pageMessages">
+                <apex:outputPanel styleClass="errors" layout="block" rendered="{!IF( hasErrors, true, false )}">
+                    <apex:pageBlockSectionItem >
+                        <apex:pageMessages />
+                    </apex:pageBlockSectionItem>
+                </apex:outputPanel>
+            </apex:pageBlockSection>
+    
+            <!-- Form Buttons -->
+            <apex:pageBlockButtons id="pageButtonsWrapper" location="bottom">
+                <apex:outputPanel layout="block" id="pageButtons">
+                    <apex:actionStatus id="emailLinkStatus" rendered="{!IF( AND( runningUser.ET4AE__ExactTargetForAppExchangeAdmin__c == true, sendType == SENDTYPE_REPORT ), true, false )}">
+                        <apex:facet name="start">
+                            <img class="spinnerSmall" src="{!URLFOR( $Resource.ET4AE__ExactTargetImages, 'loading.gif' )}"/>
+                        </apex:facet>
+                        <apex:facet name="stop">
+                            <apex:commandButton id="emailLink" value="{!$Label.et4ae__SendEmail_Button_EmailLink}" action="{!linkEmail}" rerender="pageMessages" status="emailLinkStatus"/>
+                        </apex:facet>
+                    </apex:actionStatus>
+                    <apex:actionStatus id="sendStatus">
+                        <apex:facet name="start">
+                            <img class="spinnerSmall" src="{!URLFOR( $Resource.ET4AE__ExactTargetImages, 'loading.gif' )}"/>
+                        </apex:facet>
+                        <apex:facet name="stop">
+                            <apex:commandButton id="sendButton" value="{!$Label.et4ae__SendEmail_Button_Send}" action="{!save}" rerender="pageMessages" status="sendStatus" disabled="{!NOT( localSend.optIn )}"/>
+                        </apex:facet>
+                    </apex:actionStatus>
+                </apex:outputPanel>
+            </apex:pageBlockButtons>
+    
+            <apex:pageBlockSection columns="1">
+            
+                <!-- Target Audience -->
+                <apex:pageBlockSectionItem id="emailTargetAudience" helpText="{!$Label.et4ae__SendEmail_Help_TargetAudience}" rendered="{!IF( OR( sendType = SENDTYPE_CAMPAIGN, sendType = SENDTYPE_SUBSCRIBERLIST, sendType = SENDTYPE_REPORT ), true, false )}">
+                    <apex:outputLabel for="targetAudience" value="{!$Label.et4ae__SendEmail_Field_TargetAudience}"/>
+                    <apex:actionStatus id="targetAudienceStatus">
+                        <apex:facet name="start">
+                            <img class="spinnerSmall" src="{!URLFOR( $Resource.ET4AE__ExactTargetImages, 'loading.gif' )}"/>
+                        </apex:facet>
+                        <apex:facet name="stop">
+                            <apex:selectList id="targetAudience" value="{!localSend.selectedTargetAudience}" size="1" onchange="changeTargetAudience();">
+                                <!--  <apex:actionSupport event="onchange" action="{!changeSendType}" rerender="exclusionListSection,addlDataSection,audienceSection,pageButtons,selectedFromWrapper" status="targetAudienceStatus" oncomplete="swapFromSource();" >
+                                    <apex:param assignTo="{!isFromSelected}" value="{jQuery( '[id$=fromSelectorEmail]' ).val}" name="selectedIFrom"/>
+                                    <apex:param assignTo="{!isSCSelected}" value="{jQuery( '[id$=fromSelectorSC]' ).val}" name="selectedISC"/>
+                                </apex:actionSupport> -->
+                                <apex:selectOptions value="{!targetAudienceOptions}"/>
+                            </apex:selectList>
+                        </apex:facet>
+                    </apex:actionStatus>
+                </apex:pageBlockSectionItem>
+            
+                <!-- Business Units -->
+                <apex:pageBlockSectionItem id="selectedBusinessUnits" helpText="{!$Label.et4ae__SendEmail_Help_BusinessUnits}" rendered="{!IF( businessUnits.size > 0, true, false )}">
+                    <apex:outputLabel for="businessUnits" value="{!$Label.et4ae__SendEmail_Field_BusinessUnit}"/>                  
+                    <apex:actionStatus id="businessUnitsStatus">
+                        <apex:facet name="start">
+                            <img class="spinnerSmall" src="{!URLFOR( $Resource.ET4AE__ExactTargetImages, 'loading.gif' )}"/>
+                        </apex:facet>
+                        <apex:facet name="stop">
+                            <apex:selectList id="businessUnits" value="{!localSend.selectedBusinessUnitId}" size="1" onchange="changeBusinessUnit();">
+                                <!-- <apex:actionSupport event="onchange" action="{!changeBU}" rerender="emailWrapper,emailSubject,sendClassificationWrapper,subscriberListWrapper" status="businessUnitsStatus" oncomplete="swapFromSource();"/> -->
+                                <apex:selectOptions value="{!businessUnits}"/>
+                            </apex:selectList>
+                        </apex:facet>
+                    </apex:actionStatus>
+                </apex:pageBlockSectionItem>
+                
+                <!-- Email -->
+                <apex:pageBlockSectionItem id="emailTemplate" helpText="{!$Label.et4ae__SendEmail_Help_EmailTemplate}">
+                    <apex:outputLabel for="emailName" value="{!$Label.et4ae__Send_Field_Email}"/>
+                    <apex:outputPanel id="emailWrapper" layout="block">
+                        <apex:outputText id="emailName" value="{!localSend.email.name}"/>
+                        <apex:outputPanel id="emailPreviewLinkWrapper">
+                            <apex:outputPanel id="emailPreviewLink" rendered="{!IF( NOT( ISNULL( localSend.email ) ), true, false )}">
+                                <a href="{!$Page.EmailPreview}?buId={!localSend.selectedBusinessUnitId}&emailId={!localSend.email.id}" target="_blank" style="padding: 0 10px 0 10px;">{!$Label.SendEmail_Button_EmailPreview}</a>
+                            </apex:outputPanel>
+                        </apex:outputPanel>
+                        <apex:outputPanel >
+                            <apex:actionStatus id="listEmailsStatus">
+                                <apex:facet name="start">
+                                    <img class="spinnerSmall" src="{!URLFOR( $Resource.ET4AE__ExactTargetImages, 'loading.gif' )}"/>
+                                </apex:facet>
+                                <apex:facet name="stop">
+                                    <apex:commandButton id="listEmails" value="{!$Label.et4ae__SendEmail_Button_FindEmail}" action="{!listExactTargetEmails}" rerender="exactTargetEmails,pageMessages" status="listEmailsStatus"/>
+                                </apex:facet>
+                            </apex:actionStatus>
+                            <apex:outputPanel id="exactTargetEmails" layout="block">
+                                <apex:actionStatus id="clickEmailStatus">
+                                    <apex:facet name="start">
+                                        <img class="spinnerSmall" src="{!URLFOR( $Resource.ET4AE__ExactTargetImages, 'loading.gif' )}"/>
+                                    </apex:facet>
+                                    <apex:facet name="stop">
+                                        <apex:outputPanel styleClass="popup" layout="block" rendered="{!IF( OR( showEmailChooser), true, false )}">
+                                            <script type="text/javascript">
+                                                function toggleFolderDisplay( folderId ) {
+
+                                                    // Identify folder div.
+                                                    var folderDiv = document.getElementById( folderId );
+                                                    
+                                                    // Pull the folder class.
+                                                    var folderClass = folderDiv.className;
+                                                    
+                                                    // Determine if the folder is open or closed.
+                                                    var newFolderClass = 'emailFolder closed';
+                                                    if( folderClass.indexOf( 'closed' ) > -1 ) {
+                                                        newFolderClass = 'emailFolder open';
+                                                    }
+
+                                                    // Assing new class.
+                                                    folderDiv.className = newFolderClass;
+
+                                                }
+                                            </script>
+                                            <apex:pageBlock >
+                                                <apex:pageBlockButtons location="both">
+                                                    <apex:commandButton action="{!selectEmailCancel}" value="{!$Label.et4ae__General_Button_Cancel}" rerender="exactTargetEmails" status="clickEmailStatus"/>
+                                                </apex:pageBlockButtons>
+                                                <apex:repeat value="{!localSend.emails}" var="emailFolder1">
+                                                    + <a href="#" onclick="javascript:toggleFolderDisplay( 'emailFolder_{!emailFolder1.pathId}' );">{!emailFolder1.name}</a><br/>
+                                                    <div class="emailFolder closed" id="emailFolder_{!emailFolder1.pathId}">
+                                                        <apex:repeat value="{!emailFolder1.children}" var="emailFolder2" rendered="{!NOT( ISBLANK( emailFolder1.children ) )}">
+                                                            + <a href="#" onclick="javascript:toggleFolderDisplay( 'emailFolder_{!emailFolder2.pathId}' );">{!emailFolder2.name}</a><br/>
+                                                            <div class="emailFolder closed" id="emailFolder_{!emailFolder2.pathId}">
+                                                                <apex:repeat value="{!emailFolder2.children}" var="emailFolder3" rendered="{!NOT( ISBLANK( emailFolder2.children ) )}">
+                                                                    + <a href="#" onclick="javascript:toggleFolderDisplay( 'emailFolder_{!emailFolder3.pathId}' );">{!emailFolder3.name}</a><br/>
+                                                                    <div class="emailFolder closed" id="emailFolder_{!emailFolder3.pathId}">
+                                                                        <apex:repeat value="{!emailFolder3.children}" var="emailFolder4" rendered="{!NOT( ISBLANK( emailFolder3.children ) )}">
+                                                                            + <a href="#" onclick="javascript:toggleFolderDisplay( 'emailFolder_{!emailFolder4.pathId}' );">{!emailFolder4.name}</a><br/>
+                                                                            <div class="emailFolder closed" id="emailFolder_{!emailFolder4.pathId}">
+                                                                                <apex:repeat value="{!emailFolder4.children}" var="emailFolder5" rendered="{!NOT( ISBLANK( emailFolder4.children ) )}">
+                                                                                    + <a href="#" onclick="javascript:toggleFolderDisplay( 'emailFolder_{!emailFolder5.pathId}' );">{!emailFolder5.name}</a><br/>
+                                                                                    <div class="emailFolder closed" id="emailFolder_{!emailFolder5.pathId}">
+                                                                                        <apex:repeat value="{!emailFolder5.contents}" var="email5">
+                                                                                            &nbsp;-&nbsp;
+                                                                                            <a href="#" onclick="javascript:selectEmailJS( '{!email5.id}', '{!email5.name}', '{!email5.title}' );">{!email5.name}</a>
+                                                                                            <br/>
+                                                                                        </apex:repeat>
+                                                                                    </div>
+                                                                                </apex:repeat>
+                                                                                <apex:repeat value="{!emailFolder4.contents}" var="email4">
+                                                                                    &nbsp;-&nbsp;
+                                                                                    <a href="#" onclick="javascript:selectEmailJS( '{!email4.id}', '{!email4.name}', '{!email4.title}' );">{!email4.name}</a>
+                                                                                    <br/>
+                                                                                </apex:repeat>
+                                                                            </div>
+                                                                        </apex:repeat>
+                                                                        <apex:repeat value="{!emailFolder3.contents}" var="email3">
+                                                                            &nbsp;-&nbsp;
+                                                                            <a href="#" onclick="javascript:selectEmailJS( '{!email3.id}', '{!email3.name}', '{!email3.title}' );">{!email3.name}</a>
+                                                                            <br/>
+                                                                        </apex:repeat>
+                                                                    </div>
+                                                                </apex:repeat>
+                                                                <apex:repeat value="{!emailFolder2.contents}" var="email2">
+                                                                    &nbsp;-&nbsp;
+                                                                    <a href="#" onclick="javascript:selectEmailJS( '{!email2.id}', '{!email2.name}', '{!email2.title}' );">{!email2.name}</a>
+                                                                    <br/>
+                                                                </apex:repeat>
+                                                            </div>
+                                                        </apex:repeat>
+                                                        <apex:repeat value="{!emailFolder1.contents}" var="email1">
+                                                            &nbsp;-&nbsp;
+                                                            <a href="#" onclick="javascript:selectEmailJS( '{!email1.id}', '{!email1.name}', '{!email1.title}' );">{!email1.name}</a>
+                                                            <br/>
+                                                        </apex:repeat>
+                                                    </div>
+                                                </apex:repeat>
+                                            </apex:pageBlock>
+                                        </apex:outputPanel>
+                                    </apex:facet>
+                                </apex:actionStatus>
+                            </apex:outputPanel>
+                        </apex:outputPanel>
+                    </apex:outputPanel>
+                </apex:pageBlockSectionItem>
+                
+                <apex:pageBlockSectionItem id="selectedEmailSubject" helpText="{!$Label.et4ae__SendEmail_Help_Subject}">
+                    <apex:outputLabel for="emailSubject" value="{!$Label.et4ae__Send_Field_Subject}"/>
+                    <apex:inputText id="emailSubject" value="{!localSend.email.title}"/>
+                </apex:pageBlockSectionItem>
+                
+                <apex:pageBlockSection id="audienceSection" columns="1">
+                    <!-- Campaign only displayed if the sendType is CAMPAIGN -->
+                    <apex:pageBlockSectionItem id="selectedCampaign" helpText="{!$Label.et4ae__SendEmail_Help_Campaign}" rendered="{!IF(AND(sendType = SENDTYPE_CAMPAIGN, isCustomCampaign = false ), true, false  )}">
+                        <apex:outputLabel for="campaign" value="{!$Label.et4ae__Send_Field_Campaign}"/>
+                        <apex:inputField id="campaign" value="{!send.ET4AE__Campaign__c}"/>
+                    </apex:pageBlockSectionItem>
+                    
+                    <apex:pageBlockSectionItem id="selectedCustomCampaign" helpText="{!$Label.et4ae__SendEmail_Help_Campaign}" rendered="{!IF(AND(sendType = SENDTYPE_CAMPAIGN, isCustomCampaign = true ), true, false  )}">
+                        <!-- <apex:outputLabel for="customCampaign" value="{!$Label.et4ae__Send_Field_Campaign}"/>
+                        <apex:inputField id="customCampaign" value="{!send.ET4AE__Campaign__c}"/> -->
+                        <apex:outputLabel for="customCampaign" value="{!$Label.et4ae__Send_Field_Campaign}"/>
+                        <apex:outputPanel id="customCampaignWrapper" layout="block">
+                            <apex:outputText id="customCampaignName" value="{!localSend.customObject.name}"/>
+                            <apex:outputPanel >
+                                <apex:actionStatus id="listCustomCampaignStatus">
+                                    <apex:facet name="start">
+                                        <img class="spinnerSmall" src="{!URLFOR( $Resource.ET4AE__ExactTargetImages, 'loading.gif' )}"/>
+                                    </apex:facet>
+                                    <apex:facet name="stop">
+                                        <apex:commandButton id="listCustomCampaigns" value="Find Campaign" action="{!listCustomSalesforceObjectRecords}" rerender="customCampaignsSection,pageMessages" status="listCustomCampaignStatus">
+                                        </apex:commandButton>
+                                    </apex:facet>
+                                </apex:actionStatus>
+                                <apex:outputPanel id="customCampaignsSection">
+                                    <apex:actionStatus id="clickCustomCampaignStatus">
+                                        <apex:facet name="start">
+                                            <img class="spinnerSmall" src="{!URLFOR( $Resource.ET4AE__ExactTargetImages, 'loading.gif' )}"/>
+                                        </apex:facet>
+                                        <apex:facet name="stop">
+                                            <apex:outputPanel styleClass="popup" rendered="{!IF( showRecipientCustomObjectChooser, true, false )}">
+                                                <apex:pageBlock >
+                                                    <apex:pageBlockButtons location="both">
+                                                        <apex:commandButton action="{!selectSalesforceCustomObjectCancel}" value="{!$Label.et4ae__General_Button_Cancel}" rerender="customCampaignsSection" status="clickCustomCampaignStatus"/>
+                                                    </apex:pageBlockButtons>
+                                                    <apex:repeat value="{!localSend.customObjects}" var="customCampaignsFolder">
+                                                        <apex:pageBlockSection title="{!customCampaignsFolder.name}" columns="1">
+                                                            <apex:repeat value="{!customCampaignsFolder.contents}" var="customCampaign">
+                                                                <apex:pageBlockSectionItem >
+                                                                    <apex:commandLink action="{!selectSalesforceCustomObject}" value="{!customCampaign.name}" rerender="customCampaignName,customCampaignsSection" status="clickCustomCampaignStatus">
+                                                                        <apex:param name="customCampaignId" value="{!customCampaign.id}"/>
+                                                                        <apex:param name="customCampaignName" value="{!customCampaign.name}"/>
+                                                                    </apex:commandLink>
+                                                                    <br/>
+                                                                </apex:pageBlockSectionItem>
+                                                            </apex:repeat>
+                                                        </apex:pageBlockSection>
+                                                    </apex:repeat>
+                                                </apex:pageBlock>
+                                            </apex:outputPanel>
+                                        </apex:facet>
+                                    </apex:actionStatus>
+                                </apex:outputPanel>
+                            </apex:outputPanel>
+                        </apex:outputPanel>
+                    </apex:pageBlockSectionItem>
+                
+                    <!-- Lead only displayed if sendType is LEAD -->
+                    <apex:pageBlockSectionItem id="selectedLead" helpText="{!$Label.et4ae__SendEmail_Help_Lead}" rendered="{!IF( sendType = SENDTYPE_LEAD, true, false )}">
+                        <apex:outputLabel for="lead" value="{!$Label.et4ae__Send_Field_Lead}"/>
+                        <apex:inputField id="lead" value="{!send.ET4AE__Lead__c}"/>
+                    </apex:pageBlockSectionItem>
+                    
+                    <!-- Contact only displayed if sendType is CONTACT -->
+                    <apex:pageBlockSectionItem id="selectedContact" helpText="{!$Label.et4ae__SendEmail_Help_Contact}" rendered="{!IF( sendType = SENDTYPE_CONTACT, true, false )}">
+                        <apex:outputLabel for="contact" value="{!$Label.et4ae__Send_Field_Contact}"/>
+                        <apex:inputField id="contact" value="{!send.ET4AE__Contact__c}"/>
+                    </apex:pageBlockSectionItem>
+                
+                    <!-- Subscriber List only displayed if the sendType is SUBSCRIBER_LIST -->
+                    <apex:pageBlockSectionItem helpText="{!$Label.et4ae__SendEmail_Help_SubscriberList}" rendered="{!IF( sendType = SENDTYPE_SUBSCRIBERLIST, true, false )}">
+                        <apex:outputLabel for="subscriberList" value="{!$Label.et4ae__Send_Field_SubscriberList}"/>
+                        <apex:outputPanel layout="block" id="subscriberListWrapper">
+                            <apex:outputText id="subscriberListName" value="{!localSend.subscriberList.name}"/>
+                            <apex:outputPanel >
+                                <apex:actionStatus id="listSubscriberListsStatus">
+                                    <apex:facet name="start">
+                                        <img class="spinnerSmall" src="{!URLFOR( $Resource.ET4AE__ExactTargetImages, 'loading.gif' )}"/>
+                                    </apex:facet>
+                                    <apex:facet name="stop">
+                                        <apex:commandButton id="listSubscriberLists" value="{!$Label.et4ae__SendEmail_Button_FindSubscriberList}" action="{!listSubscriberLists}" rerender="subscriberLists,pageMessages" status="listSubscriberListsStatus"/>
+                                    </apex:facet>
+                                </apex:actionStatus>
+                                <apex:outputPanel id="subscriberLists">
+                                    <apex:actionStatus id="clickListStatus">
+                                        <apex:facet name="start">
+                                            <img class="spinnerSmall" src="{!URLFOR( $Resource.ET4AE__ExactTargetImages, 'loading.gif' )}"/>
+                                        </apex:facet>
+                                        <apex:facet name="stop">
+                                            <apex:outputPanel styleClass="popup" rendered="{!IF( showSubscriberListChooser, true, false )}">
+                                            <script type="text/javascript">
+                                                function toggleFolderDisplay2( folderId ) {
+
+                                                    // Identify folder div.
+                                                    var folderDiv = document.getElementById( folderId );
+                                                    
+                                                    // Pull the folder class.
+                                                    var folderClass = folderDiv.className;
+                                                    
+                                                    // Determine if the folder is open or closed.
+                                                    var newFolderClass = 'subscriberListFolder closed';
+                                                    if( folderClass.indexOf( 'closed' ) > -1 ) {
+                                                        newFolderClass = 'subscriberListFolder open';
+                                                    }
+
+                                                    // Assing new class.
+                                                    folderDiv.className = newFolderClass;
+
+                                                }
+                                                </script>
+                                                <apex:pageBlock >
+                                                    <apex:pageBlockButtons location="both">
+                                                        <apex:commandButton action="{!selectSubscriberListCancel}" value="{!$Label.et4ae__General_Button_Cancel}" rerender="subscriberLists" status="clickListStatus"/>
+                                                    </apex:pageBlockButtons>
+                                                    <!-- Comment by Arjun : Comment out for  -->
+                                                    <!-- <apex:repeat value="{!localSend.subscriberLists}" var="subscriberListFolder">
+                                                        <apex:pageBlockSection title="{!subscriberListFolder.name}" columns="1">
+                                                            <apex:repeat value="{!subscriberListFolder.contents}" var="subscriberList">
+                                                                <apex:pageBlockSectionItem >
+                                                                    <apex:commandLink action="{!selectSubscriberList}" value="{!subscriberList.name}" rerender="subscriberListName,subscriberLists" status="clickListStatus">
+                                                                        <apex:param name="subscriberListId" value="{!subscriberList.id}"/>
+                                                                        <apex:param name="subscriberListName" value="{!subscriberList.name}"/>
+                                                                    </apex:commandLink>
+                                                                    <br/>
+                                                                </apex:pageBlockSectionItem>
+                                                            </apex:repeat>
+                                                        </apex:pageBlockSection>
+                                                    </apex:repeat>  -->
+                                                    <!-- Comment by Arjun. Include for August Release -->
+                                                    <apex:repeat value="{!localSend.subscriberLists}" var="subscriberListFolder1">
+                                                    + <a href="#" onclick="javascript:toggleFolderDisplay2( 'subscriberListFolder_{!subscriberListFolder1.pathId}' );">{!subscriberListFolder1.name}</a><br/>
+                                                    <div class="subscriberListFolder closed" id="subscriberListFolder_{!subscriberListFolder1.pathId}">
+                                                        <apex:repeat value="{!subscriberListFolder1.children}" var="subscriberListFolder2" rendered="{!NOT( ISBLANK( subscriberListFolder1.children ) )}">
+                                                            + <a href="#" onclick="javascript:toggleFolderDisplay2( 'subscriberListFolder_{!subscriberListFolder2.pathId}' );">{!subscriberListFolder2.name}</a><br/>
+                                                            <div class="subscriberListFolder closed" id="subscriberListFolder_{!subscriberListFolder2.pathId}">
+                                                                <apex:repeat value="{!subscriberListFolder2.children}" var="subscriberListFolder3" rendered="{!NOT( ISBLANK( subscriberListFolder2.children ) )}">
+                                                                    + <a href="#" onclick="javascript:toggleFolderDisplay2( 'subscriberListFolder_{!subscriberListFolder3.pathId}' );">{!subscriberListFolder3.name}</a><br/>
+                                                                    <div class="subscriberListFolder closed" id="subscriberListFolder_{!subscriberListFolder3.pathId}">
+                                                                        <apex:repeat value="{!subscriberListFolder3.children}" var="subscriberListFolder4" rendered="{!NOT( ISBLANK( subscriberListFolder3.children ) )}">
+                                                                            + <a href="#" onclick="javascript:toggleFolderDisplay2( 'subscriberListFolder_{!subscriberListFolder4.pathId}' );">{!subscriberListFolder4.name}</a><br/>
+                                                                            <div class="subscriberListFolder closed" id="subscriberListFolder_{!subscriberListFolder4.pathId}">
+                                                                                <apex:repeat value="{!subscriberListFolder4.children}" var="subscriberListFolder5" rendered="{!NOT( ISBLANK( subscriberListFolder4.children ) )}">
+                                                                                    + <a href="#" onclick="javascript:toggleFolderDisplay2( 'subscriberListFolder_{!subscriberListFolder5.pathId}' );">{!subscriberListFolder5.name}</a><br/>
+                                                                                    <div class="subscriberListFolder closed" id="subscriberListFolder_{!subscriberListFolder5.pathId}">
+                                                                                        <apex:repeat value="{!subscriberListFolder5.contents}" var="subscriberList5">
+                                                                                            &nbsp;-&nbsp;
+                                                                                            <a href="#" onclick="javascript:selectSubscriberListJS( '{!subscriberList5.id}', '{!subscriberList5.name}' );">{!subscriberList5.name}</a>
+                                                                                            <br/>
+                                                                                        </apex:repeat>
+                                                                                    </div>
+                                                                                </apex:repeat>
+                                                                                <apex:repeat value="{!subscriberListFolder4.contents}" var="subscriberList4">
+                                                                                    &nbsp;-&nbsp;
+                                                                                    <a href="#" onclick="javascript:selectSubscriberListJS( '{!subscriberList4.id}', '{!subscriberList4.name}' );">{!subscriberList4.name}</a>
+                                                                                    <br/>
+                                                                                </apex:repeat>
+                                                                            </div>
+                                                                        </apex:repeat>
+                                                                        <apex:repeat value="{!subscriberListFolder3.contents}" var="subscriberList3">
+                                                                            &nbsp;-&nbsp;
+                                                                            <a href="#" onclick="javascript:selectSubscriberListJS( '{!subscriberList3.id}', '{!subscriberList3.name}' );">{!subscriberList3.name}</a>
+                                                                            <br/>
+                                                                        </apex:repeat>
+                                                                    </div>
+                                                                </apex:repeat>
+                                                                <apex:repeat value="{!subscriberListFolder2.contents}" var="subscriberList2">
+                                                                    &nbsp;-&nbsp;
+                                                                    <a href="#" onclick="javascript:selectSubscriberListJS( '{!subscriberList2.id}', '{!subscriberList2.name}' );">{!subscriberList2.name}</a>
+                                                                    <br/>
+                                                                </apex:repeat>
+                                                            </div>
+                                                        </apex:repeat>
+                                                        <apex:repeat value="{!subscriberListFolder1.contents}" var="subscriberList1">
+                                                            &nbsp;-&nbsp;
+                                                            <a href="#" onclick="javascript:selectSubscriberListJS( '{!subscriberList1.id}', '{!subscriberList1.name}' );">{!subscriberList1.name}</a>
+                                                            <br/>
+                                                        </apex:repeat>
+                                                    </div>
+                                                </apex:repeat>
+                                                <!-- End of part added by Arjun -->
+                                                </apex:pageBlock>
+                                            </apex:outputPanel>
+                                        </apex:facet>
+                                    </apex:actionStatus>
+                                </apex:outputPanel>
+                            </apex:outputPanel>
+                        </apex:outputPanel>
+                    </apex:pageBlockSectionItem>
+    
+                    <!-- Recipient Report only displayed if the sendType is REPORT -->
+                    <apex:pageBlockSectionItem helpText="{!$Label.et4ae__SendEmail_Help_RecipientReport}" rendered="{!IF( sendType = SENDTYPE_REPORT, true, false )}">
+                        <apex:outputLabel for="recipientReport" value="{!$Label.et4ae__SendEmail_Field_RecipientReport}"/>
+                        <apex:outputPanel id="recipientReportWrapper" layout="block">
+                            <apex:outputText id="recipientReportName" value="{!localSend.report.name}"/>
+                            <apex:outputPanel >
+                                <apex:actionStatus id="listRecipientReportsStatus">
+                                    <apex:facet name="start">
+                                        <img class="spinnerSmall" src="{!URLFOR( $Resource.ET4AE__ExactTargetImages, 'loading.gif' )}"/>
+                                    </apex:facet>
+                                    <apex:facet name="stop">
+                                        <apex:commandButton id="listRecipientReports" value="{!$Label.et4ae__SendEmail_Button_FindRecipientReports}" action="{!listSalesforceReports}" rerender="recipientReports,pageMessages" status="listRecipientReportsStatus">
+                                            <apex:param name="reportType" value="{!REPORTTYPE_RECIPIENT}"/>
+                                        </apex:commandButton>
+                                    </apex:facet>
+                                </apex:actionStatus>
+                                <apex:outputPanel id="recipientReports">
+                                    <apex:actionStatus id="clickReportStatus">
+                                        <apex:facet name="start">
+                                            <img class="spinnerSmall" src="{!URLFOR( $Resource.ET4AE__ExactTargetImages, 'loading.gif' )}"/>
+                                        </apex:facet>
+                                        <apex:facet name="stop">
+                                            <apex:outputPanel styleClass="popup" rendered="{!IF( showRecipientReportChooser, true, false )}">
+                                                <apex:pageBlock >
+                                                    <apex:pageBlockButtons location="both">
+                                                        <apex:commandButton action="{!selectSalesforceReportCancel}" value="{!$Label.et4ae__General_Button_Cancel}" rerender="recipientReports" status="clickReportStatus"/>
+                                                    </apex:pageBlockButtons>
+                                                    <apex:repeat value="{!localSend.reports}" var="recipientReportsFolder">
+                                                        <apex:pageBlockSection title="{!recipientReportsFolder.name}" columns="1">
+                                                            <apex:repeat value="{!recipientReportsFolder.contents}" var="recipientReport">
+                                                                <apex:pageBlockSectionItem >
+                                                                    <apex:commandLink action="{!selectSalesforceReport}" value="{!recipientReport.name}" rerender="recipientReportName,recipientReports,sfPasswordField,reportName,salesforceReports" status="clickReportStatus">
+                                                                        <apex:param name="reportId" value="{!recipientReport.id}"/>
+                                                                        <apex:param name="reportName" value="{!recipientReport.name}"/>
+                                                                        <apex:param name="reportType" value="{!REPORTTYPE_RECIPIENT}"/>
+                                                                    </apex:commandLink>
+                                                                    <br/>
+                                                                </apex:pageBlockSectionItem>
+                                                            </apex:repeat>
+                                                        </apex:pageBlockSection>
+                                                    </apex:repeat>
+                                                </apex:pageBlock>
+                                            </apex:outputPanel>
+                                        </apex:facet>
+                                    </apex:actionStatus>
+                                </apex:outputPanel>
+                            </apex:outputPanel>
+                        </apex:outputPanel>
+                    </apex:pageBlockSectionItem>
+                </apex:pageBlockSection>
+                
+                <!-- Additional data (report) selection -->
+                <!-- rendered="{!IF(sendType == SENDTYPE_SUBSCRIBERLIST,false,true) } -->
+                <!-- columns="1" -->
+                <apex:pageBlockSection id="addlDataSection" rendered="{!IF(mtAdminConsole.ET4AE__allowAdditionalDataReports__c == false,false,true)}">
+                    <apex:pageBlockSectionItem helpText="{!$Label.et4ae__SendEmail_Help_Report}" rendered="{!IF(sendType == SENDTYPE_SUBSCRIBERLIST,false,true) }">
+                        <apex:outputLabel for="reportName" value="{!$Label.et4ae__SendEmail_Field_Report}"/>
+                        <apex:outputPanel id="additionalDataReportWrapper">
+                            <apex:outputText id="reportName" value="{!localSend.extraDataReport.name}"/>
+                            <apex:outputPanel >
+                                <apex:actionStatus id="listReportsStatus">
+                                    <apex:facet name="start">
+                                        <img class="spinnerSmall" src="{!URLFOR( $Resource.ET4AE__ExactTargetImages, 'loading.gif' )}"/>
+                                    </apex:facet>
+                                    <apex:facet name="stop">
+                                        <apex:commandButton id="listReports" value="{!$Label.et4ae__SendEmail_Button_FindReport}" action="{!listSalesforceReports}" rerender="salesforceReports,pageMessages" status="listReportsStatus">
+                                            <apex:param name="reportType" value="{!REPORTTYPE_EXTRADATA}"/>
+                                        </apex:commandButton>
+                                    </apex:facet>
+                                </apex:actionStatus>
+                                <apex:outputPanel id="salesforceReports">
+                                    <apex:actionStatus id="clickAdditionalReportStatus">
+                                        <apex:facet name="start">
+                                            <img class="spinnerSmall" src="{!URLFOR( $Resource.ET4AE__ExactTargetImages, 'loading.gif' )}"/>
+                                        </apex:facet>
+                                        <apex:facet name="stop">
+                                            <apex:outputPanel styleClass="popup" rendered="{!IF( showExtraDataReportChooser, true, false )}">
+                                                <apex:pageBlock >
+                                                    <apex:pageBlockButtons location="both">
+                                                        <apex:commandButton action="{!selectSalesforceReportCancel}" value="{!$Label.et4ae__General_Button_Cancel}" rerender="salesforceReports" status="clickAdditionalReportStatus"/>
+                                                    </apex:pageBlockButtons>
+                                                    <apex:repeat value="{!localSend.extraDataReports}" var="reportFolder">
+                                                        <apex:pageBlockSection title="{!reportFolder.name}" columns="1">
+                                                            <apex:repeat value="{!reportFolder.contents}" var="report">
+                                                                <apex:pageBlockSectionItem >
+                                                                    <apex:commandLink action="{!selectSalesforceReport}" value="{!report.name}" rerender="sfPasswordField,reportName,salesforceReports" status="clickAdditionalReportStatus">
+                                                                        <apex:param name="reportId" value="{!report.id}"/>
+                                                                        <apex:param name="reportName" value="{!report.name}"/>
+                                                                        <apex:param name="reportType" value="{!REPORTTYPE_EXTRADATA}"/>
+                                                                    </apex:commandLink>
+                                                                    <br/>
+                                                                </apex:pageBlockSectionItem>
+                                                            </apex:repeat>
+                                                        </apex:pageBlockSection>
+                                                    </apex:repeat>
+                                                </apex:pageBlock>
+                                            </apex:outputPanel>
+                                        </apex:facet>
+                                    </apex:actionStatus>
+                                </apex:outputPanel>
+                            </apex:outputPanel>
+                        </apex:outputPanel>
+                    </apex:pageBlockSectionItem>
+                    <apex:pageBlockSectionItem helpText="{!$Label.et4ae__SendEmail_Help_Report}" rendered="{!IF(sendType == SENDTYPE_SUBSCRIBERLIST,true,false) }">
+                        <apex:outputLabel for="reportName" value="{!$Label.et4ae__SendEmail_Field_Report}"/>
+                        <apex:outputPanel styleClass="unavailable-feature">
+                            {!$Label.et4ae__SendEmail_Field_Report} is not available for Subscriber List sends
+                        </apex:outputPanel>
+                    </apex:pageBlockSectionItem>
+                </apex:pageBlockSection>
+
+                <!-- Exclusion Reports only displayed if the sendType is CAMPAIGN or REPORT -->
+                <apex:pageBlockSection id="exclusionListSection">
+                    <apex:pageBlockSectionItem helpText="{!$Label.et4ae__SendEmail_Help_ExclusionLists}" rendered="{!IF( OR( sendType = SENDTYPE_CAMPAIGN, sendType = SENDTYPE_REPORT ), true, false )}">
+                        <apex:outputLabel for="exclusionLists" value="{!$Label.et4ae__SendEmail_Field_ExclusionLists}"/>
+                        <apex:outputPanel id="exclusionLists">
+                            <apex:repeat value="{!localSend.exclusionReportsSelected}" var="exclusionList">
+                                <apex:pageBlockSectionItem >
+                                    <apex:outputText value="{!exclusionList.name}"/>
+                                </apex:pageBlockSectionItem>
+                                <apex:pageBlockSectionItem >
+                                    <apex:commandButton action="{!removeExclusionList}" value="{!$Label.et4ae__General_Button_Remove}" rerender="sfPasswordField,exclusionLists,pageMessages" status="exclusionListsStatus">
+                                        <apex:param name="listId" value="{!exclusionList.id}"/>
+                                    </apex:commandButton>
+                                    <br/>
+                                </apex:pageBlockSectionItem>
+                            </apex:repeat>
+                            <apex:outputPanel >
+                                <apex:outputPanel id="exclusionListsPopup">
+                                    <apex:actionStatus id="clickExclusionReportStatus">
+                                        <apex:facet name="start">
+                                            <img class="spinnerSmall" src="{!URLFOR( $Resource.ET4AE__ExactTargetImages, 'loading.gif' )}"/>
+                                        </apex:facet>
+                                        <apex:facet name="stop">
+                                            <apex:outputPanel styleClass="popup" rendered="{!IF( showExclusionListChooser, true, false )}">
+                                                <apex:pageBlock >
+                                                    <apex:pageBlockButtons location="both">
+                                                        <apex:commandButton action="{!selectSalesforceReportCancel}" value="{!$Label.et4ae__General_Button_Cancel}" rerender="exclusionLists" status="clickExclusionReportStatus"/>
+                                                    </apex:pageBlockButtons>
+                                                    <apex:repeat value="{!localSend.exclusionReports}" var="reportFolder">
+                                                        <apex:pageBlockSection title="{!reportFolder.name}" columns="1">
+                                                            <apex:repeat value="{!reportFolder.contents}" var="report">
+                                                                <apex:pageBlockSectionItem >
+                                                                    <apex:commandLink action="{!selectSalesforceReport}" value="{!report.name}" rerender="sfPasswordField,exclusionLists" status="clickExclusionReportStatus">
+                                                                        <apex:param name="reportId" value="{!report.id}"/>
+                                                                        <apex:param name="reportName" value="{!report.name}"/>
+                                                                        <apex:param name="reportType" value="{!REPORTTYPE_EXCLUSION}"/>
+                                                                    </apex:commandLink>
+                                                                    <br/>
+                                                                </apex:pageBlockSectionItem>
+                                                            </apex:repeat>
+                                                        </apex:pageBlockSection>
+                                                    </apex:repeat>
+                                                </apex:pageBlock>
+                                            </apex:outputPanel>
+                                        </apex:facet>
+                                    </apex:actionStatus>
+                                </apex:outputPanel>
+                            </apex:outputPanel>
+                            <apex:actionStatus id="listExclusionListsStatus">
+                                <apex:facet name="start">
+                                    <img class="spinnerSmall" src="{!URLFOR( $Resource.ET4AE__ExactTargetImages, 'loading.gif' )}"/>
+                                </apex:facet>
+                                <apex:facet name="stop">
+                                    <apex:commandButton id="listExclusionLists" value="{!$Label.et4ae__SendEmail_Button_AddAnotherList}" action="{!listSalesforceReports}" rerender="exclusionLists" status="listExclusionListsStatus">
+                                        <apex:param name="reportType" value="{!REPORTTYPE_EXCLUSION}"/>
+                                    </apex:commandButton>
+                                </apex:facet>
+                            </apex:actionStatus>
+                        </apex:outputPanel>
+                    </apex:pageBlockSectionItem>
+                                        <!-- Suppression Lists only displayed if the sendType is SUBSCRIBER_LIST -->
+                    <apex:pageBlockSectionItem helpText="{!$Label.et4ae__Send_Email_Help_Suppression_Lists}" rendered="{!IF(sendType = SENDTYPE_SUBSCRIBERLIST, true, false )}">
+                        <apex:outputLabel for="suppressionLists" value="{!$Label.et4ae__Send_Email_Field_Suppression_Lists}"/>
+                        <apex:outputPanel id="suppressionLists">
+                            <apex:repeat value="{!localSend.suppressionList}" var="suppressionList">
+                                <apex:pageBlockSectionItem >
+                                    <apex:outputText value="{!suppressionList.name}"/>
+                                </apex:pageBlockSectionItem>
+                                <apex:pageBlockSectionItem >
+                                    <apex:commandButton action="{!removeSuppressionList}" value="{!$Label.et4ae__General_Button_Remove}" rerender="sfPasswordField,suppressionLists,pageMessages" status="suppressionListsStatus">
+                                        <apex:param name="listId" value="{!suppressionList.id}"/>
+                                    </apex:commandButton>
+                                    <br/>
+                                </apex:pageBlockSectionItem>
+                            </apex:repeat>
+                            <apex:outputPanel layout="block" id="suppressionListWrapper">
+                            <apex:outputPanel id="suppressionList">
+                                    <apex:actionStatus id="clickSuppressionListStatus">
+                                        <apex:facet name="start">
+                                            <img class="spinnerSmall" src="{!URLFOR( $Resource.ET4AE__ExactTargetImages, 'loading.gif' )}"/>
+                                        </apex:facet>
+                                        <apex:facet name="stop">
+                                            <apex:outputPanel styleClass="popup" rendered="{!IF( showSuppressionListChooser, true, false )}">
+                                            <script type="text/javascript">
+                                                function toggleFolderDisplay3( folderId ) {
+
+                                                    // Identify folder div.
+                                                    var folderDiv = document.getElementById( folderId );
+                                                    
+                                                    // Pull the folder class.
+                                                    var folderClass = folderDiv.className;
+                                                    
+                                                    // Determine if the folder is open or closed.
+                                                    var newFolderClass = 'suppressionListFolder closed';
+                                                    if( folderClass.indexOf( 'closed' ) > -1 ) {
+                                                        newFolderClass = 'suppressionListFolder open';
+                                                    }
+
+                                                    // Assing new class.
+                                                    folderDiv.className = newFolderClass;
+
+                                                }
+                                                </script>
+                                                <apex:pageBlock >
+                                                    <apex:pageBlockButtons location="both">
+                                                        <apex:commandButton action="{!selectSuppressionListCancel}" value="{!$Label.et4ae__General_Button_Cancel}" rerender="suppressionLists" status="clickSuppressionListStatus"/>
+                                                    </apex:pageBlockButtons>
+                                                    <!-- Comment by Arjun. Include for August Release -->
+                                                    <apex:repeat value="{!localSend.suppressionLists}" var="suppressionListFolder1">
+                                                    + <a href="#" onclick="javascript:toggleFolderDisplay3( 'suppressionListFolder_{!suppressionListFolder1.pathId}' );">{!suppressionListFolder1.name}</a><br/>
+                                                    <div class="suppressionListFolder closed" id="suppressionListFolder_{!suppressionListFolder1.pathId}">
+                                                        <apex:repeat value="{!suppressionListFolder1.children}" var="suppressionListFolder2" rendered="{!NOT( ISBLANK( suppressionListFolder1.children ) )}">
+                                                            + <a href="#" onclick="javascript:toggleFolderDisplay3( 'suppressionListFolder_{!suppressionListFolder2.pathId}' );">{!suppressionListFolder2.name}</a><br/>
+                                                            <div class="suppressionListFolder closed" id="suppressionListFolder_{!suppressionListFolder2.pathId}">
+                                                                <apex:repeat value="{!suppressionListFolder2.children}" var="suppressionListFolder3" rendered="{!NOT( ISBLANK( suppressionListFolder2.children ) )}">
+                                                                    + <a href="#" onclick="javascript:toggleFolderDisplay3( 'suppressionListFolder_{!suppressionListFolder3.pathId}' );">{!suppressionListFolder3.name}</a><br/>
+                                                                    <div class="suppressionListFolder closed" id="suppressionListFolder_{!suppressionListFolder3.pathId}">
+                                                                        <apex:repeat value="{!suppressionListFolder3.children}" var="suppressionListFolder4" rendered="{!NOT( ISBLANK( suppressionListFolder3.children ) )}">
+                                                                            + <a href="#" onclick="javascript:toggleFolderDisplay3( 'suppressionListFolder_{!suppressionListFolder4.pathId}' );">{!suppressionListFolder4.name}</a><br/>
+                                                                            <div class="suppressionListFolder closed" id="suppressionListFolder_{!suppressionListFolder4.pathId}">
+                                                                                <apex:repeat value="{!suppressionListFolder4.children}" var="suppressionListFolder5" rendered="{!NOT( ISBLANK( suppressionListFolder4.children ) )}">
+                                                                                    + <a href="#" onclick="javascript:toggleFolderDisplay3( 'suppressionListFolder_{!suppressionListFolder5.pathId}' );">{!suppressionListFolder5.name}</a><br/>
+                                                                                    <div class="suppressionListFolder closed" id="suppressionListFolder_{!suppressionListFolder5.pathId}">
+                                                                                        <apex:repeat value="{!suppressionListFolder5.contents}" var="suppressionList5">
+                                                                                            &nbsp;-&nbsp;
+                                                                                            <a href="#" onclick="javascript:selectSuppressionListJS( '{!suppressionList5.id}', '{!suppressionList5.name}' );">{!suppressionList5.name}</a>
+                                                                                            <br/>
+                                                                                        </apex:repeat>
+                                                                                    </div>
+                                                                                </apex:repeat>
+                                                                                <apex:repeat value="{!suppressionListFolder4.contents}" var="suppressionList4">
+                                                                                    &nbsp;-&nbsp;
+                                                                                    <a href="#" onclick="javascript:selectSuppressionListJS( '{!suppressionList4.id}', '{!suppressionList4.name}' );">{!suppressionList4.name}</a>
+                                                                                    <br/>
+                                                                                </apex:repeat>
+                                                                            </div>
+                                                                        </apex:repeat>
+                                                                        <apex:repeat value="{!suppressionListFolder3.contents}" var="suppressionList3">
+                                                                            &nbsp;-&nbsp;
+                                                                            <a href="#" onclick="javascript:selectSuppressionListJS( '{!suppressionList3.id}', '{!suppressionList3.name}' );">{!suppressionList3.name}</a>
+                                                                            <br/>
+                                                                        </apex:repeat>
+                                                                    </div>
+                                                                </apex:repeat>
+                                                                <apex:repeat value="{!suppressionListFolder2.contents}" var="suppressionList2">
+                                                                    &nbsp;-&nbsp;
+                                                                    <a href="#" onclick="javascript:selectSuppressionListJS( '{!suppressionList2.id}', '{!suppressionList2.name}' );">{!suppressionList2.name}</a>
+                                                                    <br/>
+                                                                </apex:repeat>
+                                                            </div>
+                                                        </apex:repeat>
+                                                        <apex:repeat value="{!suppressionListFolder1.contents}" var="suppressionList1">
+                                                            &nbsp;-&nbsp;
+                                                            <a href="#" onclick="javascript:selectSuppressionListJS( '{!suppressionList1.id}', '{!suppressionList1.name}' );">{!suppressionList1.name}</a>
+                                                            <br/>
+                                                        </apex:repeat>
+                                                    </div>
+                                                </apex:repeat>
+                                                <!-- End of part added by Arjun -->
+                                                </apex:pageBlock>
+                                            </apex:outputPanel>
+                                        </apex:facet>
+                                    </apex:actionStatus>
+                                </apex:outputPanel>
+                            </apex:outputPanel>
+                            <apex:actionStatus id="listSuppressionListsStatus">
+                                <apex:facet name="start">
+                                    <img class="spinnerSmall" src="{!URLFOR( $Resource.ET4AE__ExactTargetImages, 'loading.gif' )}"/>
+                                </apex:facet>
+                                <apex:facet name="stop">
+                                    <apex:commandButton id="listSuppressionLists" value="{!$Label.et4ae__SendEmail_Button_AddAnotherList}" action="{!listSuppressionLists}" rerender="suppressionLists" status="listSuppressionListsStatus">
+                                    </apex:commandButton>
+                                </apex:facet>
+                            </apex:actionStatus>
+                            </apex:outputPanel>
+                    </apex:pageBlockSectionItem>
+                </apex:pageBlockSection>
+                
+                <!-- From -->
+                <apex:pageBlockSection id="selectedFromWrapper">
+                <apex:inputHidden value="{!isFromSelected}" id="theHiddenInput1" />
+                <apex:inputHidden value="{!isSCSelected}" id="theHiddenInput2" />
+                <apex:pageBlockSectionitem id="selectedFrom" helpText="{!$Label.et4ae__SendEmail_Help_From}">
+                    <apex:outputLabel for="fromBlock" value="{!$Label.et4ae__Send_Field_From}"/>
+                    <apex:outputPanel id="fromBlock" layout="block">
+                        <apex:outputPanel layout="block">
+                            <input type="radio" id="fromSelectorEmail" name="fromSelector" value="true" onclick="swapFromSource();"/>
+                            <apex:selectList id="from" value="{!localSend.fromEmailSelected}" size="1">
+                                <apex:selectOptions value="{!localSend.fromOptions}"/>
+                            </apex:selectList>
+                        </apex:outputPanel>
+                        <apex:outputPanel id="sendClassificationWrapper" layout="block" rendered="{!localSend.sendClassificationOptions.size > 0}">
+                            <input type="radio" id="fromSelectorSC" name="fromSelector" value="true" onclick="swapFromSource();"/>
+                            <apex:outputLabel for="sendClassification" value="{!$Label.et4ae__SendEmail_Field_SendClassification}"/>
+                            <apex:selectList id="sendClassification" value="{!localSend.sendClassificationSelected}" size="1">
+                                <apex:selectOptions value="{!localSend.sendClassificationOptions}"/>
+                            </apex:selectList>
+                        </apex:outputPanel>
+                    </apex:outputPanel>
+                </apex:pageBlockSectionitem>
+                </apex:pageBlockSection>
+                
+                <!-- Dedupe Subscribers -->
+                <apex:pageBlockSectionItem id="dedupeSubscribersField" helpText="{!$Label.et4ae__SendEmail_Help_DedupeSubscribers}">
+                    <apex:outputLabel for="dedupeSubscribers" value="{!$Label.et4ae__Send_Field_DedupeSubscribers}"/>
+                    <apex:inputCheckbox id="dedupeSubscribers" value="{!localSend.dedupeSubscribers}"/>
+                </apex:pageBlockSectionItem>
+                
+                <!-- Send Date/Time -->
+                <apex:pageBlockSectionItem id="sendDateTimeField" helpText="{!$Label.et4ae__SendEmail_Help_SendDateTime}">
+                    <apex:outputLabel for="sendDateTime" value="{!$Label.et4ae__Send_Field_SendDateTIme}"/>
+                    <apex:inputField id="sendDateTime" value="{!send.ET4AE__SendTime__c}"/>
+                </apex:pageBlockSectionItem>
+
+                <!-- Recipients Opt In -->
+                <apex:pageBlockSectionItem id="selectedOptIn">
+                    <apex:outputLabel for="optIn" value="{!$Label.et4ae__SendEmail_Field_OptIn}"/>
+                    <apex:inputCheckbox id="optIn" value="{!localSend.optIn}">
+                        <apex:actionSupport event="onchange" rerender="sendButton"/>
+                    </apex:inputCheckbox>
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+        
+    </apex:form>
+    <apex:includeScript value="{!URLFOR($Resource.ET4AE__jQueryUI, 'jquery-ui-1.9.2.custom/js/jquery-1.8.3.js')}"/>
+    <script type="text/javascript">
+            var j$ = jQuery.noConflict();
+            // Identify triggerable elements.
+            //var fsEmail = document.getElementById( "fromSelectorEmail" );
+            //var fsSC = document.getElementById( "fromSelectorSC" );
+            var fsEmail = jQuery( '[id$=fromSelectorEmail]' );
+            var fsSC = jQuery( '[id$=fromSelectorSC]' );
+            
+            //alert('fsEmail: ' + fsEmail);
+            //alert('fsSC: ' + fsSC);
+            // Assign event actions.
+            fsEmail.onclick = swapFromSource;
+            fsSC.onclick = swapFromSource;
+            
+            // Initial swap execution.
+            swapFromSource();
+        
+        
+        // Swap enablement for the picklists.
+        function swapFromSource() {
+            j$ = jQuery.noConflict();
+            fsEmail = jQuery( '[id$=fromSelectorEmail]' );
+            fsSC = jQuery( '[id$=fromSelectorSC]' );
+            // Identify picklists.
+            //var fromList = document.getElementById( "j_id0:j_id2:j_id4:j_id5:sendEmailForm:sendEmailPage:j_id11:selectedFrom:from" );
+            //var scList = document.getElementById( "j_id0:j_id2:j_id4:j_id5:sendEmailForm:sendEmailPage:j_id11:selectedFrom:sendClassification" );
+            var fromList = jQuery( '[id$=from]' );
+            var scList = jQuery( '[id$=sendClassification]' );
+            
+            //alert('fromList: ' + fromList);
+            //alert('scList: ' + scList);
+            
+            //alert('fsEmail: ' + fsEmail + ' fsEmail.checked:' + fsEmail.checked);
+            //alert('fsSC: ' + fsSC + ' fsSC.checked: ' + fsSC.checked);
+            
+            // Disable both picklists.
+            if( fromList != null ) fromList.attr("disabled",true);
+            if( scList != null ) scList.attr("disabled",true);
+            
+            if (jQuery( '[id$=fromSelectorEmail]' ).is(':checked') == true || (jQuery( '[id$=theHiddenInput1]' ).val() == "true" && jQuery( '[id$=fromSelectorSC]' ).is(':checked') == false))
+                fsEmail.attr("checked","checked");
+            if (jQuery( '[id$=fromSelectorSC]' ).is(':checked') == true || (jQuery( '[id$=theHiddenInput2]' ).val() == "true" && jQuery( '[id$=fromSelectorEmail]' ).is(':checked') == false))
+                fsSC.attr("checked","checked");
+                
+                    
+            if( fsEmail.is(":checked") == false && fsSC.is(":checked") == false )
+                fsEmail.attr("checked","checked");
+                
+            // Enable the correct picklist.
+            if( fsEmail.is(":checked") == true ) {
+                if( scList != null ) scList.val("");
+                if( fromList != null ) fromList.removeAttr("disabled");
+            } if( fsSC.is(":checked") == true ) {
+                if( fromList != null ) fromList.val("");
+                if( scList != null ) scList.removeAttr("disabled");
+            }
+            
+            //alert('fromList.disabled: ' + fromList.attr);
+            //alert('scList.disabled: ' + scList.attr);
+        }
+        
+        function changeTargetAudience()
+        {
+            changeTargetAudienceJS(jQuery( '[id$=fromSelectorEmail]' ).is(':checked'),jQuery( '[id$=fromSelectorSC]' ).is(':checked'));
+        }
+        
+        function changeBusinessUnit()
+        {
+            changeBusinessUnitJS(jQuery( '[id$=fromSelectorEmail]' ).is(':checked'),jQuery( '[id$=fromSelectorSC]' ).is(':checked'));
+        }
+    </script>
+</apex:page>

@@ -1,0 +1,57 @@
+<apex:page controller="ET4AE.BusinessUnitsConsoleControl" action="{!initialize}" tabStyle="ExactTarget__tab">
+	<apex:form id="buConsoleForm">
+		<apex:pageBlock id="buConsolePage" title="{!$Label.et4ae__BUConsole_Message_PageLabel}">
+		
+			<!-- General Form Errors -->
+			<apex:pageBlockSection id="pageMessages" rendered="{!IF( hasErrors, true, false )}">
+				<apex:outputPanel styleClass="errors" layout="block">
+					<apex:pageBlockSectionItem >
+						<apex:pageMessages />
+					</apex:pageBlockSectionItem>
+				</apex:outputPanel>
+			</apex:pageBlockSection>
+		
+			<!-- Form Buttons -->
+			<apex:pageBlockButtons location="bottom">
+				<apex:actionStatus id="selectAllStatus">
+					<apex:facet name="start">
+						<img class="spinnerSmall" src="{!URLFOR( $Resource.ET4AE__ExactTargetImages, 'loading.gif' )}"/>
+					</apex:facet>
+					<apex:facet name="stop">
+						<apex:commandButton action="{!selectAll}" value="{!$Label.et4ae__BUConsole_Button_SelectAll}" rerender="buConsoleForm" status="selectAllStatus"/>
+					</apex:facet>
+				</apex:actionStatus>
+				<apex:actionStatus id="selectNoneStatus">
+					<apex:facet name="start">
+						<img class="spinnerSmall" src="{!URLFOR( $Resource.ET4AE__ExactTargetImages, 'loading.gif' )}"/>
+					</apex:facet>
+					<apex:facet name="stop">
+						<apex:commandButton action="{!selectNone}" value="{!$Label.et4ae__BUConsole_Button_SelectNone}" rerender="buConsoleForm" status="selectNoneStatus"/>
+					</apex:facet>
+				</apex:actionStatus>
+				<apex:actionStatus id="submitStatus">
+					<apex:facet name="start">
+						<img class="spinnerSmall" src="{!URLFOR( $Resource.ET4AE__ExactTargetImages, 'loading.gif' )}"/>
+					</apex:facet>
+					<apex:facet name="stop">
+						<apex:commandButton action="{!save}" value="{!$Label.et4ae__General_Button_Submit}" rerender="buConsoleForm" status="submitStatus"/>
+					</apex:facet>
+				</apex:actionStatus>
+			</apex:pageBlockButtons>
+			
+			<apex:outputPanel id="businessUnitsDisplay" layout="block">
+				<apex:outputText value="{!$Label.et4ae__BUConsole_Message_NoBUFound}" rendered="{!IF( businessUnits.size = 0, true, false )}"/>
+				<apex:outputPanel id="businessUnitsBlock" layout="block">
+					<apex:repeat value="{!businessUnits}" var="bu" rendered="{!IF( businessUnits.size > 0, true, false )}">
+						<apex:outputPanel styleClass="buItem" layout="block">
+							<apex:inputCheckbox value="{!bu.active}"/>
+							<apex:outputLabel value="{!bu.name}"/>
+						</apex:outputPanel>
+					</apex:repeat>
+					<apex:outputPanel styleClass="clear" layout="block"/>
+				</apex:outputPanel>
+			</apex:outputPanel>
+			
+		</apex:pageBlock>
+	</apex:form>
+</apex:page>

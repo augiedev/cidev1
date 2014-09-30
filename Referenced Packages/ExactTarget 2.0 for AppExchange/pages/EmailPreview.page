@@ -1,0 +1,5 @@
+<apex:page controller="ET4AE.EmailPreviewControl" showHeader="false" sidebar="false" action="{!initialize}">
+	<apex:outputPanel id="emailPreview">
+		<apex:outputText value="{!emailContent}" escape="false"/>
+	</apex:outputPanel>
+</apex:page>

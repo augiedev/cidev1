@@ -1,0 +1,259 @@
+<apex:page controller="ET4AE.DashboardControl" action="{!initialize}" tabStyle="ExactTarget__tab">
+	<apex:form id="adminDashboardForm">
+		<apex:actionFunction name="refreshDashboardComponents" action="{!initialize}"  rerender="adminDashboardForm" />
+		<script type="text/javascript">
+		var win;
+		function openReportProblemPopup(url,name)
+		{
+			win = window.open(url, name);
+			win.refreshDashboard = CallAlert;
+		}
+		function afterChildClose()
+		{
+			/*alert('Coming in: '+win);
+			alert(win.location);*/
+			if(win.location != "about:blank") // This is so that the function 
+                                          // doesn't do anything when the 
+                                          // window is first opened.
+        	{
+            	refreshDashboardComponents();
+        	}
+		}
+		function CallAlert() 
+    	{ 
+        	refreshDashboardComponents(); 
+    	}
+
+		</script>
+		<apex:pageBlock id="adminDashboardPage" title="{!$Label.et4ae__AdminDashboard_Tab} ({!IF( sendCount > 0, startRecord + 1, 0 )} - {!endRecord} of {!sendCount})">
+		
+			<!-- General Form Errors -->
+			<apex:pageBlockSection id="pageMessages" rendered="{!IF( hasErrors, true, false )}">
+				<apex:outputPanel styleClass="errors" layout="block">
+					<apex:pageBlockSectionItem >
+						<apex:pageMessages />
+					</apex:pageBlockSectionItem>
+				</apex:outputPanel>
+			</apex:pageBlockSection>
+		
+			<!-- Form Buttons -->
+			<apex:pageBlockButtons location="top" rendered="{!IF( AND( atFirstPage, atLastPage ), false, true )}">
+				<apex:actionStatus id="previousPageStatus" rendered="{!IF( NOT( atFirstPage ), true, false)}">
+					<apex:facet name="start">
+						<img class="spinnerSmall" src="{!URLFOR( $Resource.ET4AE__ExactTargetImages, 'loading.gif' )}"/>
+					</apex:facet>
+					<apex:facet name="stop">
+						<apex:commandButton action="{!updateSendDisplay}" value="{!$Label.et4ae__AdminDashboard_Button_PreviousPage}" rerender="adminDashboardForm" status="previousPageStatus">
+							<apex:param name="pageMod" value="-1"/>
+						</apex:commandButton>
+					</apex:facet>
+				</apex:actionStatus>
+				<apex:actionStatus id="pageLimitStatus">
+					<apex:facet name="start">
+						<img class="spinnerSmall" src="{!URLFOR( $Resource.ET4AE__ExactTargetImages, 'loading.gif' )}"/>
+					</apex:facet>
+					<apex:facet name="stop">
+						<apex:inputText value="{!pageLimit}" style="width: 40px;">
+							<apex:actionSupport event="onchange" action="{!updateSendDisplay}" rerender="adminDashboardForm" status="pageLimitStatus"/>
+						</apex:inputText>
+					</apex:facet>
+				</apex:actionStatus>
+				<apex:actionStatus id="nextPageStatus" rendered="{!IF( NOT( atLastPage ), true, false)}">
+					<apex:facet name="start">
+						<img class="spinnerSmall" src="{!URLFOR( $Resource.ET4AE__ExactTargetImages, 'loading.gif' )}"/>
+					</apex:facet>
+					<apex:facet name="stop">
+						<apex:commandButton action="{!updateSendDisplay}" value="{!$Label.et4ae__AdminDashboard_Button_NextPage}" rerender="adminDashboardForm" status="nextPageStatus">
+							<apex:param name="pageMod" value="1"/>
+						</apex:commandButton>
+					</apex:facet>
+				</apex:actionStatus>
+			</apex:pageBlockButtons>
+			
+			<!-- Search -->
+			<apex:pageBlockSection columns="2" title="{!$Label.et4ae__AdminDashboard_Button_Search}" collapsible="false">
+				<apex:pageBlockSectionItem >
+					<apex:inputText value="{!keyword}"/>
+					<apex:actionStatus id="searchStatus">
+						<apex:facet name="start">
+							<img class="spinnerSmall" src="{!URLFOR( $Resource.ET4AE__ExactTargetImages, 'loading.gif' )}"/>
+						</apex:facet>
+						<apex:facet name="stop">
+							<apex:commandButton action="{!searchSends}" value="{!$Label.et4ae__AdminDashboard_Button_Search}" rerender="adminDashboardForm" status="searchStatus"/>
+						</apex:facet>
+					</apex:actionStatus>
+				</apex:pageBlockSectionItem>
+				<apex:pageBlockSectionItem >
+					<apex:actionStatus id="refreshStatus">
+						<apex:facet name="start">
+							<img class="spinnerSmall" src="{!URLFOR( $Resource.ET4AE__ExactTargetImages, 'loading.gif' )}"/>
+						</apex:facet>
+						<apex:facet name="stop">
+							<apex:commandButton action="{!initialize}" value="{!$Label.et4ae__General_Button_Refresh}" rerender="adminDashboardForm" status="refreshStatus"/>
+						</apex:facet>
+					</apex:actionStatus>
+				</apex:pageBlockSectionItem>
+			</apex:pageBlockSection>
+
+			<!-- Send Definition History -->
+			<apex:pageBlockSection columns="1" collapsible="false" id="dashboardSection">
+				<apex:facet name="header">
+					<apex:actionStatus id="sendListStatus">
+						<apex:facet name="start">
+							<img class="spinnerSmall" src="{!URLFOR( $Resource.ET4AE__ExactTargetImages, 'loading.gif' )}"/>
+						</apex:facet>
+						<apex:facet name="stop">
+							<apex:outputText value="Sends"/>
+						</apex:facet>
+					</apex:actionStatus>
+				</apex:facet>
+				<apex:outputPanel layout="none" id="sendHistoryTableWrapper">
+				<apex:pageBlockSectionItem >
+					<apex:dataTable value="{!sends}" var="send" id="sendHistoryTable" cellpadding="3" rowClasses="odd, even" rules="rows">
+						<apex:column >
+							<apex:facet name="header">Hide</apex:facet>
+							<apex:commandButton action="{!hideSend}" rerender="sendHistoryTable" value="X" status="sendListStatus">
+								<apex:param name="sendId" value="{!send.id}"/>
+							</apex:commandButton>
+						</apex:column>
+						<apex:column >
+							<apex:facet name="header">
+								<apex:actionStatus id="colSendIdStatus">
+									<apex:facet name="start">
+										<img class="spinnerSmall" src="{!URLFOR( $Resource.ET4AE__ExactTargetImages, 'loading.gif' )}"/>
+									</apex:facet>
+									<apex:facet name="stop">
+										<apex:commandLink value="{!$Label.et4ae__Send_Field_SendId}" action="{!updateSendOrder}" rerender="adminDashboardForm" status="colSendIdStatus">
+											<apex:param name="orderBy" value="Name"/>
+										</apex:commandLink>
+									</apex:facet>
+								</apex:actionStatus>
+							</apex:facet>
+							<apex:outputText value="{!send.name}"/>
+						</apex:column>
+						<apex:column >
+							<apex:facet name="header">
+								<apex:actionStatus id="colCreatedDateStatus">
+									<apex:facet name="start">
+										<img class="spinnerSmall" src="{!URLFOR( $Resource.ET4AE__ExactTargetImages, 'loading.gif' )}"/>
+									</apex:facet>
+									<apex:facet name="stop">
+										<apex:commandLink value="{!$Label.et4ae__AdminDashboard_Field_CreatedDate}" action="{!updateSendOrder}" rerender="adminDashboardForm" status="colCreatedDateStatus">
+											<apex:param name="orderBy" value="createdDate"/>
+										</apex:commandLink>
+									</apex:facet>
+								</apex:actionStatus>								
+							</apex:facet>
+							<apex:outputField value="{!send.CreatedDate}"/>
+						</apex:column>
+						<apex:column >
+							<apex:facet name="header">
+								<apex:actionStatus id="colOwnerStatus">
+									<apex:facet name="start">
+										<img class="spinnerSmall" src="{!URLFOR( $Resource.ET4AE__ExactTargetImages, 'loading.gif' )}"/>
+									</apex:facet>
+									<apex:facet name="stop">
+										<apex:commandLink value="{!$Label.et4ae__AdminDashboard_Field_Requestor}" action="{!updateSendOrder}" rerender="adminDashboardForm" status="colOwnerStatus">
+											<apex:param name="orderBy" value="owner.name"/>
+										</apex:commandLink>
+									</apex:facet>
+								</apex:actionStatus>
+							</apex:facet>
+							<apex:outputText value="{!send.owner.name}"/>
+						</apex:column>
+						<apex:column >
+							<apex:facet name="header">
+								<apex:actionStatus id="colSendStatusStatus">
+									<apex:facet name="start">
+										<img class="spinnerSmall" src="{!URLFOR( $Resource.ET4AE__ExactTargetImages, 'loading.gif' )}"/>
+									</apex:facet>
+									<apex:facet name="stop">
+										<apex:commandLink value="{!$Label.et4ae__Send_Field_Status}" action="{!updateSendOrder}" rerender="adminDashboardForm" status="colSendStatusStatus">
+											<apex:param name="orderBy" value="sendStatus__c"/>
+										</apex:commandLink>
+									</apex:facet>
+								</apex:actionStatus>
+							</apex:facet>
+							<apex:outputText value="{!send.ET4AE__SendStatus__c}"/>
+						</apex:column>
+						<apex:column >
+							<apex:facet name="header">
+								<apex:actionStatus id="colEmailStatus">
+									<apex:facet name="start">
+										<img class="spinnerSmall" src="{!URLFOR( $Resource.ET4AE__ExactTargetImages, 'loading.gif' )}"/>
+									</apex:facet>
+									<apex:facet name="stop">
+										<apex:commandLink value="{!$Label.et4ae__Send_Field_Email}" action="{!updateSendOrder}" rerender="adminDashboardForm" status="colEmailStatus">
+											<apex:param name="orderBy" value="emailName__c"/>
+										</apex:commandLink>
+									</apex:facet>
+								</apex:actionStatus>
+							</apex:facet>
+							<apex:outputText value="{!send.ET4AE__EmailName__c}"/>
+						</apex:column>
+						<apex:column >
+							<apex:facet name="header">
+								<apex:actionStatus id="colRecipientElementStatus">
+									<apex:facet name="start">
+										<img class="spinnerSmall" src="{!URLFOR( $Resource.ET4AE__ExactTargetImages, 'loading.gif' )}"/>
+									</apex:facet>
+									<apex:facet name="stop">
+										<apex:commandLink value="{!$Label.et4ae__AdminDashboard_Field_Subscribers}" action="{!updateSendOrder}" rerender="adminDashboardForm" status="colRecipientElementStatus">
+											<apex:param name="orderBy" value="recipientElement__c"/>
+										</apex:commandLink>
+									</apex:facet>
+								</apex:actionStatus>
+							</apex:facet>
+							<apex:outputText value="{!send.ET4AE__RecipientElement__c}"/>
+						</apex:column>
+						<apex:column >
+							<apex:facet name="header">
+								<apex:actionStatus id="colRecipientTypeStatus">
+									<apex:facet name="start">
+										<img class="spinnerSmall" src="{!URLFOR( $Resource.ET4AE__ExactTargetImages, 'loading.gif' )}"/>
+									</apex:facet>
+									<apex:facet name="stop">
+										<apex:commandLink value="{!$Label.et4ae__AdminDashboard_Field_SubscriberType}" action="{!updateSendOrder}" rerender="adminDashboardForm" status="colRecipientTypeStatus">
+											<apex:param name="orderBy" value="recipientType__c"/>
+										</apex:commandLink>
+									</apex:facet>
+								</apex:actionStatus>
+							</apex:facet>
+							<apex:outputText value="{!LOWER( SUBSTITUTE( send.ET4AE__RecipientType__c, '_', ' ' ) )}"/>
+						</apex:column>
+						<apex:column >
+							<apex:facet name="header">{!$Label.et4ae__AdminDashboard_Field_Tracking}</apex:facet>
+							<apex:outputText rendered="{!send.ET4AE__SendStatus__c = 'Complete'}">
+								<apex:commandButton onclick="window.open( '{!$Page.ET4AE__ViewEmailTracking}?sendId={!send.Id}' );" value="{!$Label.et4ae__AdminDashboard_Button_ViewTracking}" rerender="null"/>
+							</apex:outputText>
+						</apex:column>
+						<apex:column >
+							<apex:facet name="header">{!$Label.et4ae__AdminDashboard_Field_Support}</apex:facet>
+							<apex:commandButton value="{!$Label.et4ae__AdminDashboard_Button_ReportProblem}" onclick="openReportProblemPopup('{!$Page.ET4AE__SupportRequest}?sendId={!send.Id}','supportWindow');" rerender="null">
+								<apex:param name="sendId2" value="{!send.id}"/>
+							</apex:commandButton>
+						</apex:column>
+						<apex:column >
+							<apex:facet name="header">
+								<apex:actionStatus id="colSupportStatus">
+									<apex:facet name="start">
+										<img class="spinnerSmall" src="{!URLFOR( $Resource.ET4AE__ExactTargetImages, 'loading.gif' )}"/>
+									</apex:facet>
+									<apex:facet name="stop">
+										<apex:commandLink value="{!$Label.et4ae__AdminDashboard_Field_SupportStatus}" action="{!updateSendOrder}" rerender="adminDashboardForm" status="colSupportStatus">
+											<apex:param name="orderBy" value="supportRequestStatus__c"/>
+										</apex:commandLink>
+									</apex:facet>
+								</apex:actionStatus>
+							</apex:facet>
+							<apex:outputText value="{!send.ET4AE__SupportRequestStatus__c}"/>
+						</apex:column>
+					</apex:dataTable>
+				</apex:pageBlockSectionItem>
+				</apex:outputPanel>
+			</apex:pageBlockSection>
+			
+		</apex:pageBlock>
+	</apex:form>
+
+</apex:page>

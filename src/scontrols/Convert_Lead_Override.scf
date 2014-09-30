@@ -1,0 +1,27 @@
+<script type="text/javascript">
+var recordType = '{!Lead.RecordTypeId}';
+
+var url = window.location.toString();
+var domain = url.substr(0, url.indexOf('.com')+4);
+
+// If Record Type is an EMEA Record Type 
+if (recordType == '012300000001hwm' || recordType == '01280000000HfSX' || recordType == '012300000001XPr' || recordType == '0123000000012Dr' || recordType == '012300000001nJU' || recordType == '012300000001izJ' || recordType == '012300000001l6b' || recordType == '01280000000HgBE' || recordType == '0128000000022Ns') {
+
+   var segment = '{!Lead.Segment__c}';
+   var industry = '{!Lead.Industry__c}';
+   var dimension = '{!Lead.Dimension__c}';
+   var organization = '{!Lead.Organization__c}';
+
+   if (segment == '' || industry == '' || dimension == '' || organization == '') {
+      alert ('All Segmentation fields needs to be filled in. The Segmentation fields are:\n' +
+              '* Segment\n* Industry\n* Dimension\n* Organization');
+      top.location = domain + '/{!Lead.Id}';
+   }
+   else {
+      top.location = domain + '/apex/AccountSearch?isLeadBeingConverted=true&leadId={!Lead.Id}&retURL=/{!Lead.Id}';
+   } 
+}
+else {
+   top.location = domain + '/apex/AccountSearch?isLeadBeingConverted=true&leadId={!Lead.Id}&retURL=/{!Lead.Id}';
+}
+</script>
